@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-pagination-bullet {
+  background: #582C8D !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #582C8D !important;
+}
+
 @layer base {
   * {
     @apply scroll-smooth;

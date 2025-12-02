@@ -35,6 +35,8 @@ export default {
         'fade-up-delayed': 'fadeUp 0.6s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out forwards',
         'slide-up-delayed': 'slideUp 0.7s ease-out forwards',
+        'icon-bounce': 'iconBounce 0.5s ease-in-out',
+        'icon-float': 'iconFloat 3s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: {
@@ -44,6 +46,14 @@ export default {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(40px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        iconBounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        iconFloat: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
         },
       },
       backgroundImage: {

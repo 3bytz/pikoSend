@@ -48,7 +48,7 @@ export const Features: React.FC = () => {
                 style={{ animationDelay: `${index * 0.08}s` }}
               >
                 <div className="flex justify-center" style={{ marginBottom: '40px' }}>
-                  <div className={`flex items-center justify-center w-16 h-16 rounded-full ${colors.bg} bg-opacity-10 border-2 ${colors.border} border-opacity-30`}>
+                  <div className={`flex items-center justify-center w-16 h-16 rounded-full ${colors.bg} bg-opacity-10 border-2 ${colors.border} border-opacity-30 hover:animate-icon-bounce transition-all hover:scale-110`}>
                     <Icon className={`w-8 h-8 ${colors.text}`} strokeWidth={1.5} />
                   </div>
                 </div>
