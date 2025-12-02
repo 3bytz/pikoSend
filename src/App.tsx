@@ -3,7 +3,10 @@ import {
   Hero,
   Features,
   Mission,
-  ProductShowcase,
+  ReceiveMoneyHero,
+  GlobalAccountsHero,
+  CardsHero,
+  SendMoneyHero,
   TapGo,
   UserPersonas,
   PersonalBusiness,
@@ -27,7 +30,10 @@ function App() {
       <Hero />
       <Features />
       <Mission />
-      <ProductShowcase />
+      <ReceiveMoneyHero />
+      <GlobalAccountsHero />
+      <CardsHero />
+      <SendMoneyHero />
       <TapGo />
       <UserPersonas />
       <PersonalBusiness />
