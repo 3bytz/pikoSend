@@ -32,11 +32,11 @@
   }
 
   .btn-primary {
-    @apply px-8 py-3 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] active:translate-y-[-2px];
+    @apply px-8 py-3 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:translate-y-[-6px] hover:scale-105 active:translate-y-[-2px] active:scale-100;
   }
 
   .btn-secondary {
-    @apply px-8 py-3 bg-transparent border-2 border-piko-purple text-piko-purple rounded-full font-medium transition-all duration-300 hover:bg-piko-purple hover:text-white;
+    @apply px-8 py-3 bg-transparent border-2 border-piko-purple text-piko-purple rounded-full font-medium transition-all duration-300 hover:bg-piko-purple hover:text-white hover:shadow-lg hover:translate-y-[-4px] active:translate-y-[-2px];
   }
 
   .input-field {

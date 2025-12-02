@@ -19,12 +19,12 @@ const businessFeatures = [
 
 export const PersonalBusiness: React.FC = () => {
   return (
-    <Section background="white" className="border-t border-piko-soft-grey">
+    <Section background="white" className="border-t border-piko-soft-grey" id="personal">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="animate-fade-up space-y-12">
             <div>
-              <h2 className="text-h2 text-piko-black font-poppins mb-2">Personal Use</h2>
+              <h2 className="text-3xl md:text-h2 text-piko-black font-poppins mb-2">Personal Use</h2>
               <div className="w-16 h-1 bg-piko-purple rounded-full"></div>
             </div>
             <ul className="space-y-4">
@@ -34,8 +34,10 @@ export const PersonalBusiness: React.FC = () => {
                   className="flex items-center gap-4 animate-fade-up"
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
-                  <CheckCircle2 className="w-6 h-6 text-piko-purple flex-shrink-0" strokeWidth={1.5} />
-                  <span className="text-body text-piko-medium-grey">{feature}</span>
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-piko-teal bg-opacity-10 flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-piko-teal" strokeWidth={1.5} />
+                  </div>
+                  <span className="text-base text-piko-medium-grey">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -43,25 +45,27 @@ export const PersonalBusiness: React.FC = () => {
 
           <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=600&fit=crop"
+              src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
               alt="Personal use"
               className="w-full rounded-2xl shadow-lg"
+              style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
             />
           </div>
         </div>
 
-        <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center lg:grid-cols-2-reverse">
+        <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center" id="business">
           <div className="order-2 lg:order-1 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=600&fit=crop"
+              src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
               alt="Business use"
               className="w-full rounded-2xl shadow-lg"
+              style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
             />
           </div>
 
           <div className="order-1 lg:order-2 animate-fade-up space-y-12">
             <div>
-              <h2 className="text-h2 text-piko-black font-poppins mb-2">For Your Business</h2>
+              <h2 className="text-3xl md:text-h2 text-piko-black font-poppins mb-2">For Your Business</h2>
               <div className="w-16 h-1 bg-piko-purple rounded-full"></div>
             </div>
             <ul className="space-y-4">
@@ -71,8 +75,10 @@ export const PersonalBusiness: React.FC = () => {
                   className="flex items-center gap-4 animate-fade-up"
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
-                  <CheckCircle2 className="w-6 h-6 text-piko-purple flex-shrink-0" strokeWidth={1.5} />
-                  <span className="text-body text-piko-medium-grey">{feature}</span>
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-piko-green bg-opacity-10 flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-piko-green" strokeWidth={1.5} />
+                  </div>
+                  <span className="text-base text-piko-medium-grey">{feature}</span>
                 </li>
               ))}
             </ul>

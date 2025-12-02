@@ -1,4 +1,5 @@
 import {
+  Navbar,
   Hero,
   Features,
   PersonalBusiness,
@@ -11,6 +12,7 @@ import {
 function App() {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
       <Hero />
       <Features />
       <PersonalBusiness />

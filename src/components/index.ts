@@ -1,6 +1,7 @@
 export { Button } from './Button';
 export { Section } from './Section';
 export { Container } from './Container';
+export { Navbar } from './Navbar';
 export { Hero } from './Hero';
 export { Features } from './Features';
 export { PersonalBusiness } from './PersonalBusiness';

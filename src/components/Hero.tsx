@@ -49,23 +49,25 @@ export const Hero: React.FC = () => {
 
         <div className="lg:col-span-3 flex justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <div className="relative w-64 h-96">
+            <div className="absolute -inset-2 bg-gradient-to-br from-piko-lilac to-piko-purple opacity-20 blur-xl rounded-3xl"></div>
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop"
+              src="https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop"
               alt="Professional"
-              className="w-full h-full object-cover rounded-3xl shadow-2xl"
+              className="relative w-full h-full object-cover rounded-3xl shadow-2xl"
+              style={{ filter: 'drop-shadow(0 20px 40px rgba(88, 44, 141, 0.3))' }}
             />
           </div>
         </div>
 
-        <div className="lg:col-span-4 flex justify-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
-          <div className="relative">
+        <div className="lg:col-span-4 flex justify-center lg:justify-end animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className="relative" style={{ transform: 'rotate(-2deg)' }}>
             <div className="absolute -inset-4 bg-gradient-to-br from-piko-lilac to-piko-purple rounded-3xl blur-2xl opacity-30"></div>
-            <div className="relative bg-white rounded-3xl p-3 shadow-2xl" style={{ width: '280px', height: '560px' }}>
-              <div className="w-full h-full bg-gradient-to-br from-piko-purple to-piko-lilac rounded-2xl flex flex-col items-center justify-center">
+            <div className="relative bg-white rounded-3xl p-3 shadow-2xl" style={{ width: '280px', height: '560px', transform: 'rotate(2deg)' }}>
+              <div className="w-full h-full bg-gradient-to-br from-piko-purple to-piko-lilac rounded-2xl flex flex-col items-center justify-center overflow-hidden">
                 <div className="text-center text-white space-y-4 px-6">
                   <div className="text-4xl font-bold">$2,450</div>
                   <p className="text-sm opacity-80">Available Balance</p>
-                  <div className="flex gap-2 justify-center">
+                  <div className="flex gap-2 justify-center mt-8">
                     <div className="w-3 h-3 rounded-full bg-white opacity-60"></div>
                     <div className="w-3 h-3 rounded-full bg-white"></div>
                     <div className="w-3 h-3 rounded-full bg-white opacity-60"></div>
@@ -73,11 +75,24 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
             </div>
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-4 bg-piko-purple opacity-10 blur-xl rounded-full"></div>
           </div>
         </div>
       </Container>
 
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-piko-lilac to-transparent opacity-30"></div>
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
+        <svg
+          viewBox="0 0 1440 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto"
+        >
+          <path
+            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+            fill="white"
+          />
+        </svg>
+      </div>
     </section>
   );
 };

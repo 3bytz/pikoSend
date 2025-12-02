@@ -7,6 +7,8 @@ export default {
         'piko-purple': '#582C8D',
         'piko-plum': '#3E1C6D',
         'piko-lilac': '#9A6AFD',
+        'piko-teal': '#14B8A6',
+        'piko-green': '#10B981',
         'piko-soft-grey': '#F5F7FA',
         'piko-black': '#1A1A1A',
         'piko-medium-grey': '#555555',
