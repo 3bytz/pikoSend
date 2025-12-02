@@ -14,6 +14,8 @@ export { ReceiveMoneyHero } from './ReceiveMoneyHero';
 export { GlobalAccountsHero } from './GlobalAccountsHero';
 export { CardsHero } from './CardsHero';
 export { SendMoneyHero } from './SendMoneyHero';
+export { ContactHero } from './ContactHero';
+export { ContactForm } from './ContactForm';
 export { UserPersonas } from './UserPersonas';
 export { PersonalBusiness } from './PersonalBusiness';
 export { BusinessSection } from './BusinessSection';

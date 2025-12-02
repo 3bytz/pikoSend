@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Container } from './Container';
 import { Button } from './Button';
 import { Send, Menu, X, ChevronDown } from 'lucide-react';
@@ -19,6 +20,7 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +30,11 @@ export const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const navLinks: NavLink[] = [
     {
@@ -55,6 +62,7 @@ export const Navbar: React.FC = () => {
       ],
     },
     { label: 'About', href: '#about' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -67,7 +75,7 @@ export const Navbar: React.FC = () => {
     >
       <Container>
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-piko-purple">
               <Send size={20} className="text-white" />
             </div>
@@ -78,7 +86,7 @@ export const Navbar: React.FC = () => {
             >
               PikoSend
             </span>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -115,6 +123,15 @@ export const Navbar: React.FC = () => {
                       </div>
                     )}
                   </>
+                ) : link.href?.startsWith('/') ? (
+                  <Link
+                    to={link.href}
+                    className={`font-medium transition-colors hover:text-piko-purple ${
+                      isScrolled ? 'text-piko-black' : 'text-white'
+                    } ${location.pathname === link.href ? 'text-piko-purple' : ''}`}
+                  >
+                    {link.label}
+                  </Link>
                 ) : (
                   <a
                     href={link.href}
@@ -151,19 +168,30 @@ export const Navbar: React.FC = () => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-piko-soft-grey">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden mt-4 pt-4 border-t border-piko-soft-grey bg-white rounded-lg">
+            <div className="flex flex-col gap-4 p-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={`font-medium transition-colors ${
-                    isScrolled ? 'text-piko-black' : 'text-white'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
+                link.href?.startsWith('/') ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`font-medium transition-colors text-piko-black hover:text-piko-purple ${
+                      location.pathname === link.href ? 'text-piko-purple' : ''
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="font-medium transition-colors text-piko-black hover:text-piko-purple"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                )
               ))}
               <Button variant="primary" size="sm" className="w-full">
                 Get Started
