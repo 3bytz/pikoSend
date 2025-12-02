@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from './Container';
-import { Send, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Send, Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -17,8 +17,24 @@ export const Footer: React.FC = () => {
               <span className="font-poppins text-xl font-bold">PikoSend</span>
             </div>
             <p className="text-sm opacity-80 leading-relaxed max-w-sm">
-              Making global payments simple, fast, and affordable for everyone. Join thousands who trust us for their international money transfers.
+              Empowering Africa through financial inclusion. Making payments simple, fast, and accessible for everyone.
             </p>
+
+            <div className="space-y-2 pt-2">
+              <a href="tel:+254706525135" className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition">
+                <Phone size={14} />
+                <span>+254 (706) 525 135</span>
+              </a>
+              <a href="mailto:info@pikosend.co.ke" className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition">
+                <Mail size={14} />
+                <span>info@pikosend.co.ke</span>
+              </a>
+              <div className="flex items-center gap-2 text-sm opacity-80">
+                <MapPin size={14} />
+                <span>Nairobi, Kenya</span>
+              </div>
+            </div>
+
             <div className="pt-4">
               <p className="text-xs opacity-60 mb-2">Download our app</p>
               <div className="flex gap-3">
@@ -148,7 +164,8 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="text-center mt-6 text-xs opacity-60">
-            <p>&copy; {currentYear} PikoSend. All rights reserved. Licensed and regulated in multiple jurisdictions.</p>
+            <p>&copy; {currentYear} PikoSend. All rights reserved. Powered by Futuriza.</p>
+            <p className="mt-1">Licensed and regulated in Kenya.</p>
           </div>
         </div>
       </Container>

@@ -12,21 +12,21 @@ interface TestimonialData {
 
 const testimonials: TestimonialData[] = [
   {
-    quote: "PikoSend transformed how we handle international payments. The speed and transparency are unmatched. Highly recommend!",
-    author: "Sarah Johnson",
-    role: "CEO, Global Commerce Inc",
+    quote: "PikoSend has transformed how I handle payments for my business. The instant transfers and low fees make it perfect for my daily operations. I can now pay suppliers and receive payments from customers without any hassle.",
+    author: "Alex Mwangi",
+    role: "Business Owner",
     rating: 5,
   },
   {
-    quote: "As a freelancer working with clients globally, PikoSend has been a game-changer. Getting paid is now instant and hassle-free.",
-    author: "Michael Chen",
+    quote: "As a freelancer, receiving payments from clients across Africa used to be a nightmare. With PikoSend, I get paid instantly and the fees are transparent. It's been a game-changer for my work.",
+    author: "Grace Wanjiru",
     role: "Freelance Designer",
     rating: 5,
   },
   {
-    quote: "The multi-currency accounts saved me thousands in fees. Perfect for my e-commerce business dealing with international suppliers.",
-    author: "Amara Okafor",
-    role: "E-commerce Entrepreneur",
+    quote: "The ability to buy airtime and pay bills directly through PikoSend saves me so much time. Everything I need for my daily transactions is in one place. The app is so easy to use!",
+    author: "David Ochieng",
+    role: "Small Business Owner",
     rating: 5,
   },
 ];

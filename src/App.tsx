@@ -2,7 +2,9 @@ import {
   Navbar,
   Hero,
   Features,
+  Mission,
   ProductShowcase,
+  TapGo,
   UserPersonas,
   PersonalBusiness,
   BusinessSection,
@@ -24,7 +26,9 @@ function App() {
       <Navbar />
       <Hero />
       <Features />
+      <Mission />
       <ProductShowcase />
+      <TapGo />
       <UserPersonas />
       <PersonalBusiness />
       <BusinessSection />

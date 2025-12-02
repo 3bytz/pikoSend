@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
               more than just a payment solution
             </h1>
             <p className="text-white text-lg mt-6 leading-relaxed max-w-md opacity-90">
-              Send money globally, manage finances locally, and grow your business with confidence.
+              Experience seamless transactions and enhanced security - empowering your personal and business growth.
             </p>
           </div>
 

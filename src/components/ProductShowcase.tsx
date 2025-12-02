@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container } from './Container';
-import { CreditCard, Send, Globe, TrendingUp, Wallet } from 'lucide-react';
+import { CreditCard, Send, Wallet, Smartphone, FileText, ArrowLeftRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -18,49 +18,58 @@ interface Product {
 
 const products: Product[] = [
   {
-    id: 'receive',
-    icon: Wallet,
-    title: 'Receive Money',
-    description: 'Get paid from anywhere in the world. Accept payments in multiple currencies with zero hassle.',
-    features: ['Multiple currencies', 'Instant notifications', 'Low fees', 'Secure transfers'],
-    image: 'https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=400',
-    color: '#14B8A6',
-  },
-  {
-    id: 'accounts',
-    icon: Globe,
-    title: 'Global Accounts',
-    description: 'Open local accounts in multiple countries. Get account details instantly and receive money like a local.',
-    features: ['US, UK, EU accounts', 'Local details', 'Fast setup', 'No monthly fees'],
-    image: 'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400',
-    color: '#10B981',
-  },
-  {
-    id: 'cards',
-    icon: CreditCard,
-    title: 'Virtual & Physical Cards',
-    description: 'Spend your money anywhere with our cards. Get instant virtual cards or order physical cards delivered to you.',
-    features: ['Instant virtual cards', 'Physical cards', 'Spending controls', 'Worldwide acceptance'],
-    image: 'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=400',
-    color: '#14B8A6',
-  },
-  {
     id: 'send',
     icon: Send,
     title: 'Send Money',
-    description: 'Transfer money globally in seconds. Send to bank accounts, mobile wallets, or other PikoSend users.',
-    features: ['Fast transfers', 'Competitive rates', 'Track payments', '150+ countries'],
+    description: 'Transfer money instantly across Africa. Send to bank accounts, mobile wallets, or other PikoSend users in seconds.',
+    features: ['Instant transfers', 'Mobile wallets', 'Bank transfers', 'P2P payments'],
     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400',
     color: '#10B981',
   },
   {
-    id: 'earn',
-    icon: TrendingUp,
-    title: 'Earn Rewards',
-    description: 'Get rewarded for using PikoSend. Earn points on every transaction and redeem for cashback or perks.',
-    features: ['Cashback rewards', 'Referral bonuses', 'Transaction points', 'Exclusive perks'],
-    image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400',
+    id: 'receive',
+    icon: Wallet,
+    title: 'Receive Payments',
+    description: 'Accept customer payments instantly. Perfect for businesses and individuals receiving money from anywhere.',
+    features: ['Instant notifications', 'Multiple sources', 'Low fees', 'Secure transfers'],
+    image: 'https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=400',
     color: '#14B8A6',
+  },
+  {
+    id: 'airtime',
+    icon: Smartphone,
+    title: 'Buy Airtime',
+    description: 'Top up your phone or send airtime to family and friends. Support for all major networks in Kenya.',
+    features: ['All networks', 'Instant delivery', 'Bulk purchases', 'Save favorites'],
+    image: 'https://images.pexels.com/photos/887751/pexels-photo-887751.jpeg?auto=compress&cs=tinysrgb&w=400',
+    color: '#F59E0B',
+  },
+  {
+    id: 'bills',
+    icon: FileText,
+    title: 'Pay Bills',
+    description: 'Pay your utility bills, TV subscriptions, and more. Never miss a payment with scheduled reminders.',
+    features: ['Utilities', 'TV subscriptions', 'Internet bills', 'Auto-reminders'],
+    image: 'https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=400',
+    color: '#8B5CF6',
+  },
+  {
+    id: 'wallets',
+    icon: ArrowLeftRight,
+    title: 'Multi-Wallet',
+    description: 'Organize your money with separate wallets. Keep personal and business funds separate for better tracking.',
+    features: ['Multiple wallets', 'Easy switching', 'Transaction history', 'Budget tracking'],
+    image: 'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=400',
+    color: '#14B8A6',
+  },
+  {
+    id: 'cards',
+    icon: CreditCard,
+    title: 'Virtual Cards',
+    description: 'Get instant virtual cards for online shopping. Shop safely and control your spending with ease.',
+    features: ['Instant cards', 'Online shopping', 'Spending limits', 'Secure payments'],
+    image: 'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=400',
+    color: '#EC4899',
   },
 ];
 
