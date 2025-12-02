@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-inter text-piko-black;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-poppins;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto px-4 md:px-6 max-w-7xl;
+  }
+
+  .section-spacing {
+    @apply py-section-mobile md:py-section-tablet lg:py-section-desktop;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] active:translate-y-[-2px];
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 bg-transparent border-2 border-piko-purple text-piko-purple rounded-full font-medium transition-all duration-300 hover:bg-piko-purple hover:text-white;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-full border-2 border-piko-soft-grey focus:border-piko-purple focus:outline-none transition-colors;
+  }
+
+  .icon-wrapper {
+    @apply flex items-center justify-center w-12 h-12 rounded-full bg-piko-lilac bg-opacity-20;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-piko-purple to-piko-lilac bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300;
+  }
+}
+
+@layer utilities {
+  .animate-stagger-1 {
+    animation: fadeUp 0.5s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-2 {
+    animation: fadeUp 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-3 {
+    animation: fadeUp 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-4 {
+    animation: fadeUp 0.5s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-piko-purple via-piko-lilac to-piko-purple bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px];
+  }
+
+  .smooth-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0) 40%
+  );
+  background-size: 1000px 100%;
+}
