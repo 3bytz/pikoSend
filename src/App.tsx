@@ -2,7 +2,12 @@ import {
   Navbar,
   Hero,
   Features,
-  ProductShowcase,
+  Mission,
+  ReceiveMoneyHero,
+  GlobalAccountsHero,
+  CardsHero,
+  SendMoneyHero,
+  TapGo,
   UserPersonas,
   PersonalBusiness,
   BusinessSection,
@@ -24,7 +29,12 @@ function App() {
       <Navbar />
       <Hero />
       <Features />
-      <ProductShowcase />
+      <Mission />
+      <ReceiveMoneyHero />
+      <GlobalAccountsHero />
+      <CardsHero />
+      <SendMoneyHero />
+      <TapGo />
       <UserPersonas />
       <PersonalBusiness />
       <BusinessSection />
