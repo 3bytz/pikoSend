@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from './Container';
 import { Button } from './Button';
-import { Send, Menu, X } from 'lucide-react';
+import { Send, Menu, X, ChevronDown } from 'lucide-react';
+
+interface DropdownItem {
+  label: string;
+  href: string;
+  description?: string;
+}
+
+interface NavLink {
+  label: string;
+  href?: string;
+  dropdown?: DropdownItem[];
+}
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +29,31 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'Features', href: '#features' },
-    { label: 'Personal', href: '#personal' },
-    { label: 'Business', href: '#business' },
+  const navLinks: NavLink[] = [
+    {
+      label: 'Personal',
+      dropdown: [
+        { label: 'Global Accounts', href: '#accounts', description: 'Receive money from anywhere' },
+        { label: 'Send Money', href: '#send', description: 'Transfer funds globally' },
+        { label: 'Cards', href: '#cards', description: 'Virtual and physical cards' },
+      ],
+    },
+    {
+      label: 'Business',
+      dropdown: [
+        { label: 'Business Accounts', href: '#business', description: 'Manage team payments' },
+        { label: 'API Integration', href: '#api', description: 'Build with PikoSend' },
+        { label: 'Invoicing', href: '#invoicing', description: 'Professional invoices' },
+      ],
+    },
+    {
+      label: 'Products',
+      dropdown: [
+        { label: 'Mobile App', href: '#app', description: 'iOS and Android' },
+        { label: 'Web Platform', href: '#web', description: 'Manage from anywhere' },
+        { label: 'Developer Tools', href: '#tools', description: 'APIs and SDKs' },
+      ],
+    },
     { label: 'About', href: '#about' },
   ];
 
@@ -48,25 +82,63 @@ export const Navbar: React.FC = () => {
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`font-medium transition-colors hover:text-piko-purple ${
-                  isScrolled ? 'text-piko-black' : 'text-white'
-                }`}
+              <div
+                key={link.label}
+                className="relative"
+                onMouseEnter={() => link.dropdown && setActiveDropdown(link.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                {link.label}
-              </a>
+                {link.dropdown ? (
+                  <>
+                    <button
+                      className={`font-medium transition-colors hover:text-piko-purple flex items-center gap-1 ${
+                        isScrolled ? 'text-piko-black' : 'text-white'
+                      }`}
+                    >
+                      {link.label}
+                      <ChevronDown size={16} className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
+                    </button>
+                    {activeDropdown === link.label && (
+                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-4 px-2 animate-fade-up">
+                        {link.dropdown.map((item) => (
+                          <a
+                            key={item.href}
+                            href={item.href}
+                            className="block px-4 py-3 rounded-lg hover:bg-piko-soft-grey transition-colors"
+                          >
+                            <div className="font-medium text-piko-black">{item.label}</div>
+                            {item.description && (
+                              <div className="text-sm text-piko-medium-grey mt-1">{item.description}</div>
+                            )}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <a
+                    href={link.href}
+                    className={`font-medium transition-colors hover:text-piko-purple ${
+                      isScrolled ? 'text-piko-black' : 'text-white'
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                )}
+              </div>
             ))}
           </div>
 
           <div className="hidden md:flex items-center gap-4">
+            <button className={`font-medium transition-colors ${isScrolled ? 'text-piko-black hover:text-piko-purple' : 'text-white hover:text-piko-lilac'}`}>
+              Login
+            </button>
             <Button
-              variant={isScrolled ? 'secondary' : 'primary'}
+              variant="primary"
               size="sm"
               className={!isScrolled ? 'bg-white text-piko-purple hover:bg-opacity-90' : ''}
             >
-              Get Started
+              Create Account
             </Button>
           </div>
 

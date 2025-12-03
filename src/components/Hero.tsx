@@ -23,14 +23,21 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="primary" size="md" className="flex items-center justify-center gap-2">
-              <Apple size={20} />
-              App Store
+            <Button variant="primary" size="lg" className="flex items-center justify-center gap-2 bg-white text-piko-purple hover:bg-opacity-90">
+              Create an Account
             </Button>
-            <Button variant="primary" size="md" className="flex items-center justify-center gap-2">
-              <Play size={20} />
-              Google Play
-            </Button>
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:block w-16 h-16 bg-white rounded-xl p-2">
+                <div className="w-full h-full bg-piko-purple rounded-lg"></div>
+              </div>
+              <div className="text-white text-sm">
+                <p className="font-medium">Scan to download</p>
+                <div className="flex gap-2 mt-1">
+                  <Apple size={16} />
+                  <Play size={16} />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="pt-8 border-t border-white border-opacity-20">

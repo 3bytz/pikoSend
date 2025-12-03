@@ -2,9 +2,15 @@ import {
   Navbar,
   Hero,
   Features,
+  ProductShowcase,
+  UserPersonas,
   PersonalBusiness,
+  HowItWorks,
+  Statistics,
   MidBanner,
   Testimonial,
+  Press,
+  FAQ,
   Newsletter,
   Footer,
 } from './components';
@@ -15,9 +21,15 @@ function App() {
       <Navbar />
       <Hero />
       <Features />
+      <ProductShowcase />
+      <UserPersonas />
       <PersonalBusiness />
+      <HowItWorks />
+      <Statistics />
       <MidBanner />
       <Testimonial />
+      <Press />
+      <FAQ />
       <Newsletter />
       <Footer />
     </div>
