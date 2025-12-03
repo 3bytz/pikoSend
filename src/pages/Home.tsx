@@ -8,6 +8,7 @@ import {
   GlobalAccountsHero,
   CardsHero,
   SendMoneyHero,
+  AppScreensTimeline,
   TapGo,
   UserPersonas,
   PersonalBusiness,
@@ -35,6 +36,7 @@ export const Home: React.FC = () => {
       <GlobalAccountsHero />
       <CardsHero />
       <SendMoneyHero />
+      <AppScreensTimeline />
       <TapGo />
       <UserPersonas />
       <PersonalBusiness />
