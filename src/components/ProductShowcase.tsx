@@ -95,13 +95,41 @@ export const ProductShowcase: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-white" style={{ minHeight: `${products.length * 100}vh` }}>
-      <Container className="flex gap-12">
-        <div ref={navRef} className="w-1/3 pt-32 pb-20">
-          <h2 className="text-3xl md:text-h2 font-poppins font-bold text-piko-black mb-12">
-            Everything you need
-          </h2>
-          <nav className="space-y-6">
+    <section ref={sectionRef} className="relative bg-white">
+      <Container className="py-20">
+        <h2 className="text-3xl md:text-h2 font-poppins font-bold text-piko-black mb-12 text-center md:text-left">
+          Everything you need
+        </h2>
+
+        <div className="md:hidden space-y-8">
+          {products.map((product, index) => {
+            const Icon = product.icon;
+            return (
+              <div key={product.id} className="bg-white rounded-2xl shadow-lg p-6 animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full" style={{ backgroundColor: `${product.color}20` }}>
+                    <Icon className="w-6 h-6" style={{ color: product.color }} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-poppins text-xl font-semibold text-piko-black">{product.title}</h3>
+                </div>
+                <p className="text-piko-medium-grey mb-4">{product.description}</p>
+                <img src={product.image} alt={product.title} className="w-full h-48 object-cover rounded-xl mb-4" />
+                <ul className="space-y-2">
+                  {product.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm text-piko-medium-grey">
+                      <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: product.color }}></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="hidden md:flex gap-12" style={{ minHeight: `${products.length * 100}vh` }}>
+          <div ref={navRef} className="w-1/3 pt-12 pb-20">
+            <nav className="space-y-6">
             {products.map((product, index) => {
               const Icon = product.icon;
               const isActive = activeProduct === index;
@@ -143,9 +171,9 @@ export const ProductShowcase: React.FC = () => {
               );
             })}
           </nav>
-        </div>
+          </div>
 
-        <div ref={contentRef} className="w-2/3 h-screen flex items-center justify-center sticky top-0">
+          <div ref={contentRef} className="w-2/3 h-screen flex items-center justify-center sticky top-0">
           <div className="w-full max-w-lg">
             <div
               className="relative bg-white rounded-3xl shadow-2xl p-8 transition-all duration-500"
@@ -182,6 +210,7 @@ export const ProductShowcase: React.FC = () => {
                   ))}
                 </ul>
               </div>
+            </div>
             </div>
           </div>
         </div>

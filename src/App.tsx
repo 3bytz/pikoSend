@@ -5,11 +5,14 @@ import {
   ProductShowcase,
   UserPersonas,
   PersonalBusiness,
+  BusinessSection,
   HowItWorks,
   Statistics,
+  TrustBadges,
   MidBanner,
   Testimonial,
   Press,
+  Blog,
   FAQ,
   Newsletter,
   Footer,
@@ -24,11 +27,14 @@ function App() {
       <ProductShowcase />
       <UserPersonas />
       <PersonalBusiness />
+      <BusinessSection />
       <HowItWorks />
       <Statistics />
+      <TrustBadges />
       <MidBanner />
       <Testimonial />
       <Press />
+      <Blog />
       <FAQ />
       <Newsletter />
       <Footer />
