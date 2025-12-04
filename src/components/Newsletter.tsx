@@ -2,15 +2,39 @@ import React, { useState } from 'react';
 import { Section } from './Section';
 import { Container } from './Container';
 import { Button } from './Button';
-import { Mail } from 'lucide-react';
+import { Mail, CheckCircle } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 export const Newsletter: React.FC = () => {
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Newsletter signup:', email);
-    setEmail('');
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert([{ email, subscribed_at: new Date().toISOString() }]);
+
+      if (error) throw error;
+
+      setSuccess(true);
+      setEmail('');
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (err: any) {
+      if (err.code === '23505') {
+        setError('This email is already subscribed');
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -26,18 +50,31 @@ export const Newsletter: React.FC = () => {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              {success && (
+                <div className="flex items-center gap-2 p-3 bg-piko-teal/10 text-piko-teal rounded-lg">
+                  <CheckCircle size={20} />
+                  <span className="text-sm font-medium">Successfully subscribed!</span>
+                </div>
+              )}
+              {error && (
+                <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">
+                  {error}
+                </div>
+              )}
               <div className="relative">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-6 py-4 pr-32 rounded-full border-2 border-piko-soft-grey focus:border-piko-purple focus:outline-none transition-colors text-base"
+                  className="w-full px-6 py-4 pr-32 rounded-full border-2 border-piko-soft-grey focus:border-piko-purple focus:outline-none transition-colors text-base disabled:opacity-50"
                   required
+                  disabled={loading}
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2.5 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] flex items-center gap-2"
+                  disabled={loading}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2.5 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] flex items-center gap-2 disabled:opacity-50"
                 >
                   <Mail size={18} />
                 </button>

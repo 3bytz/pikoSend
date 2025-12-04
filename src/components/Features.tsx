@@ -1,28 +1,28 @@
 import React from 'react';
 import { Section } from './Section';
 import { Container } from './Container';
-import { Send, Shield, Zap, Globe } from 'lucide-react';
+import { Zap, Shield, Smile, Headphones } from 'lucide-react';
 
 const features = [
   {
-    icon: Send,
-    title: 'Instant Transfers',
-    description: 'Send money anywhere in seconds with our lightning-fast payment network.',
+    icon: Zap,
+    title: 'Fast Transactions',
+    description: 'Transfer funds within seconds, no matter where you are in Africa.',
   },
   {
     icon: Shield,
-    title: 'Bank-Level Security',
-    description: 'Your money is protected with military-grade encryption and compliance.',
+    title: 'Trusted Security',
+    description: 'Advanced encryption technology protects your transactions and data.',
   },
   {
-    icon: Zap,
-    title: 'Zero Hidden Fees',
-    description: 'Transparent pricing with no surprise charges or complex conditions.',
+    icon: Smile,
+    title: 'User-Friendly',
+    description: 'Intuitive design makes sending and receiving money simple for everyone.',
   },
   {
-    icon: Globe,
-    title: 'Global Reach',
-    description: 'Support for 150+ countries with real-time exchange rates.',
+    icon: Headphones,
+    title: '24/7 Support',
+    description: 'Our dedicated team is available anytime you need assistance.',
   },
 ];
 
@@ -48,7 +48,7 @@ export const Features: React.FC = () => {
                 style={{ animationDelay: `${index * 0.08}s` }}
               >
                 <div className="flex justify-center" style={{ marginBottom: '40px' }}>
-                  <div className={`flex items-center justify-center w-16 h-16 rounded-full ${colors.bg} bg-opacity-10 border-2 ${colors.border} border-opacity-30`}>
+                  <div className={`flex items-center justify-center w-16 h-16 rounded-full ${colors.bg} bg-opacity-10 border-2 ${colors.border} border-opacity-30 hover:animate-icon-bounce transition-all hover:scale-110`}>
                     <Icon className={`w-8 h-8 ${colors.text}`} strokeWidth={1.5} />
                   </div>
                 </div>

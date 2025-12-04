@@ -45,7 +45,7 @@ export const PersonalBusiness: React.FC = () => {
 
           <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <img
-              src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+              src="/pikoSendHero.png"
               alt="Personal use"
               className="w-full rounded-2xl shadow-lg"
               style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
@@ -56,7 +56,7 @@ export const PersonalBusiness: React.FC = () => {
         <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center" id="business">
           <div className="order-2 lg:order-1 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <img
-              src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+              src="/ForBiz.png"
               alt="Business use"
               className="w-full rounded-2xl shadow-lg"
               style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
