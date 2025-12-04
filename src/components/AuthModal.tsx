@@ -117,7 +117,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMo
                   placeholder="••••••••"
                 />
               </div>
-
+              
               <button
                 type="submit"
                 disabled={loading}

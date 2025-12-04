@@ -30,3 +30,4 @@ export { FAQ } from './FAQ';
 export { Newsletter } from './Newsletter';
 export { Footer } from './Footer';
 export { AuthModal } from './AuthModal';
+export { AppScreensTimeline } from './AppScreensTimeline';

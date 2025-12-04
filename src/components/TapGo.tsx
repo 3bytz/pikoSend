@@ -5,8 +5,8 @@ import { Smartphone, Zap, CheckCircle } from 'lucide-react';
 
 export const TapGo: React.FC = () => {
   return (
-    <Section background="white">
-      <Container>
+    <Section background="white" className=''>
+      <Container className='px-0'>
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-piko-purple via-piko-plum to-piko-purple p-12 md:p-16">
           <div className="absolute top-0 right-0 w-96 h-96 bg-piko-lilac rounded-full blur-3xl opacity-20"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-piko-teal rounded-full blur-3xl opacity-10"></div>

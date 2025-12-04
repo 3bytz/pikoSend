@@ -43,7 +43,7 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <Section background="soft-grey">
+    <Section background="soft-grey" id='faq'>
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-h2 font-poppins font-bold text-piko-black mb-4">

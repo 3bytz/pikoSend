@@ -24,13 +24,61 @@ export const MidBanner: React.FC = () => {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="animate-slide-up flex justify-center lg:justify-start">
-            <img
-              src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=500&h=667&fit=crop"
-              alt="Join the future"
-              className="w-full max-w-md rounded-2xl shadow-lg"
-              style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)', aspectRatio: '3/4' }}
-            />
+          <div className="lg:col-span-4 flex justify-center lg:justify-end animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className="relative" style={{ transform: 'rotate(-2deg)' }}>
+            <div className="absolute -inset-6 bg-gradient-to-br from-piko-lilac via-piko-purple to-piko-teal rounded-full blur-3xl opacity-40 animate-icon-float"></div>
+            <div className="relative bg-white rounded-[36px] p-3 shadow-2xl" style={{ width: '310px', height: '660px', transform: 'rotate(2deg)' }}>
+              <div className="w-full h-full bg-gradient-to-br from-piko-purple via-piko-purple to-piko-plum rounded-[28px] flex flex-col overflow-hidden relative">
+                <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black/20 to-transparent"></div>
+
+                <div className="pt-6 pb-3 px-5 relative z-10">
+                  <div className="flex justify-between items-center text-white text-xs mb-8">
+                    <span>9:41</span>
+                    <div className="flex gap-1">
+                      <div className="w-4 h-3 border border-white rounded-sm"></div>
+                      <div className="w-4 h-3 border border-white rounded-sm"></div>
+                    </div>
+                  </div>
+
+                  <p className="text-white/70 text-xs mb-2">Total Balance</p>
+                  <h2 className="text-white text-4xl font-bold mb-8">$12,450.00</h2>
+                </div>
+
+                <div className="flex-1 bg-white rounded-t-[28px] p-5 relative">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-3 bg-piko-soft-grey rounded-xl">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-piko-teal/20 flex items-center justify-center">
+                          <div className="w-5 h-5 rounded-full bg-piko-teal"></div>
+                        </div>
+                        <div>
+                          <p className="text-xs font-medium text-piko-black">Received</p>
+                          <p className="text-[10px] text-piko-medium-grey">From John Doe</p>
+                        </div>
+                      </div>
+                      <p className="text-sm font-bold text-piko-teal">+$500</p>
+                    </div>
+
+                    <div className="flex items-center justify-between p-3 bg-piko-soft-grey rounded-xl">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-piko-purple/20 flex items-center justify-center">
+                          <div className="w-5 h-5 rounded-full bg-piko-purple"></div>
+                        </div>
+                        <div>
+                          <p className="text-xs font-medium text-piko-black">Sent</p>
+                          <p className="text-[10px] text-piko-medium-grey">To Sarah Smith</p>
+                        </div>
+                      </div>
+                      <p className="text-sm font-bold text-piko-medium-grey">-$150</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-56 h-8 bg-gradient-to-r from-transparent via-piko-purple/20 to-transparent blur-xl rounded-full"></div>
           </div>
+        </div>  
+        </div>
 
           <div className="animate-fade-up space-y-8">
             <div>

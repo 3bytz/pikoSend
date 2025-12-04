@@ -5,9 +5,9 @@ import { Target, Users, Heart, TrendingUp } from 'lucide-react';
 
 export const Mission: React.FC = () => {
   return (
-    <Section background="white">
+    <Section background="white" id='mission'>
       <Container>
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <div className="inline-block px-4 py-2 bg-piko-purple/10 rounded-full mb-6">
             <p className="text-piko-purple font-medium text-sm">Our Mission</p>
           </div>

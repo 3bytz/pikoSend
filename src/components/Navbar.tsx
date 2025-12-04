@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Container } from './Container';
 import { Button } from './Button';
 import { Send, Menu, X, ChevronDown } from 'lucide-react';
@@ -20,7 +20,10 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,33 +39,73 @@ export const Navbar: React.FC = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleMouseEnter = (label: string) => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+    }
+    setActiveDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 200);
+    setDropdownTimeout(timeout);
+  };
+
+  const handleDropdownClick = (href: string) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (href.startsWith('/')) {
+      navigate(href);
+    } else {
+      window.location.href = href;
+    }
+    setActiveDropdown(null);
+    setIsMobileMenuOpen(false);
+  };
+
   const navLinks: NavLink[] = [
     {
-      label: 'Personal',
+      label: 'Explore',
+      dropdown: [      
+        { label: 'Mission', href: '#mission' ,  description: 'Our goals and values'},
+        { label: 'Testimonials', href: '#testimonials' ,  description: 'What our users say'},
+        { label: 'PikoSend', href: '#forall' ,  description: 'PikoSend for Everyone  '},
+        { label: 'Assurance', href: '#features' ,  description: 'Security you can trust'},
+        { label: 'How it works', href: '#how' ,  description: 'Simple and efficient'},
+        { label: 'Experience PikoSend', href: '#experience' ,  description: 'How it looks and feels'},
+        { label: 'FAQs', href: '#faq' ,  description: 'Get answers to common questions'}, 
+        
+      ],
+    },
+    {
+      label: 'Business & Personal',
       dropdown: [
+        { label: 'Business Accounts', href: '#personal', description: 'Manage team payments' },
         { label: 'Global Accounts', href: '#accounts', description: 'Receive money from anywhere' },
         { label: 'Send Money', href: '#send', description: 'Transfer funds globally' },
         { label: 'Cards', href: '#cards', description: 'Virtual and physical cards' },
+        { label: 'All Features', href: '#features', description: 'Explore all features' },
       ],
     },
-    {
-      label: 'Business',
-      dropdown: [
-        { label: 'Business Accounts', href: '#business', description: 'Manage team payments' },
-        { label: 'API Integration', href: '#api', description: 'Build with PikoSend' },
-        { label: 'Invoicing', href: '#invoicing', description: 'Professional invoices' },
-      ],
-    },
-    {
-      label: 'Products',
-      dropdown: [
-        { label: 'Mobile App', href: '#app', description: 'iOS and Android' },
-        { label: 'Web Platform', href: '#web', description: 'Manage from anywhere' },
-        { label: 'Developer Tools', href: '#tools', description: 'APIs and SDKs' },
-      ],
-    },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'News & Blog', href: '#blog' },
+    // { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -77,7 +120,12 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-piko-purple">
-              <Send size={20} className="text-white" />
+              <img
+                src="/faviconTr.png"
+                alt="Personal use"
+                className="w-full rounded-2xl shadow-lg"
+                style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
+              />
             </div>
             <span
               className={`font-poppins text-xl font-bold transition-colors ${
@@ -93,32 +141,55 @@ export const Navbar: React.FC = () => {
               <div
                 key={link.label}
                 className="relative"
-                onMouseEnter={() => link.dropdown && setActiveDropdown(link.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                ref={link.dropdown ? dropdownRef : null}
+                onMouseEnter={() => link.dropdown && handleMouseEnter(link.label)}
+                onMouseLeave={link.dropdown ? handleMouseLeave : undefined}
               >
                 {link.dropdown ? (
                   <>
                     <button
                       className={`font-medium transition-colors hover:text-piko-purple flex items-center gap-1 ${
                         isScrolled ? 'text-piko-black' : 'text-white'
-                      }`}
+                      } ${activeDropdown === link.label ? 'text-piko-purple' : ''}`}
+                      onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
                     >
                       {link.label}
-                      <ChevronDown size={16} className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
+                      <ChevronDown 
+                        size={16} 
+                        className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} 
+                      />
                     </button>
                     {activeDropdown === link.label && (
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-4 px-2 animate-fade-up">
+                      <div 
+                        className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl py-4 px-2 animate-fade-up"
+                        onMouseEnter={() => handleMouseEnter(link.label)}
+                        onMouseLeave={handleMouseLeave}
+                      >
                         {link.dropdown.map((item) => (
-                          <a
-                            key={item.href}
-                            href={item.href}
-                            className="block px-4 py-3 rounded-lg hover:bg-piko-soft-grey transition-colors"
-                          >
-                            <div className="font-medium text-piko-black">{item.label}</div>
-                            {item.description && (
-                              <div className="text-sm text-piko-medium-grey mt-1">{item.description}</div>
-                            )}
-                          </a>
+                       <a
+  key={item.href}
+  href={item.href}
+  onClick={(e) => {
+    if (item.href.startsWith('#')) {
+      e.preventDefault();
+      const el = document.querySelector(item.href);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      handleDropdownClick(item.href);
+    }
+
+    setActiveDropdown(null);
+  }}
+  className="block w-full text-left px-4 py-3 rounded-lg hover:bg-piko-soft-grey transition-colors"
+>
+  <div className="font-medium text-piko-black">{item.label}</div>
+  {item.description && (
+    <div className="text-sm text-piko-medium-grey mt-1">{item.description}</div>
+  )}
+</a>
+
                         ))}
                       </div>
                     )}
@@ -138,6 +209,15 @@ export const Navbar: React.FC = () => {
                     className={`font-medium transition-colors hover:text-piko-purple ${
                       isScrolled ? 'text-piko-black' : 'text-white'
                     }`}
+                    onClick={(e) => {
+                      if (link.href?.startsWith('#')) {
+                        e.preventDefault();
+                        const element = document.querySelector(link.href);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    }}
                   >
                     {link.label}
                   </a>
@@ -147,16 +227,18 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <button className={`font-medium transition-colors ${isScrolled ? 'text-piko-black hover:text-piko-purple' : 'text-white hover:text-piko-lilac'}`}>
+            {/* <button className={`font-medium transition-colors ${isScrolled ? 'text-piko-black hover:text-piko-purple' : 'text-white hover:text-piko-lilac'}`}>
               Login
-            </button>
-            <Button
-              variant="primary"
-              size="sm"
-              className={!isScrolled ? 'bg-white text-piko-purple hover:bg-opacity-90' : ''}
+            </button> */}
+            <Link
+            to={'/contact'}
+              // variant="primary"
+              // size="sm"
+              target='_blank'
+              className={!isScrolled ? 'bg-white py-3 px-4 rounded-lg border-0 text-piko-purple hover:bg-opacity-90' : 'bg-piko-purple py-3 px-4 rounded-md text-white hover:bg-opacity-90'}
             >
-              Create Account
-            </Button>
+              Contact Us
+            </Link>
           </div>
 
           <button
@@ -170,8 +252,30 @@ export const Navbar: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pt-4 border-t border-piko-soft-grey bg-white rounded-lg">
             <div className="flex flex-col gap-4 p-4">
-              {navLinks.map((link) => (
-                link.href?.startsWith('/') ? (
+              {navLinks.map((link) => {
+                if (link.dropdown) {
+                  return (
+                    <div key={link.label} className="flex flex-col gap-2">
+                      <div className="font-medium text-piko-black mb-2">{link.label}</div>
+                      <div className="flex flex-col gap-2 pl-4">
+                        {link.dropdown.map((item) => (
+                          <button
+                            key={item.href}
+                            onClick={() => handleDropdownClick(item.href)}
+                            className="text-left py-2 px-3 rounded-lg hover:bg-piko-soft-grey transition-colors"
+                          >
+                            <div className="font-medium text-piko-black">{item.label}</div>
+                            {item.description && (
+                              <div className="text-sm text-piko-medium-grey">{item.description}</div>
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+                
+                return link.href?.startsWith('/') ? (
                   <Link
                     key={link.href}
                     to={link.href}
@@ -183,16 +287,23 @@ export const Navbar: React.FC = () => {
                     {link.label}
                   </Link>
                 ) : (
-                  <a
+                  <button
                     key={link.href}
-                    href={link.href}
-                    className="font-medium transition-colors text-piko-black hover:text-piko-purple"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      if (link.href?.startsWith('#')) {
+                        const element = document.querySelector(link.href);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="font-medium transition-colors text-piko-black hover:text-piko-purple text-left"
                   >
                     {link.label}
-                  </a>
-                )
-              ))}
+                  </button>
+                );
+              })}
               <Button variant="primary" size="sm" className="w-full">
                 Get Started
               </Button>
