@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from './Container';
 import { AppStoreBadges } from './AppStoreBadges';
+import { TypingEffect } from './TypingEffect';
 import { Building2, TrendingUp, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -19,14 +20,16 @@ export const BusinessHero: React.FC = () => {
       <Container className="relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-white space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full animate-fade-in">
               <Building2 className="w-4 h-4" />
               For Business
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight animate-fade-up">
               Power Your Business with
-              <span className="block mt-2">Smart Payments</span>
+              <span className="block mt-2">
+                <TypingEffect texts={['Smart Payments', 'Instant Transfers', 'Global Reach', 'Seamless Solutions']} typingSpeed={100} deletingSpeed={50} pauseDuration={2000} />
+              </span>
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
@@ -67,9 +70,9 @@ export const BusinessHero: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative lg:block hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-2xl"></div>
-            <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl transform hover:scale-105 transition-transform duration-500">
+          <div className="relative block mt-8 lg:mt-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-2xl animate-float"></div>
+            <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-4 sm:p-8 shadow-2xl transform hover:scale-105 transition-transform duration-500 animate-scale-in">
               <img
                 src="/ForBiz.png"
                 alt="Business Dashboard"

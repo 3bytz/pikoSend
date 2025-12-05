@@ -1,9 +1,11 @@
 import React from 'react';
 import { Navbar, Footer, Newsletter, SEO, FeaturesHero, AppStoreBadges } from '../components';
 import { AppScreensTimeline } from '../components/AppScreensTimeline';
+import { FeatureCard } from '../components/FeatureCard';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Shield, Zap, Globe, Clock, Smartphone, Lock, TrendingUp, Users } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const features = [
   {
@@ -65,6 +67,8 @@ const features = [
 ];
 
 export const FeaturesPage: React.FC = () => {
+  const ctaAnimation = useScrollAnimation({ threshold: 0.3 });
+
   return (
     <div className="min-h-screen bg-white">
       <SEO
@@ -77,42 +81,18 @@ export const FeaturesPage: React.FC = () => {
 
       <Section background="white" className="py-20">
         <Container>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="group relative bg-white border-2 border-piko-soft-grey rounded-2xl p-8 transition-all duration-500 hover:border-piko-purple hover:shadow-2xl hover:-translate-y-2"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-piko-purple/5 to-piko-violet/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  <div className="relative">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-piko-purple/10 to-piko-violet/10 mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-7 h-7 text-piko-purple" strokeWidth={2} />
-                    </div>
-
-                    <h3 className="text-xl font-poppins font-bold text-piko-black mb-3">
-                      {feature.title}
-                    </h3>
-
-                    <p className="text-piko-medium-grey mb-6 leading-relaxed">
-                      {feature.description}
-                    </p>
-
-                    <div className="pt-6 border-t border-piko-soft-grey">
-                      <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet">
-                        {feature.stats}
-                      </div>
-                      <div className="text-sm text-piko-light-grey mt-1">
-                        {feature.statsLabel}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+                stats={feature.stats}
+                statsLabel={feature.statsLabel}
+                delay={index * 0.1}
+              />
+            ))}
           </div>
         </Container>
       </Section>
@@ -121,7 +101,7 @@ export const FeaturesPage: React.FC = () => {
 
       <Section background="soft-grey" className="py-20">
         <Container>
-          <div className="bg-gradient-to-r from-piko-purple to-piko-violet rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
+          <div ref={ctaAnimation.ref} className={`bg-gradient-to-r from-piko-purple to-piko-violet rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden ${ctaAnimation.isVisible ? 'animate-scale-in' : 'opacity-0'}`}>
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-poppins font-bold mb-6">
