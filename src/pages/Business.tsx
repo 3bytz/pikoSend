@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Footer, Newsletter, BusinessSection } from '../components';
+import { Navbar, Footer, Newsletter, BusinessSection, SEO } from '../components';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Building2, TrendingUp, Users, Wallet, BarChart3, Lock, Clock, Headphones, CheckCircle2 } from 'lucide-react';
@@ -71,6 +71,11 @@ const benefits = [
 export const Business: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Business Solutions - PikoSend | Payment Infrastructure for Companies"
+        description="Power your business with PikoSend's payment platform. Business accounts, bulk payments, team management, API integration, and advanced analytics."
+        keywords="business payments, bulk transfers, payment API, business accounts, payroll, vendor payments, expense tracking"
+      />
       <Navbar />
 
       <Section background="white" className="pt-32 pb-20">

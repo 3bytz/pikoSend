@@ -67,9 +67,19 @@ export const Navbar: React.FC = () => {
 
   const handleDropdownClick = (href: string) => {
     if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else if (href.startsWith('/')) {
       navigate(href);
@@ -157,17 +167,8 @@ export const Navbar: React.FC = () => {
   key={item.href}
   href={item.href}
   onClick={(e) => {
-    if (item.href.startsWith('#')) {
-      e.preventDefault();
-      const el = document.querySelector(item.href);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      handleDropdownClick(item.href);
-    }
-
-    setActiveDropdown(null);
+    e.preventDefault();
+    handleDropdownClick(item.href);
   }}
   className="block w-full text-left px-4 py-3 rounded-lg hover:bg-piko-soft-grey transition-colors"
 >
@@ -199,9 +200,19 @@ export const Navbar: React.FC = () => {
                     onClick={(e) => {
                       if (link.href?.startsWith('#')) {
                         e.preventDefault();
-                        const element = document.querySelector(link.href);
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
+                        if (location.pathname !== '/') {
+                          navigate('/');
+                          setTimeout(() => {
+                            const element = document.querySelector(link.href);
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }, 100);
+                        } else {
+                          const element = document.querySelector(link.href);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
                         }
                       }
                     }}
@@ -278,9 +289,19 @@ export const Navbar: React.FC = () => {
                     key={link.href}
                     onClick={() => {
                       if (link.href?.startsWith('#')) {
-                        const element = document.querySelector(link.href);
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
+                        if (location.pathname !== '/') {
+                          navigate('/');
+                          setTimeout(() => {
+                            const element = document.querySelector(link.href);
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }, 100);
+                        } else {
+                          const element = document.querySelector(link.href);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
                         }
                       }
                       setIsMobileMenuOpen(false);

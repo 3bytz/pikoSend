@@ -91,7 +91,7 @@ export const LiveTestimonials: React.FC = () => {
   }, []);
 
   return (
-    <Section background="soft-grey">
+    <Section background="soft-grey" id="testimonials">
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Footer, Newsletter } from '../components';
+import { Navbar, Footer, Newsletter, SEO } from '../components';
 import { AppScreensTimeline } from '../components/AppScreensTimeline';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
@@ -67,6 +67,11 @@ const features = [
 export const FeaturesPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Features - PikoSend | Fast, Secure & Reliable Money Transfers"
+        description="Discover PikoSend's powerful features: lightning-fast transactions, bank-grade security, 24/7 availability, low fees, and expert support."
+        keywords="fast money transfer, secure payments, mobile banking, low fees, 24/7 support, global reach"
+      />
       <Navbar />
 
       <Section background="white" className="pt-32 pb-20">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Footer, Newsletter } from '../components';
+import { Navbar, Footer, Newsletter, SEO } from '../components';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Zap, Globe, CreditCard, Smartphone, ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -43,6 +43,11 @@ const products = [
 export const Products: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Products - PikoSend | Instant Transfers, Virtual Cards & More"
+        description="Explore PikoSend's suite of financial products: instant transfers, global accounts, virtual cards, and mobile wallet. Everything you need to manage money."
+        keywords="instant transfers, virtual cards, global accounts, mobile wallet, digital payments, online banking"
+      />
       <Navbar />
 
       <Section background="white" className="pt-32 pb-20">

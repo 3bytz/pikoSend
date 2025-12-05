@@ -34,3 +34,6 @@ export { AppScreensTimeline } from './AppScreensTimeline';
 export { DynamicHero } from './DynamicHero';
 export { AppScreenCarousel } from './AppScreenCarousel';
 export { LiveTestimonials } from './LiveTestimonials';
+export { ErrorBoundary } from './ErrorBoundary';
+export { Skeleton, CardSkeleton, ListSkeleton, FormSkeleton } from './SkeletonLoader';
+export { SEO } from './SEO';
