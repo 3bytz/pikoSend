@@ -31,7 +31,7 @@ function App() {
             },
             success: {
               iconTheme: {
-                primary: '#10b981',
+                primary: '#8B5CF6',
                 secondary: '#fff',
               },
             },

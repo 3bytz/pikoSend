@@ -240,7 +240,7 @@ export const AppScreenCarousel: React.FC = () => {
         }
 
         .app-carousel .swiper-pagination-bullet {
-          background: #14B8A6;
+          background: #8B5CF6;
           opacity: 0.3;
           width: 12px;
           height: 12px;
