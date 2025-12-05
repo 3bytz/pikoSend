@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Footer, Newsletter, SEO } from '../components';
+import { Navbar, Footer, Newsletter, SEO, ProductsHero, AppStoreBadges } from '../components';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Zap, Globe, CreditCard, Smartphone, ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -49,24 +49,10 @@ export const Products: React.FC = () => {
         keywords="instant transfers, virtual cards, global accounts, mobile wallet, digital payments, online banking"
       />
       <Navbar />
+      <ProductsHero />
 
-      <Section background="white" className="pt-32 pb-20">
+      <Section background="white" className="py-20">
         <Container>
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-sm font-semibold rounded-full mb-6">
-              <Zap className="w-4 h-4" />
-              Our Products
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-piko-black mb-6">
-              Everything You Need to
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet mt-2">
-                Manage Your Money
-              </span>
-            </h1>
-            <p className="text-xl text-piko-medium-grey leading-relaxed">
-              Powerful financial tools designed for modern Africa. Send, receive, and manage money with unmatched speed and security.
-            </p>
-          </div>
 
           <div className="space-y-32">
             {products.map((product, index) => {
@@ -139,7 +125,7 @@ export const Products: React.FC = () => {
             <p className="text-lg text-piko-medium-grey mb-8">
               Join thousands of users who trust PikoSend for their daily transactions
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
@@ -153,6 +139,12 @@ export const Products: React.FC = () => {
               >
                 Learn More
               </Link>
+            </div>
+            <div className="pt-8 border-t border-gray-200">
+              <p className="text-sm text-piko-medium-grey mb-4">Download the app and get started</p>
+              <div className="flex justify-center">
+                <AppStoreBadges variant="light" size="md" />
+              </div>
             </div>
           </div>
         </Container>

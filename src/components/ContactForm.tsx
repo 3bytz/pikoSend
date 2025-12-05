@@ -5,6 +5,7 @@ import { Loader2 } from 'lucide-react';
 import { contactFormSchema, ContactFormInput } from '../lib/validations';
 import { useContactForm } from '../hooks/useContactForm';
 import { Container } from './Container';
+import { AppStoreBadges } from './AppStoreBadges';
 
 const subjects = [
   'General Inquiry',
@@ -204,6 +205,18 @@ export const ContactForm: React.FC = () => {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Response Time</h3>
               <p className="text-gray-600">Within 24 hours<br />on business days</p>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-gradient-to-r from-piko-purple to-piko-violet rounded-3xl p-8 md:p-12 text-center text-white">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Prefer to chat with us on the app?
+            </h3>
+            <p className="text-lg mb-6 opacity-90">
+              Download our mobile app for instant support and quick assistance
+            </p>
+            <div className="flex justify-center">
+              <AppStoreBadges variant="dark" size="md" />
             </div>
           </div>
         </div>

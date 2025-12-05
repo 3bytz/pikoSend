@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Footer, Newsletter, SEO } from '../components';
+import { Navbar, Footer, Newsletter, SEO, FeaturesHero, AppStoreBadges } from '../components';
 import { AppScreensTimeline } from '../components/AppScreensTimeline';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
@@ -73,24 +73,10 @@ export const FeaturesPage: React.FC = () => {
         keywords="fast money transfer, secure payments, mobile banking, low fees, 24/7 support, global reach"
       />
       <Navbar />
+      <FeaturesHero />
 
-      <Section background="white" className="pt-32 pb-20">
+      <Section background="white" className="py-20">
         <Container>
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-sm font-semibold rounded-full mb-6">
-              <Zap className="w-4 h-4" />
-              Platform Features
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-piko-black mb-6">
-              Built for Speed,
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet mt-2">
-                Designed for You
-              </span>
-            </h1>
-            <p className="text-xl text-piko-medium-grey leading-relaxed">
-              Experience the most advanced fintech platform in Africa. Every feature crafted with your success in mind.
-            </p>
-          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => {
@@ -144,9 +130,15 @@ export const FeaturesPage: React.FC = () => {
               <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
                 Join thousands of satisfied users who have transformed their financial lives with PikoSend
               </p>
-              <button className="px-10 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="px-10 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl mb-8">
                 Get Started Free
               </button>
+              <div className="pt-8 border-t border-white/20">
+                <p className="text-sm text-white/80 mb-4">Available on mobile</p>
+                <div className="flex justify-center">
+                  <AppStoreBadges variant="dark" size="md" />
+                </div>
+              </div>
             </div>
           </div>
         </Container>

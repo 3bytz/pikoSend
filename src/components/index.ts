@@ -37,3 +37,7 @@ export { LiveTestimonials } from './LiveTestimonials';
 export { ErrorBoundary } from './ErrorBoundary';
 export { Skeleton, CardSkeleton, ListSkeleton, FormSkeleton } from './SkeletonLoader';
 export { SEO } from './SEO';
+export { AppStoreBadges } from './AppStoreBadges';
+export { ProductsHero } from './ProductsHero';
+export { FeaturesHero } from './FeaturesHero';
+export { BusinessHero } from './BusinessHero';

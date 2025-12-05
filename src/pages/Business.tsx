@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Footer, Newsletter, BusinessSection, SEO } from '../components';
+import { Navbar, Footer, Newsletter, BusinessSection, SEO, BusinessHero, AppStoreBadges } from '../components';
 import { Container } from '../components/Container';
 import { Section } from '../components/Section';
 import { Building2, TrendingUp, Users, Wallet, BarChart3, Lock, Clock, Headphones, CheckCircle2 } from 'lucide-react';
@@ -77,48 +77,10 @@ export const Business: React.FC = () => {
         keywords="business payments, bulk transfers, payment API, business accounts, payroll, vendor payments, expense tracking"
       />
       <Navbar />
+      <BusinessHero />
 
-      <Section background="white" className="pt-32 pb-20">
+      <Section background="white" className="py-20">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-32">
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-violet/10 to-piko-purple/10 text-piko-purple text-sm font-semibold rounded-full mb-6">
-                <Building2 className="w-4 h-4" />
-                For Business
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-piko-black mb-6">
-                Power Your Business with
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-violet to-piko-lilac mt-2">
-                  Smart Payments
-                </span>
-              </h1>
-              <p className="text-xl text-piko-medium-grey leading-relaxed mb-8">
-                Everything your business needs to accept payments, pay bills, and manage finances in one powerful platform.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-piko-violet to-piko-purple text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
-                >
-                  Request Demo
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-black border-2 border-piko-purple rounded-full font-semibold transition-all duration-300 hover:bg-piko-purple hover:text-white"
-                >
-                  Contact Sales
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-piko-violet to-piko-purple rounded-3xl opacity-20 blur-2xl"></div>
-              <img
-                src="/ForBiz.png"
-                alt="Business Dashboard"
-                className="relative rounded-2xl shadow-2xl"
-              />
-            </div>
-          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
             {businessFeatures.map((feature, index) => {
@@ -183,13 +145,17 @@ export const Business: React.FC = () => {
                 <p className="text-lg text-piko-medium-grey mb-8">
                   Join hundreds of businesses that trust PikoSend for their payment infrastructure
                 </p>
-                <div className="space-y-4">
+                <div className="space-y-4 mb-8">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="w-6 h-6 text-piko-purple flex-shrink-0 mt-0.5" />
                       <span className="text-piko-black font-medium">{benefit}</span>
                     </div>
                   ))}
+                </div>
+                <div className="pt-6 border-t border-gray-300">
+                  <p className="text-sm text-piko-medium-grey mb-4">Manage on the go with our mobile app</p>
+                  <AppStoreBadges variant="light" size="md" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-8">
