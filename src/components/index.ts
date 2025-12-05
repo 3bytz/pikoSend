@@ -31,3 +31,6 @@ export { Newsletter } from './Newsletter';
 export { Footer } from './Footer';
 export { AuthModal } from './AuthModal';
 export { AppScreensTimeline } from './AppScreensTimeline';
+export { DynamicHero } from './DynamicHero';
+export { AppScreenCarousel } from './AppScreenCarousel';
+export { LiveTestimonials } from './LiveTestimonials';

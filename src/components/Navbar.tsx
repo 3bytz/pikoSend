@@ -81,31 +81,18 @@ export const Navbar: React.FC = () => {
   };
 
   const navLinks: NavLink[] = [
+    { label: 'Products', href: '/products' },
+    { label: 'Features', href: '/features' },
+    { label: 'For Business', href: '/business' },
     {
-      label: 'Explore',
-      dropdown: [      
-        { label: 'Mission', href: '#mission' ,  description: 'Our goals and values'},
-        { label: 'Testimonials', href: '#testimonials' ,  description: 'What our users say'},
-        { label: 'PikoSend', href: '#forall' ,  description: 'PikoSend for Everyone  '},
-        { label: 'Assurance', href: '#features' ,  description: 'Security you can trust'},
-        { label: 'How it works', href: '#how' ,  description: 'Simple and efficient'},
-        { label: 'Experience PikoSend', href: '#experience' ,  description: 'How it looks and feels'},
-        { label: 'FAQs', href: '#faq' ,  description: 'Get answers to common questions'}, 
-        
-      ],
-    },
-    {
-      label: 'Business & Personal',
+      label: 'Company',
       dropdown: [
-        { label: 'Business Accounts', href: '#personal', description: 'Manage team payments' },
-        { label: 'Global Accounts', href: '#accounts', description: 'Receive money from anywhere' },
-        { label: 'Send Money', href: '#send', description: 'Transfer funds globally' },
-        { label: 'Cards', href: '#cards', description: 'Virtual and physical cards' },
-        { label: 'All Features', href: '#features', description: 'Explore all features' },
+        { label: 'About Us', href: '#mission', description: 'Our goals and values' },
+        { label: 'Testimonials', href: '#testimonials', description: 'What our users say' },
+        { label: 'News & Blog', href: '#blog', description: 'Latest updates' },
+        { label: 'FAQs', href: '#faq', description: 'Get answers to common questions' },
       ],
     },
-    { label: 'News & Blog', href: '#blog' },
-    // { label: 'Contact', href: '/contact' },
   ];
 
   return (

@@ -4,6 +4,9 @@ import { Toaster } from 'react-hot-toast';
 import { queryClient } from './lib/queryClient';
 import { Home } from './pages/Home';
 import { Contact } from './pages/Contact';
+import { Products } from './pages/Products';
+import { FeaturesPage } from './pages/FeaturesPage';
+import { Business } from './pages/Business';
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/features" element={<FeaturesPage />} />
+          <Route path="/business" element={<Business />} />
         </Routes>
         <Toaster
           position="top-right"
