@@ -12,7 +12,14 @@ export const Footer: React.FC = () => {
           <div className="space-y-4 lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center">
-                <Send size={20} />
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-piko-purple">
+               <img
+              src="/faviconTr.png"
+              alt="Personal use"
+              className="w-full rounded-2xl shadow-lg"
+              style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
+            />
+            </div>
               </div>
               <span className="font-poppins text-xl font-bold">PikoSend</span>
             </div>
@@ -131,14 +138,15 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex gap-3">
               {[
-                { icon: Facebook, label: 'Facebook' },
-                { icon: Twitter, label: 'Twitter' },
-                { icon: Linkedin, label: 'LinkedIn' },
-                { icon: Instagram, label: 'Instagram' },
-              ].map(({ icon: Icon, label }) => (
+                { icon: Facebook, label: 'Facebook', link:"https://web.facebook.com/profile.php?id=61583837009742" },
+                { icon: Twitter, label: 'Twitter',link:"https://x.com/Pikosend" },
+                { icon: Linkedin, label: 'LinkedIn',link:"https://www.linkedin.com/in/pikosend-ke-038902397/" },
+                { icon: Instagram, label: 'Instagram',link:"https://www.instagram.com/pikosend.ke/" },
+              ].map(({ icon: Icon, label, link }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={link}
+                  target="_blank"
                   aria-label={label}
                   className="flex items-center justify-center w-9 h-9 rounded-full bg-white bg-opacity-10 hover:bg-piko-lilac hover:bg-opacity-100 transition-all hover:scale-110"
                 >

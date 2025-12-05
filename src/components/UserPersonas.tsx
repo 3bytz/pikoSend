@@ -55,7 +55,7 @@ const personas: Persona[] = [
 
 export const UserPersonas: React.FC = () => {
   return (
-    <Section background="soft-grey">
+    <Section background="soft-grey" id='forall'>
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-h2 font-poppins font-bold text-piko-black mb-4">

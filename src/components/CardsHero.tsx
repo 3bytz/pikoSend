@@ -2,10 +2,11 @@ import React from 'react';
 import { Container } from './Container';
 import { TransactionCard } from './TransactionCard';
 import { ArrowRight } from 'lucide-react';
+import { Section } from './Section';
 
 export const CardsHero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <Section className="relative min-h-screen flex items-center overflow-hidden" id='cards'>
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -55,6 +56,6 @@ export const CardsHero: React.FC = () => {
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 };

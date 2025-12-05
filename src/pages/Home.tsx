@@ -8,7 +8,6 @@ import {
   GlobalAccountsHero,
   CardsHero,
   SendMoneyHero,
-  AppScreensTimeline,
   TapGo,
   UserPersonas,
   PersonalBusiness,
@@ -23,6 +22,7 @@ import {
   FAQ,
   Newsletter,
   Footer,
+  AppScreensTimeline,
 } from '../components';
 
 export const Home: React.FC = () => {
@@ -30,18 +30,18 @@ export const Home: React.FC = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <Features />
       <Mission />
       <ReceiveMoneyHero />
+      <Features />    
       <GlobalAccountsHero />
-      <CardsHero />
-      <SendMoneyHero />
-      <AppScreensTimeline />
       <TapGo />
       <UserPersonas />
       <PersonalBusiness />
+      <SendMoneyHero />
       <BusinessSection />
+      <CardsHero />
       <HowItWorks />
+      <AppScreensTimeline />
       <Statistics />
       <TrustBadges />
       <MidBanner />

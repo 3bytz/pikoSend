@@ -33,7 +33,7 @@ const steps: Step[] = [
 
 export const HowItWorks: React.FC = () => {
   return (
-    <Section background="white">
+    <Section background="white" id='how'>
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-h2 font-poppins font-bold text-piko-black mb-4">
@@ -93,9 +93,9 @@ export const HowItWorks: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="px-8 py-4 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:translate-y-[-6px] hover:scale-105">
+          {/* <button className="px-8 py-4 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:translate-y-[-6px] hover:scale-105">
             Create Your Free Account
-          </button>
+          </button> */}
           <p className="text-sm text-piko-light-grey mt-4">
             No credit card required. Get started in minutes.
           </p>

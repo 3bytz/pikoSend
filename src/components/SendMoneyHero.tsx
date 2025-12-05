@@ -2,10 +2,11 @@ import React from 'react';
 import { Container } from './Container';
 import { NotificationCard } from './NotificationCard';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { Section } from './Section';
 
 export const SendMoneyHero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <Section className="relative min-h-screen flex items-center overflow-hidden" id='send'>
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -45,6 +46,6 @@ export const SendMoneyHero: React.FC = () => {
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 };

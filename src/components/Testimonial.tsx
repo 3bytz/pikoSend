@@ -45,7 +45,7 @@ export const Testimonial: React.FC = () => {
   const current = testimonials[currentIndex];
 
   return (
-    <Section background="purple" className="mt-28" id="about">
+    <Section background="purple" className="md:mt-28" id="testimonials">
       <Container>
         <div className="max-w-3xl mx-auto text-center space-y-8 px-4">
           <div className="flex justify-center gap-1.5">
