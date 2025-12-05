@@ -44,7 +44,7 @@ export const Press: React.FC = () => {
                   >
                     <div className="relative group">
                      
-                      <div className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center bg-white rounded-xl shadow-sm border border-piko-soft-grey p-4 transition-all duration-300 group-hover:shadow-lg group-hover:border-piko-teal/20 group-hover:scale-105">
+                      <div className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center bg-white rounded-xl shadow-sm border border-piko-soft-grey p-4 transition-all duration-300 group-hover:shadow-lg group-hover:border-piko-purple/20 group-hover:scale-105">
                         <img
                           src={logo.logo}
                           alt={logo.name}
@@ -78,7 +78,7 @@ export const Press: React.FC = () => {
                     className="flex-shrink-0 mx-4 md:mx-8"
                   >
                     <div className="relative group">
-                      <div className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center bg-white rounded-xl shadow-sm border border-piko-soft-grey p-4 transition-all duration-300 group-hover:shadow-lg group-hover:border-piko-green/20 group-hover:scale-105">
+                      <div className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center bg-white rounded-xl shadow-sm border border-piko-soft-grey p-4 transition-all duration-300 group-hover:shadow-lg group-hover:border-piko-violet/20 group-hover:scale-105">
                         
              
                         <img
@@ -135,11 +135,11 @@ export const Press: React.FC = () => {
               <p className="text-piko-medium-grey text-sm">Partners Worldwide</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-piko-teal mb-2">100+</div>
+              <div className="text-3xl md:text-4xl font-bold text-piko-purple mb-2">100+</div>
               <p className="text-piko-medium-grey text-sm">Media Features</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-piko-green mb-2">24/7</div>
+              <div className="text-3xl md:text-4xl font-bold text-piko-violet mb-2">24/7</div>
               <p className="text-piko-medium-grey text-sm">Support Available</p>
             </div>
             <div className="text-center">
@@ -155,10 +155,10 @@ export const Press: React.FC = () => {
             Want to partner with us or feature PikoSend?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-6 py-3 bg-gradient-to-r from-piko-teal to-piko-green text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:scale-105">
+            <button className="px-6 py-3 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:scale-105">
               Become a Partner
             </button>
-            {/* <button className="px-6 py-3 bg-white text-piko-black border border-piko-soft-grey rounded-full font-medium transition-all duration-300 hover:bg-piko-soft-grey hover:border-piko-teal/20">
+            {/* <button className="px-6 py-3 bg-white text-piko-black border border-piko-soft-grey rounded-full font-medium transition-all duration-300 hover:bg-piko-soft-grey hover:border-piko-purple/20">
               Media Inquiry
             </button> */}
           </div>

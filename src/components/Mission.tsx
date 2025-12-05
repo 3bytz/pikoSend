@@ -22,8 +22,8 @@ export const Mission: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             <div className="p-6 bg-piko-soft-grey rounded-2xl hover:shadow-lg transition-all animate-fade-up">
-              <div className="w-12 h-12 bg-piko-teal/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-6 h-6 text-piko-teal" />
+              <div className="w-12 h-12 bg-piko-violet/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-6 h-6 text-piko-violet" />
               </div>
               <h4 className="font-poppins font-semibold text-piko-black mb-2">Our Vision</h4>
               <p className="text-sm text-piko-medium-grey">
@@ -32,8 +32,8 @@ export const Mission: React.FC = () => {
             </div>
 
             <div className="p-6 bg-piko-soft-grey rounded-2xl hover:shadow-lg transition-all animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              <div className="w-12 h-12 bg-piko-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-6 h-6 text-piko-green" />
+              <div className="w-12 h-12 bg-piko-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-6 h-6 text-piko-purple" />
               </div>
               <h4 className="font-poppins font-semibold text-piko-black mb-2">Inclusion</h4>
               <p className="text-sm text-piko-medium-grey">

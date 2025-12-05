@@ -95,14 +95,14 @@ export const LiveTestimonials: React.FC = () => {
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-teal/10 to-piko-green/10 text-piko-teal text-sm font-semibold rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-sm font-semibold rounded-full mb-6">
               <MessageCircle className="w-4 h-4" />
               Live Activity
             </div>
 
             <h2 className="text-3xl md:text-5xl font-poppins font-bold text-piko-black mb-6">
               Join Thousands of
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-teal to-piko-green mt-2">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet mt-2">
                 Happy Users
               </span>
             </h2>
@@ -116,7 +116,7 @@ export const LiveTestimonials: React.FC = () => {
                 <div className="text-4xl font-bold text-piko-black mb-1">4.9/5</div>
                 <div className="flex gap-1 mb-2">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="w-5 h-5 fill-piko-teal text-piko-teal" />
+                    <Star key={star} className="w-5 h-5 fill-piko-purple text-piko-purple" />
                   ))}
                 </div>
                 <div className="text-sm text-piko-medium-grey">Based on 50K+ reviews</div>
@@ -132,22 +132,22 @@ export const LiveTestimonials: React.FC = () => {
 
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-piko-soft-grey">
-                <CheckCircle2 className="w-5 h-5 text-piko-teal" />
+                <CheckCircle2 className="w-5 h-5 text-piko-purple" />
                 <span className="text-sm font-medium text-piko-black">Trusted & Secure</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-piko-soft-grey">
-                <CheckCircle2 className="w-5 h-5 text-piko-teal" />
+                <CheckCircle2 className="w-5 h-5 text-piko-purple" />
                 <span className="text-sm font-medium text-piko-black">Instant Transfers</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-piko-soft-grey">
-                <CheckCircle2 className="w-5 h-5 text-piko-teal" />
+                <CheckCircle2 className="w-5 h-5 text-piko-purple" />
                 <span className="text-sm font-medium text-piko-black">24/7 Support</span>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-piko-teal/20 to-piko-green/20 rounded-3xl blur-2xl"></div>
+            <div className="absolute -inset-4 bg-gradient-to-r from-piko-purple/20 to-piko-violet/20 rounded-3xl blur-2xl"></div>
 
             <div className="relative space-y-4">
               {visibleTestimonials.length === 0 ? (
@@ -165,7 +165,7 @@ export const LiveTestimonials: React.FC = () => {
               )}
             </div>
 
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 bg-piko-teal text-white text-sm font-medium rounded-full shadow-lg animate-pulse">
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 bg-piko-purple text-white text-sm font-medium rounded-full shadow-lg animate-pulse">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
                 Live updates
@@ -203,15 +203,15 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, delay = 
             {testimonial.rating && (
               <div className="flex gap-0.5">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-piko-teal text-piko-teal" />
+                  <Star key={i} className="w-4 h-4 fill-piko-purple text-piko-purple" />
                 ))}
               </div>
             )}
           </div>
           <p className="text-piko-medium-grey mb-2">{testimonial.message}</p>
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-piko-teal/10 to-piko-green/10 rounded-full">
-            <CheckCircle2 className="w-4 h-4 text-piko-teal" />
-            <span className="text-sm font-medium text-piko-teal">{testimonial.action}</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 rounded-full">
+            <CheckCircle2 className="w-4 h-4 text-piko-purple" />
+            <span className="text-sm font-medium text-piko-purple">{testimonial.action}</span>
           </div>
         </div>
       </div>

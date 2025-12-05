@@ -175,13 +175,13 @@ export const ContactForm: React.FC = () => {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-              <div className="w-12 h-12 bg-piko-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-piko-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-12 h-12 bg-piko-purple/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-piko-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
-              <a href="mailto:support@pikosend.com" className="text-piko-teal hover:underline">
+              <a href="mailto:support@pikosend.com" className="text-piko-purple hover:underline">
                 support@pikosend.com
               </a>
             </div>
@@ -197,8 +197,8 @@ export const ContactForm: React.FC = () => {
             </div>
 
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-              <div className="w-12 h-12 bg-piko-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-piko-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-12 h-12 bg-piko-violet/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-piko-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>

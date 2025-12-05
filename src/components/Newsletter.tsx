@@ -51,7 +51,7 @@ export const Newsletter: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {success && (
-                <div className="flex items-center gap-2 p-3 bg-piko-teal/10 text-piko-teal rounded-lg">
+                <div className="flex items-center gap-2 p-3 bg-piko-purple/10 text-piko-purple rounded-lg">
                   <CheckCircle size={20} />
                   <span className="text-sm font-medium">Successfully subscribed!</span>
                 </div>

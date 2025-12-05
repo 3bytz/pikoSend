@@ -72,13 +72,13 @@ export const FeaturesPage: React.FC = () => {
       <Section background="white" className="pt-32 pb-20">
         <Container>
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-teal/10 to-piko-green/10 text-piko-teal text-sm font-semibold rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-sm font-semibold rounded-full mb-6">
               <Zap className="w-4 h-4" />
               Platform Features
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-piko-black mb-6">
               Built for Speed,
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-teal to-piko-green mt-2">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet mt-2">
                 Designed for You
               </span>
             </h1>
@@ -93,13 +93,13 @@ export const FeaturesPage: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="group relative bg-white border-2 border-piko-soft-grey rounded-2xl p-8 transition-all duration-500 hover:border-piko-teal hover:shadow-2xl hover:-translate-y-2"
+                  className="group relative bg-white border-2 border-piko-soft-grey rounded-2xl p-8 transition-all duration-500 hover:border-piko-purple hover:shadow-2xl hover:-translate-y-2"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-piko-teal/5 to-piko-green/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-piko-purple/5 to-piko-violet/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <div className="relative">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-piko-teal/10 to-piko-green/10 mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-7 h-7 text-piko-teal" strokeWidth={2} />
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-piko-purple/10 to-piko-violet/10 mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-7 h-7 text-piko-purple" strokeWidth={2} />
                     </div>
 
                     <h3 className="text-xl font-poppins font-bold text-piko-black mb-3">
@@ -111,7 +111,7 @@ export const FeaturesPage: React.FC = () => {
                     </p>
 
                     <div className="pt-6 border-t border-piko-soft-grey">
-                      <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-piko-teal to-piko-green">
+                      <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet">
                         {feature.stats}
                       </div>
                       <div className="text-sm text-piko-light-grey mt-1">
@@ -130,7 +130,7 @@ export const FeaturesPage: React.FC = () => {
 
       <Section background="soft-grey" className="py-20">
         <Container>
-          <div className="bg-gradient-to-r from-piko-teal to-piko-green rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-piko-purple to-piko-violet rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-poppins font-bold mb-6">
@@ -139,7 +139,7 @@ export const FeaturesPage: React.FC = () => {
               <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
                 Join thousands of satisfied users who have transformed their financial lives with PikoSend
               </p>
-              <button className="px-10 py-4 bg-white text-piko-teal rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <button className="px-10 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 Get Started Free
               </button>
             </div>

@@ -45,7 +45,7 @@ export const HowItWorks: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-piko-teal via-piko-green to-piko-teal opacity-20"></div>
+          <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-piko-purple via-piko-violet to-piko-purple opacity-20"></div>
 
           {steps.map((step, index) => {
             const Icon = step.icon;

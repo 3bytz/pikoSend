@@ -43,19 +43,19 @@ const solutions = [
     title: 'For Startups',
     description: 'Scale fast with payment solutions that grow with you. No setup fees, no minimum balance.',
     icon: TrendingUp,
-    color: 'from-piko-teal to-piko-green',
+    color: 'from-piko-violet to-piko-purple',
   },
   {
     title: 'For SMEs',
     description: 'Streamline operations with automated payments, invoicing, and financial management tools.',
     icon: Building2,
-    color: 'from-piko-green to-piko-teal',
+    color: 'from-piko-purple to-piko-lilac',
   },
   {
     title: 'For Enterprise',
     description: 'Enterprise-grade solutions with dedicated support, custom integrations, and advanced security.',
     icon: Users,
-    color: 'from-piko-teal to-piko-green',
+    color: 'from-piko-violet to-piko-lilac',
   },
 ];
 
@@ -77,13 +77,13 @@ export const Business: React.FC = () => {
         <Container>
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-32">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-teal/10 to-piko-green/10 text-piko-teal text-sm font-semibold rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-violet/10 to-piko-purple/10 text-piko-purple text-sm font-semibold rounded-full mb-6">
                 <Building2 className="w-4 h-4" />
                 For Business
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-piko-black mb-6">
                 Power Your Business with
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-teal to-piko-green mt-2">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-violet to-piko-lilac mt-2">
                   Smart Payments
                 </span>
               </h1>
@@ -93,20 +93,20 @@ export const Business: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-piko-teal to-piko-green text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-piko-violet to-piko-purple text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
                 >
                   Request Demo
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-black border-2 border-piko-teal rounded-full font-semibold transition-all duration-300 hover:bg-piko-teal hover:text-white"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-black border-2 border-piko-purple rounded-full font-semibold transition-all duration-300 hover:bg-piko-purple hover:text-white"
                 >
                   Contact Sales
                 </Link>
               </div>
             </div>
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-piko-teal to-piko-green rounded-3xl opacity-20 blur-2xl"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-piko-violet to-piko-purple rounded-3xl opacity-20 blur-2xl"></div>
               <img
                 src="/ForBiz.png"
                 alt="Business Dashboard"
@@ -121,10 +121,10 @@ export const Business: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="group bg-white border-2 border-piko-soft-grey rounded-2xl p-8 transition-all duration-300 hover:border-piko-teal hover:shadow-xl"
+                  className="group bg-white border-2 border-piko-soft-grey rounded-2xl p-8 transition-all duration-300 hover:border-piko-purple hover:shadow-xl"
                 >
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-piko-teal/10 to-piko-green/10 mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-7 h-7 text-piko-teal" strokeWidth={2} />
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-piko-violet/10 to-piko-purple/10 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-7 h-7 text-piko-purple" strokeWidth={2} />
                   </div>
                   <h3 className="text-xl font-poppins font-bold text-piko-black mb-3">
                     {feature.title}
@@ -181,7 +181,7 @@ export const Business: React.FC = () => {
                 <div className="space-y-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-piko-teal flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-6 h-6 text-piko-purple flex-shrink-0 mt-0.5" />
                       <span className="text-piko-black font-medium">{benefit}</span>
                     </div>
                   ))}
@@ -189,22 +189,22 @@ export const Business: React.FC = () => {
               </div>
               <div className="grid grid-cols-2 gap-8">
                 <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                  <Clock className="w-10 h-10 text-piko-teal mx-auto mb-4" />
+                  <Clock className="w-10 h-10 text-piko-purple mx-auto mb-4" />
                   <div className="text-3xl font-bold text-piko-black mb-2">24/7</div>
                   <div className="text-sm text-piko-medium-grey">Support Available</div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                  <Users className="w-10 h-10 text-piko-green mx-auto mb-4" />
+                  <Users className="w-10 h-10 text-piko-violet mx-auto mb-4" />
                   <div className="text-3xl font-bold text-piko-black mb-2">500+</div>
                   <div className="text-sm text-piko-medium-grey">Businesses</div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                  <TrendingUp className="w-10 h-10 text-piko-teal mx-auto mb-4" />
+                  <TrendingUp className="w-10 h-10 text-piko-lilac mx-auto mb-4" />
                   <div className="text-3xl font-bold text-piko-black mb-2">99.9%</div>
                   <div className="text-sm text-piko-medium-grey">Uptime SLA</div>
                 </div>
                 <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-                  <Headphones className="w-10 h-10 text-piko-green mx-auto mb-4" />
+                  <Headphones className="w-10 h-10 text-piko-purple mx-auto mb-4" />
                   <div className="text-3xl font-bold text-piko-black mb-2">{'< 1min'}</div>
                   <div className="text-sm text-piko-medium-grey">Response Time</div>
                 </div>

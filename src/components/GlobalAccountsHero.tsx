@@ -29,7 +29,7 @@ export const GlobalAccountsHero: React.FC = () => {
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
               Get USD, GBP and EUR accounts in minutes so you can focus on what matters most—receiving, spending and saving your money.
             </p>
-            <button className="inline-flex items-center gap-2 text-piko-teal hover:text-piko-green text-lg font-semibold transition-colors group">
+            <button className="inline-flex items-center gap-2 text-piko-purple hover:text-piko-violet text-lg font-semibold transition-colors group">
               Learn more
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>

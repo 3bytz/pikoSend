@@ -111,7 +111,7 @@ export const AppScreensTimeline: React.FC = () => {
         </div>
 
         <div className="relative" ref={timelineRef}>
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-piko-teal/30 via-piko-green/30 to-piko-lilac/30 transform -translate-x-1/2 z-0"></div>
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-piko-purple/30 via-piko-violet/30 to-piko-lilac/30 transform -translate-x-1/2 z-0"></div>
 
           <div className="space-y-10 md:space-y-32">
             {screens.map((screen, index) => {
@@ -128,20 +128,20 @@ export const AppScreensTimeline: React.FC = () => {
                     {/* Timeline Node */}
                     <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                       <div className="relative">
-                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-piko-teal to-piko-green flex items-center justify-center shadow-lg border-4 border-white">
+                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center shadow-lg border-4 border-white">
                           <div className="w-4 h-4 rounded-full bg-white animate-pulse"></div>
                         </div>
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-piko-teal to-piko-green opacity-30 animate-ping"></div>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-piko-purple to-piko-violet opacity-30 animate-ping"></div>
                       </div>
                     </div>
 
                     {/* Mobile Node */}
                     <div className="lg:hidden flex items-center justify-center mb-3 md:mb-8">
                       <div className="relative">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-piko-teal to-piko-green flex items-center justify-center shadow-lg border-4 border-white">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center shadow-lg border-4 border-white">
                           <div className="w-3 h-3 rounded-full bg-white animate-pulse"></div>
                         </div>
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-piko-teal to-piko-green opacity-30 animate-ping"></div>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-piko-purple to-piko-violet opacity-30 animate-ping"></div>
                       </div>
                     </div>
 
@@ -169,8 +169,8 @@ export const AppScreensTimeline: React.FC = () => {
 
                       {/* TEXT */}
                       <div className={`${isLeft ? 'lg:order-2 lg:pl-12' : 'lg:order-1 lg:pr-12'}`}>
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-piko-teal/10 to-piko-green/10 text-piko-teal text-sm font-medium rounded-full mb-4 border border-piko-teal/20">
-                          <div className="w-1.5 h-1.5 rounded-full bg-piko-teal animate-pulse"></div>
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-sm font-medium rounded-full mb-4 border border-piko-purple/20">
+                          <div className="w-1.5 h-1.5 rounded-full bg-piko-purple animate-pulse"></div>
                           {screen.tagline}
                         </div>
 
@@ -187,8 +187,8 @@ export const AppScreensTimeline: React.FC = () => {
                             const Icon = feature.icon;
                             return (
                               <div key={idx} className="flex items-start gap-3">
-                                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-piko-teal/10 to-piko-green/10 flex items-center justify-center">
-                                  <Icon className="w-5 h-5 text-piko-teal" />
+                                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-piko-purple/10 to-piko-violet/10 flex items-center justify-center">
+                                  <Icon className="w-5 h-5 text-piko-purple" />
                                 </div>
                                 <span className="text-piko-black font-medium">{feature.text}</span>
                               </div>
@@ -223,7 +223,7 @@ export const AppScreensTimeline: React.FC = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-12 justify-center">
-            <button className="group px-8 py-4 bg-gradient-to-r from-piko-teal to-piko-green text-white rounded-full font-medium text-lg transition-all duration-300 hover:shadow-xl hover:shadow-piko-teal/25 hover:scale-105 active:scale-95">
+            <button className="group px-8 py-4 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-medium text-lg transition-all duration-300 hover:shadow-xl hover:shadow-piko-purple/25 hover:scale-105 active:scale-95">
               <span className="flex items-center justify-center gap-2">
                 Download the App
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -232,7 +232,7 @@ export const AppScreensTimeline: React.FC = () => {
               </span>
             </button>
 {/*             
-            <button className="px-8 py-4 bg-white text-piko-black border border-piko-soft-grey rounded-full font-medium text-lg transition-all duration-300 hover:bg-piko-soft-grey hover:border-piko-teal/20 hover:shadow-lg">
+            <button className="px-8 py-4 bg-white text-piko-black border border-piko-soft-grey rounded-full font-medium text-lg transition-all duration-300 hover:bg-piko-soft-grey hover:border-piko-purple/20 hover:shadow-lg">
               View Demo
             </button> */}
           </div>

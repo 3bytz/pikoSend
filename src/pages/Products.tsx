@@ -11,7 +11,7 @@ const products = [
     title: 'Instant Transfers',
     description: 'Send money to anyone, anywhere in Africa within seconds. No delays, no hassle.',
     features: ['Real-time processing', 'Multi-currency support', 'Low transaction fees', 'Instant notifications'],
-    gradient: 'from-piko-teal to-piko-green',
+    gradient: 'from-piko-purple to-piko-violet',
     image: '/mockups/instant-send.png',
   },
   {
@@ -19,7 +19,7 @@ const products = [
     title: 'Global Accounts',
     description: 'Open virtual accounts in multiple currencies. Receive payments from anywhere in the world.',
     features: ['Multiple currencies', 'Virtual account numbers', 'Global reach', 'Competitive rates'],
-    gradient: 'from-piko-green to-piko-teal',
+    gradient: 'from-piko-violet to-piko-purple',
     image: '/mockups/financeDashbaord.png',
   },
   {
@@ -27,7 +27,7 @@ const products = [
     title: 'Virtual Cards',
     description: 'Create unlimited virtual cards for secure online shopping. Control your spending with ease.',
     features: ['Instant card creation', 'Freeze/unfreeze cards', 'Spending limits', 'Transaction alerts'],
-    gradient: 'from-piko-teal to-piko-green',
+    gradient: 'from-piko-purple to-piko-violet',
     image: '/mockups/wallets.png',
   },
   {
@@ -35,7 +35,7 @@ const products = [
     title: 'Mobile Wallet',
     description: 'Your complete financial hub in your pocket. Track, manage, and grow your money effortlessly.',
     features: ['Easy top-ups', 'Bill payments', 'Transaction history', 'Budget tracking'],
-    gradient: 'from-piko-green to-piko-teal',
+    gradient: 'from-piko-violet to-piko-purple',
     image: '/mockups/9_transaction_history_1.jpg',
   },
 ];
@@ -48,13 +48,13 @@ export const Products: React.FC = () => {
       <Section background="white" className="pt-32 pb-20">
         <Container>
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-teal/10 to-piko-green/10 text-piko-teal text-sm font-semibold rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-sm font-semibold rounded-full mb-6">
               <Zap className="w-4 h-4" />
               Our Products
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-piko-black mb-6">
               Everything You Need to
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-teal to-piko-green mt-2">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet mt-2">
                 Manage Your Money
               </span>
             </h1>
@@ -91,7 +91,7 @@ export const Products: React.FC = () => {
                     <div className="grid sm:grid-cols-2 gap-4 mb-8">
                       {product.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-piko-teal flex-shrink-0" />
+                          <CheckCircle2 className="w-5 h-5 text-piko-purple flex-shrink-0" />
                           <span className="text-piko-black">{feature}</span>
                         </div>
                       ))}
@@ -137,14 +137,14 @@ export const Products: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-piko-teal to-piko-green text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
               >
                 Open Account Now
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 to="/"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-black border-2 border-piko-teal rounded-full font-semibold transition-all duration-300 hover:bg-piko-teal hover:text-white"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-black border-2 border-piko-purple rounded-full font-semibold transition-all duration-300 hover:bg-piko-purple hover:text-white"
               >
                 Learn More
               </Link>

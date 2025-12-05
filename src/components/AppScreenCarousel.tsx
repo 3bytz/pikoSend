@@ -28,7 +28,7 @@ const screens: AppScreen[] = [
     description: 'Monitor your balance, track transactions, and manage your finances all in one beautiful dashboard.',
     imageSrc: '/mockups/financeDashbaord.png',
     icon: Smartphone,
-    gradient: 'from-piko-teal to-piko-green',
+    gradient: 'from-piko-purple to-piko-violet',
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const screens: AppScreen[] = [
     description: 'Transfer funds to anyone, anywhere with just a tap. Fast, secure, and effortless.',
     imageSrc: '/mockups/instant-send.png',
     icon: Zap,
-    gradient: 'from-piko-green to-piko-teal',
+    gradient: 'from-piko-violet to-piko-purple',
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const screens: AppScreen[] = [
     description: 'Create virtual cards, set spending limits, and manage multiple wallets with ease.',
     imageSrc: '/mockups/wallets.png',
     icon: CreditCard,
-    gradient: 'from-piko-teal to-piko-green',
+    gradient: 'from-piko-purple to-piko-violet',
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const screens: AppScreen[] = [
     description: 'View detailed transaction history with smart filters and instant search capabilities.',
     imageSrc: '/mockups/9_transaction_history_1.jpg',
     icon: Shield,
-    gradient: 'from-piko-green to-piko-teal',
+    gradient: 'from-piko-violet to-piko-purple',
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const screens: AppScreen[] = [
     description: 'Add funds instantly via QR code, bank transfer, or mobile money. Choose what works for you.',
     imageSrc: '/mockups/10_top-up.jpg',
     icon: Smartphone,
-    gradient: 'from-piko-teal to-piko-green',
+    gradient: 'from-piko-purple to-piko-violet',
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const screens: AppScreen[] = [
     description: 'Generate or scan QR codes for instant payments. No typing required.',
     imageSrc: '/mockups/11_top-up_qr_code_1.jpg',
     icon: Zap,
-    gradient: 'from-piko-green to-piko-teal',
+    gradient: 'from-piko-violet to-piko-purple',
   },
 ];
 
@@ -85,13 +85,13 @@ export const AppScreenCarousel: React.FC = () => {
     <Section background="white" id="app-screens">
       <Container>
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-teal/10 to-piko-green/10 text-piko-teal text-sm font-semibold rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-sm font-semibold rounded-full mb-6">
             <Smartphone className="w-4 h-4" />
             App Experience
           </div>
           <h2 className="text-3xl md:text-5xl font-poppins font-bold text-piko-black mb-4">
             Experience PikoSend
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-teal to-piko-green mt-2">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet mt-2">
               In Action
             </span>
           </h2>
@@ -162,21 +162,21 @@ export const AppScreenCarousel: React.FC = () => {
 
           <button
             onClick={() => swiperRef.current?.slidePrev()}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center text-piko-teal hover:bg-piko-teal hover:text-white transition-all duration-300 hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center text-piko-purple hover:bg-piko-purple hover:text-white transition-all duration-300 hover:scale-110"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={() => swiperRef.current?.slideNext()}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center text-piko-teal hover:bg-piko-teal hover:text-white transition-all duration-300 hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center text-piko-purple hover:bg-piko-purple hover:text-white transition-all duration-300 hover:scale-110"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
         </div>
 
         <div className="mt-16 max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-piko-teal/5 to-piko-green/5 rounded-3xl p-8 md:p-12 border-2 border-piko-teal/20">
+          <div className="bg-gradient-to-r from-piko-purple/5 to-piko-violet/5 rounded-3xl p-8 md:p-12 border-2 border-piko-purple/20">
             <div className="flex items-start gap-6">
               <div className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${screens[activeIndex].gradient} flex items-center justify-center shadow-lg`}>
                 {React.createElement(screens[activeIndex].icon, {
@@ -185,7 +185,7 @@ export const AppScreenCarousel: React.FC = () => {
                 })}
               </div>
               <div>
-                <div className="text-sm text-piko-teal font-semibold mb-2">
+                <div className="text-sm text-piko-purple font-semibold mb-2">
                   {screens[activeIndex].subtitle}
                 </div>
                 <h3 className="text-2xl md:text-3xl font-poppins font-bold text-piko-black mb-3">
@@ -200,7 +200,7 @@ export const AppScreenCarousel: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="group px-10 py-4 bg-gradient-to-r from-piko-teal to-piko-green text-white rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95">
+          <button className="group px-10 py-4 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95">
             <span className="flex items-center justify-center gap-2">
               Download the App
               <svg

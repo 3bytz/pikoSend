@@ -102,7 +102,7 @@ export const Statistics: React.FC = () => {
                 ></div>
                 <div className="relative text-4xl md:text-5xl font-bold text-piko-purple">
                   {formatNumber(counts[index])}
-                  <span className="text-piko-teal">{stat.suffix}</span>
+                  <span className="text-piko-lilac">{stat.suffix}</span>
                 </div>
               </div>
               <p className="text-piko-medium-grey font-medium">{stat.label}</p>

@@ -51,12 +51,12 @@ export const DynamicHero: React.FC = () => {
   }, [displayedText, isDeleting, currentPhraseIndex, typingSpeed]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-piko-teal via-piko-green to-piko-teal">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-piko-purple via-piko-violet to-piko-purple">
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
-      <div className="absolute top-20 left-10 w-72 h-72 bg-piko-green/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-piko-teal/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-piko-violet/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-piko-purple/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
 
       <Container>
         <div className="relative z-10 py-20 md:py-32">
@@ -82,7 +82,7 @@ export const DynamicHero: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-teal rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/90 hover:scale-105 hover:shadow-2xl"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/90 hover:scale-105 hover:shadow-2xl"
                 >
                   Get Started Free
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
