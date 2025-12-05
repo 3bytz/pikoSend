@@ -98,7 +98,7 @@ export const Statistics: React.FC = () => {
               <div className="relative inline-block mb-4">
                 <div
                   className="absolute -inset-4 rounded-full blur-2xl opacity-10"
-                  style={{ backgroundColor: index % 2 === 0 ? '#14B8A6' : '#10B981' }}
+                  style={{ backgroundColor: index % 2 === 0 ? '#582C8D' : '#8B5CF6' }}
                 ></div>
                 <div className="relative text-4xl md:text-5xl font-bold text-piko-purple">
                   {formatNumber(counts[index])}
