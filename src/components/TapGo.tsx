@@ -9,13 +9,13 @@ export const TapGo: React.FC = () => {
       <Container className='px-0'>
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-piko-purple via-piko-plum to-piko-purple p-12 md:p-16">
           <div className="absolute top-0 right-0 w-96 h-96 bg-piko-lilac rounded-full blur-3xl opacity-20"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-piko-teal rounded-full blur-3xl opacity-10"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-piko-lilac rounded-full blur-3xl opacity-10"></div>
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-6">
                 <Smartphone className="w-8 h-8 text-white" />
-                <Zap className="w-8 h-8 text-piko-teal" />
+                <Zap className="w-8 h-8 text-piko-lilac" />
               </div>
 
               <h2 className="text-4xl md:text-5xl font-poppins font-bold text-white mb-4">
@@ -29,17 +29,17 @@ export const TapGo: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <CheckCircle className="w-6 h-6 text-piko-teal flex-shrink-0" />
+                <CheckCircle className="w-6 h-6 text-piko-lilac flex-shrink-0" />
                 <p className="text-white text-sm">No hidden fees</p>
               </div>
 
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <CheckCircle className="w-6 h-6 text-piko-teal flex-shrink-0" />
+                <CheckCircle className="w-6 h-6 text-piko-lilac flex-shrink-0" />
                 <p className="text-white text-sm">Instant transfers</p>
               </div>
 
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <CheckCircle className="w-6 h-6 text-piko-teal flex-shrink-0" />
+                <CheckCircle className="w-6 h-6 text-piko-lilac flex-shrink-0" />
                 <p className="text-white text-sm">Bank-level security</p>
               </div>
             </div>

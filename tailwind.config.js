@@ -7,8 +7,9 @@ export default {
         'piko-purple': '#582C8D',
         'piko-plum': '#3E1C6D',
         'piko-lilac': '#9A6AFD',
-        'piko-teal': '#14B8A6',
-        'piko-green': '#10B981',
+        'piko-violet': '#7C3AED',
+        'piko-lavender': '#C4B5FD',
+        'piko-deep-purple': '#4C1D95',
         'piko-soft-grey': '#F5F7FA',
         'piko-black': '#1A1A1A',
         'piko-medium-grey': '#555555',
@@ -33,19 +34,47 @@ export default {
       animation: {
         'fade-up': 'fadeUp 0.5s ease-out forwards',
         'fade-up-delayed': 'fadeUp 0.6s ease-out forwards',
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'fade-in-left': 'fadeInLeft 0.6s ease-out forwards',
+        'fade-in-right': 'fadeInRight 0.6s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out forwards',
         'slide-up-delayed': 'slideUp 0.7s ease-out forwards',
+        'slide-in-bottom': 'slideInBottom 0.6s ease-out forwards',
+        'scale-in': 'scaleIn 0.5s ease-out forwards',
         'icon-bounce': 'iconBounce 0.5s ease-in-out',
         'icon-float': 'iconFloat 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'typing': 'typing 3.5s steps(40, end)',
+        'blink': 'blink 0.7s infinite',
       },
       keyframes: {
         fadeUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-30px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        fadeInRight: {
+          '0%': { opacity: '0', transform: 'translateX(30px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(40px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideInBottom: {
+          '0%': { opacity: '0', transform: 'translateY(60px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
         iconBounce: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -54,6 +83,18 @@ export default {
         iconFloat: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-8px)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        typing: {
+          '0%': { width: '0' },
+          '100%': { width: '100%' },
+        },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
         },
       },
       backgroundImage: {

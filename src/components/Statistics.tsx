@@ -10,7 +10,7 @@ interface Stat {
 
 const stats: Stat[] = [
   { value: 500000, suffix: '+', label: 'Active Users' },
-  { value: 150, suffix: '+', label: 'Countries Supported' },
+  { value: 15, suffix: '+', label: 'Countries Supported' },
   { value: 1000000000, suffix: '+', label: 'Total Transactions' },
   { value: 99, suffix: '%', label: 'Customer Satisfaction' },
 ];
@@ -98,11 +98,11 @@ export const Statistics: React.FC = () => {
               <div className="relative inline-block mb-4">
                 <div
                   className="absolute -inset-4 rounded-full blur-2xl opacity-10"
-                  style={{ backgroundColor: index % 2 === 0 ? '#14B8A6' : '#10B981' }}
+                  style={{ backgroundColor: index % 2 === 0 ? '#582C8D' : '#8B5CF6' }}
                 ></div>
                 <div className="relative text-4xl md:text-5xl font-bold text-piko-purple">
                   {formatNumber(counts[index])}
-                  <span className="text-piko-teal">{stat.suffix}</span>
+                  <span className="text-piko-lilac">{stat.suffix}</span>
                 </div>
               </div>
               <p className="text-piko-medium-grey font-medium">{stat.label}</p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from './Container';
 import { Button } from './Button';
 import { Apple, Play } from 'lucide-react';
@@ -6,12 +6,47 @@ import { AuthModal } from './AuthModal';
 
 export const Hero: React.FC = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
-const partners = [
-  "/partners/telecharger.png",
-  "/partners/telecharger-1.png",
- "/partners/telecharger.png",
-  "/partners/telecharger-1.png",
-];
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const phrases = [
+    'more than just a payment solution',
+    'seamless international transfers',
+    'secure digital transactions',
+    'financial freedom for everyone'
+  ];
+
+  useEffect(() => {
+    const currentPhrase = phrases[currentPhraseIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseDelay = 2000;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting && displayedText === currentPhrase) {
+        setTimeout(() => setIsDeleting(true), pauseDelay);
+      } else if (isDeleting && displayedText === '') {
+        setIsDeleting(false);
+        setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      } else {
+        setDisplayedText(
+          isDeleting
+            ? currentPhrase.substring(0, displayedText.length - 1)
+            : currentPhrase.substring(0, displayedText.length + 1)
+        );
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentPhraseIndex]);
+
+  const partners = [
+    "/partners/telecharger.png",
+    "/partners/telecharger-1.png",
+    "/partners/telecharger.png",
+    "/partners/telecharger-1.png",
+  ];
+
   return (
     <>
       <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} initialMode="signup" />
@@ -28,7 +63,10 @@ const partners = [
             <h1 className="text-white text-4xl md:text-h1 leading-tight font-poppins font-bold">
               PikoSend
               <br />
-              more than just a payment solution
+              <span className="inline-block min-h-[1.4em]">
+                {displayedText}
+                <span className="animate-pulse">|</span>
+              </span>
             </h1>
             <p className="text-white text-lg mt-6 leading-relaxed max-w-md opacity-90">
               Experience seamless transactions and enhanced security - empowering your personal and business growth.
@@ -36,14 +74,16 @@ const partners = [
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              variant="primary"
-              size="lg"
-              className="flex items-center justify-center gap-2 bg-white text-piko-purple hover:bg-opacity-90"
-              onClick={() => setAuthModalOpen(true)}
-            >
-              Create an Account
+           <div className="flex flex-col sm:flex-row gap-4">
+            <Button variant="primary" size="md" className="flex items-center justify-center gap-2">
+              <Apple size={20} />
+              App Store
             </Button>
+            <Button variant="primary" size="md" className="flex items-center justify-center gap-2">
+              <Play size={20} />
+              Google Play
+            </Button>
+          </div>
             <div className="flex items-center gap-3">
               <div className="hidden sm:block w-16 h-16 bg-white rounded-xl p-1.5 shadow-lg">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -119,7 +159,7 @@ const partners = [
 
         <div className="lg:col-span-6 flex justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <div className="relative w-[100%] h-[400px] md:h-[500px] lg:h-[780px]">
-            <div className="absolute inset-0 bg-gradient-to-br from-piko-teal via-piko-green to-piko-lilac opacity-20 rounded-[40%] blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-piko-violet via-piko-purple to-piko-lilac opacity-20 rounded-[40%] blur-3xl"></div>
             <div className="absolute -inset-8 bg-gradient-to-br from-piko-lilac to-transparent opacity-10 rounded-full blur-2xl"></div>
             <img
               src="/pikoSendHero.png"

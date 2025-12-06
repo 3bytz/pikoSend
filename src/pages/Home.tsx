@@ -1,55 +1,49 @@
 import React from 'react';
 import {
   Navbar,
-  Hero,
+  DynamicHero,
   Features,
   Mission,
-  ReceiveMoneyHero,
-  GlobalAccountsHero,
-  CardsHero,
-  SendMoneyHero,
-  TapGo,
-  UserPersonas,
+  AppScreenCarousel,
+  LiveTestimonials,
   PersonalBusiness,
-  BusinessSection,
   HowItWorks,
   Statistics,
   TrustBadges,
-  MidBanner,
   Testimonial,
   Press,
   Blog,
   FAQ,
   Newsletter,
   Footer,
-  AppScreensTimeline,
+  SEO,
 } from '../components';
 
 export const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="PikoSend - Send Money Anywhere, Anytime"
+        description="Send and receive money globally with PikoSend. Fast, secure, and affordable money transfers with the best rates."
+        keywords="money transfer, international payments, send money, receive money, cross-border payments, remittance, digital wallet, global transfers"
+      />
       <Navbar />
-      <Hero />
-      <Mission />
-      <ReceiveMoneyHero />
-      <Features />    
-      <GlobalAccountsHero />
-      <TapGo />
-      <UserPersonas />
-      <PersonalBusiness />
-      <SendMoneyHero />
-      <BusinessSection />
-      <CardsHero />
-      <HowItWorks />
-      <AppScreensTimeline />
-      <Statistics />
-      <TrustBadges />
-      <MidBanner />
-      <Testimonial />
-      <Press />
-      <Blog />
-      <FAQ />
-      <Newsletter />
+      <main id="main-content">
+        <DynamicHero />
+        <Features />
+        <Mission />
+        <AppScreenCarousel />
+        <LiveTestimonials />
+        <PersonalBusiness />
+        <HowItWorks />
+        <Statistics />
+        <TrustBadges />
+        <Testimonial />
+        <Press />
+        <Blog />
+        <FAQ />
+        <Newsletter />
+      </main>
       <Footer />
     </div>
   );

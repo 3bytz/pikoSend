@@ -24,7 +24,7 @@ const products: Product[] = [
     description: 'Transfer money instantly across Africa. Send to bank accounts, mobile wallets, or other PikoSend users in seconds.',
     features: ['Instant transfers', 'Mobile wallets', 'Bank transfers', 'P2P payments'],
     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400',
-    color: '#10B981',
+    color: '#8B5CF6',
   },
   {
     id: 'receive',
@@ -33,7 +33,7 @@ const products: Product[] = [
     description: 'Accept customer payments instantly. Perfect for businesses and individuals receiving money from anywhere.',
     features: ['Instant notifications', 'Multiple sources', 'Low fees', 'Secure transfers'],
     image: 'https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=400',
-    color: '#14B8A6',
+    color: '#A78BFA',
   },
   {
     id: 'airtime',
@@ -60,7 +60,7 @@ const products: Product[] = [
     description: 'Organize your money with separate wallets. Keep personal and business funds separate for better tracking.',
     features: ['Multiple wallets', 'Easy switching', 'Transaction history', 'Budget tracking'],
     image: 'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=400',
-    color: '#14B8A6',
+    color: '#582C8D',
   },
   {
     id: 'cards',

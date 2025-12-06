@@ -51,7 +51,7 @@ export const Newsletter: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {success && (
-                <div className="flex items-center gap-2 p-3 bg-piko-teal/10 text-piko-teal rounded-lg">
+                <div className="flex items-center gap-2 p-3 bg-piko-purple/10 text-piko-purple rounded-lg">
                   <CheckCircle size={20} />
                   <span className="text-sm font-medium">Successfully subscribed!</span>
                 </div>
@@ -87,7 +87,7 @@ export const Newsletter: React.FC = () => {
 
           <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <img
-              src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop"
+              src="/heroImageUpdated.png"
               alt="Happy couple"
               className="w-full rounded-2xl shadow-lg"
               style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}

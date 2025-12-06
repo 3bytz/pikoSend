@@ -45,7 +45,7 @@ export const HowItWorks: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-piko-teal via-piko-green to-piko-teal opacity-20"></div>
+          <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-piko-purple via-piko-violet to-piko-purple opacity-20"></div>
 
           {steps.map((step, index) => {
             const Icon = step.icon;
@@ -58,23 +58,23 @@ export const HowItWorks: React.FC = () => {
                 <div className="relative inline-block mb-6">
                   <div
                     className="absolute -inset-4 rounded-full blur-xl opacity-20"
-                    style={{ backgroundColor: index % 2 === 0 ? '#14B8A6' : '#10B981' }}
+                    style={{ backgroundColor: index % 2 === 0 ? '#582C8D' : '#8B5CF6' }}
                   ></div>
 
                   <div
                     className="relative flex items-center justify-center w-20 h-20 rounded-full mx-auto"
-                    style={{ backgroundColor: `${index % 2 === 0 ? '#14B8A6' : '#10B981'}20` }}
+                    style={{ backgroundColor: `${index % 2 === 0 ? '#582C8D' : '#8B5CF6'}20` }}
                   >
                     <Icon
                       className="w-10 h-10"
-                      style={{ color: index % 2 === 0 ? '#14B8A6' : '#10B981' }}
+                      style={{ color: index % 2 === 0 ? '#582C8D' : '#8B5CF6' }}
                       strokeWidth={1.5}
                     />
                   </div>
 
                   <div
                     className="absolute -top-2 -right-2 w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm"
-                    style={{ backgroundColor: index % 2 === 0 ? '#14B8A6' : '#10B981' }}
+                    style={{ backgroundColor: index % 2 === 0 ? '#582C8D' : '#8B5CF6' }}
                   >
                     {step.number}
                   </div>
