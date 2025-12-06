@@ -24,7 +24,7 @@ export const SendMoneyHero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
           <div className="flex items-center justify-center lg:justify-start">
             <NotificationCard
-              icon={<CheckCircle size={20} className="text-piko-green" />}
+              icon={<CheckCircle size={20} className="text-piko-violet" />}
               title="PikoSend"
               message="Your payment of $4,000 was successful and receipt sent to your email"
               time="9:42 PM"
@@ -39,7 +39,7 @@ export const SendMoneyHero: React.FC = () => {
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
               Sending money is now easier and more affordable with reasonable upfront transaction fees and flexible transfer options. Get started today and send your first transfer in minutes.
             </p>
-            <button className="inline-flex items-center gap-2 text-piko-teal hover:text-piko-green text-lg font-semibold transition-colors group">
+            <button className="inline-flex items-center gap-2 text-piko-purple hover:text-piko-violet text-lg font-semibold transition-colors group">
               Learn more
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>

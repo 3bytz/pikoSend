@@ -34,8 +34,8 @@ export const PersonalBusiness: React.FC = () => {
                   className="flex items-center gap-4 animate-fade-up"
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-piko-teal bg-opacity-10 flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-piko-teal" strokeWidth={1.5} />
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-piko-purple bg-opacity-10 flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-piko-purple" strokeWidth={1.5} />
                   </div>
                   <span className="text-base text-piko-medium-grey">{feature}</span>
                 </li>
@@ -75,8 +75,8 @@ export const PersonalBusiness: React.FC = () => {
                   className="flex items-center gap-4 animate-fade-up"
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-piko-green bg-opacity-10 flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-piko-green" strokeWidth={1.5} />
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-piko-violet bg-opacity-10 flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-piko-violet" strokeWidth={1.5} />
                   </div>
                   <span className="text-base text-piko-medium-grey">{feature}</span>
                 </li>

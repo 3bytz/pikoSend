@@ -65,7 +65,7 @@ export const AccountDetailsCard: React.FC<AccountDetailsCardProps> = ({ classNam
               className="text-white/60 hover:text-white transition-colors"
             >
               {copiedField === 'account' ? (
-                <Check size={16} className="text-piko-green" />
+                <Check size={16} className="text-piko-violet" />
               ) : (
                 <Copy size={16} />
               )}
@@ -82,7 +82,7 @@ export const AccountDetailsCard: React.FC<AccountDetailsCardProps> = ({ classNam
               className="text-white/60 hover:text-white transition-colors"
             >
               {copiedField === 'routing' ? (
-                <Check size={16} className="text-piko-green" />
+                <Check size={16} className="text-piko-violet" />
               ) : (
                 <Copy size={16} />
               )}
@@ -99,7 +99,7 @@ export const AccountDetailsCard: React.FC<AccountDetailsCardProps> = ({ classNam
               className="text-white/60 hover:text-white transition-colors flex-shrink-0 mt-0.5"
             >
               {copiedField === 'address' ? (
-                <Check size={16} className="text-piko-green" />
+                <Check size={16} className="text-piko-violet" />
               ) : (
                 <Copy size={16} />
               )}

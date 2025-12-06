@@ -43,7 +43,7 @@ export const BusinessSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <div className="relative">
-              <div className="absolute -inset-8 bg-gradient-to-br from-piko-teal/20 via-piko-green/20 to-piko-purple/20 rounded-[40%] blur-3xl"></div>
+              <div className="absolute -inset-8 bg-gradient-to-br from-piko-purple/20 via-piko-violet/20 to-piko-purple/20 rounded-[40%] blur-3xl"></div>
               <img
                 src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Business team using PikoSend"
@@ -51,8 +51,8 @@ export const BusinessSection: React.FC = () => {
               />
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-12 h-12 rounded-full bg-piko-teal/20 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-piko-teal" />
+                  <div className="w-12 h-12 rounded-full bg-piko-purple/20 flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-piko-purple" />
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-piko-black">$2.5M+</p>
@@ -84,8 +84,8 @@ export const BusinessSection: React.FC = () => {
                     style={{ animationDelay: `${index * 0.08}s` }}
                   >
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 rounded-full bg-piko-teal/20 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-piko-teal" strokeWidth={1.5} />
+                      <div className="w-10 h-10 rounded-full bg-piko-purple/20 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-piko-purple" strokeWidth={1.5} />
                       </div>
                     </div>
                     <div>

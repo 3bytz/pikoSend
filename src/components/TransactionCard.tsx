@@ -37,7 +37,7 @@ export const TransactionCard: React.FC<TransactionCardProps> = ({ className = ''
     <div className={`backdrop-blur-xl bg-black/40 border border-white/20 rounded-3xl p-5 shadow-2xl w-full max-w-sm animate-fade-up ${className}`}>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-white font-semibold text-base">Recent transactions</h3>
-        <button className="text-piko-teal text-sm hover:underline">See all</button>
+        <button className="text-piko-purple text-sm hover:underline">See all</button>
       </div>
 
       <div className="space-y-3">
@@ -56,7 +56,7 @@ export const TransactionCard: React.FC<TransactionCardProps> = ({ className = ''
             <div className="flex-1 min-w-0">
               <p className="text-white text-sm font-medium">{transaction.name}</p>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="inline-block px-2 py-0.5 bg-piko-green/20 text-piko-green text-xs rounded">
+                <span className="inline-block px-2 py-0.5 bg-piko-violet/20 text-piko-violet text-xs rounded">
                   {transaction.status}
                 </span>
               </div>

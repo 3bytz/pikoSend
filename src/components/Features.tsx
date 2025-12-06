@@ -28,10 +28,10 @@ const features = [
 
 export const Features: React.FC = () => {
   const iconColors = [
-    { bg: 'bg-piko-teal', border: 'border-piko-teal', text: 'text-piko-teal' },
-    { bg: 'bg-piko-green', border: 'border-piko-green', text: 'text-piko-green' },
-    { bg: 'bg-piko-teal', border: 'border-piko-teal', text: 'text-piko-teal' },
-    { bg: 'bg-piko-green', border: 'border-piko-green', text: 'text-piko-green' },
+    { bg: 'bg-piko-purple', border: 'border-piko-purple', text: 'text-piko-purple' },
+    { bg: 'bg-piko-violet', border: 'border-piko-violet', text: 'text-piko-violet' },
+    { bg: 'bg-piko-purple', border: 'border-piko-purple', text: 'text-piko-purple' },
+    { bg: 'bg-piko-violet', border: 'border-piko-violet', text: 'text-piko-violet' },
   ];
 
   return (

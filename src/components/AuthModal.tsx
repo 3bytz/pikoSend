@@ -72,10 +72,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMo
 
           {success ? (
             <div className="text-center py-8">
-              <div className="w-16 h-16 bg-piko-teal/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-piko-purple/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="text-3xl">✓</div>
               </div>
-              <p className="text-piko-teal font-medium">
+              <p className="text-piko-purple font-medium">
                 {mode === 'signup' ? 'Account created successfully!' : 'Signed in successfully!'}
               </p>
             </div>

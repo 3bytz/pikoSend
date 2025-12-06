@@ -26,7 +26,7 @@ export const MidBanner: React.FC = () => {
           <div className="animate-slide-up flex justify-center lg:justify-start">
           <div className="lg:col-span-4 flex justify-center lg:justify-end animate-slide-up" style={{ animationDelay: '0.4s' }}>
           <div className="relative" style={{ transform: 'rotate(-2deg)' }}>
-            <div className="absolute -inset-6 bg-gradient-to-br from-piko-lilac via-piko-purple to-piko-teal rounded-full blur-3xl opacity-40 animate-icon-float"></div>
+            <div className="absolute -inset-6 bg-gradient-to-br from-piko-lilac via-piko-purple to-piko-violet rounded-full blur-3xl opacity-40 animate-icon-float"></div>
             <div className="relative bg-white rounded-[36px] p-3 shadow-2xl" style={{ width: '310px', height: '660px', transform: 'rotate(2deg)' }}>
               <div className="w-full h-full bg-gradient-to-br from-piko-purple via-piko-purple to-piko-plum rounded-[28px] flex flex-col overflow-hidden relative">
                 <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black/20 to-transparent"></div>
@@ -48,15 +48,15 @@ export const MidBanner: React.FC = () => {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between p-3 bg-piko-soft-grey rounded-xl">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-piko-teal/20 flex items-center justify-center">
-                          <div className="w-5 h-5 rounded-full bg-piko-teal"></div>
+                        <div className="w-10 h-10 rounded-full bg-piko-violet/20 flex items-center justify-center">
+                          <div className="w-5 h-5 rounded-full bg-piko-violet"></div>
                         </div>
                         <div>
                           <p className="text-xs font-medium text-piko-black">Received</p>
                           <p className="text-[10px] text-piko-medium-grey">From John Doe</p>
                         </div>
                       </div>
-                      <p className="text-sm font-bold text-piko-teal">+$500</p>
+                      <p className="text-sm font-bold text-piko-violet">+$500</p>
                     </div>
 
                     <div className="flex items-center justify-between p-3 bg-piko-soft-grey rounded-xl">
