@@ -36,14 +36,16 @@ const partners = [
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              variant="primary"
-              size="lg"
-              className="flex items-center justify-center gap-2 bg-white text-piko-purple hover:bg-opacity-90"
-              onClick={() => setAuthModalOpen(true)}
-            >
-              Create an Account
+           <div className="flex flex-col sm:flex-row gap-4">
+            <Button variant="primary" size="md" className="flex items-center justify-center gap-2">
+              <Apple size={20} />
+              App Store
             </Button>
+            <Button variant="primary" size="md" className="flex items-center justify-center gap-2">
+              <Play size={20} />
+              Google Play
+            </Button>
+          </div>
             <div className="flex items-center gap-3">
               <div className="hidden sm:block w-16 h-16 bg-white rounded-xl p-1.5 shadow-lg">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
