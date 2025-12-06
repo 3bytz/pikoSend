@@ -66,7 +66,7 @@ export const DynamicHero: React.FC = () => {
             <div className="text-white">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/30">
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold">Africa's Fastest Growing Fintech</span>
+                <span className="text-sm font-semibold">Africa's Fastest Growing Payments Solution</span>
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold mb-6 leading-tight">
