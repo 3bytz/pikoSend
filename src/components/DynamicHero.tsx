@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Play, CheckCircle2, TrendingUp, Users, Shield } from 'lucide-react';
+import { ArrowRight, Play, CheckCircle2, TrendingUp, Users, Shield, AppleIcon, BotIcon } from 'lucide-react';
 import { Container } from './Container';
 import { Link } from 'react-router-dom';
 
@@ -81,15 +81,16 @@ export const DynamicHero: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
-                  to="/contact"
+                  to="#"
                   className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/90 hover:scale-105 hover:shadow-2xl"
                 >
-                  Get Started Free
+                  <AppleIcon className="w-5 h-5" />
+                  Get The App For IOS
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <button className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/20">
-                  <Play className="w-5 h-5" />
-                  Watch Demo
+                  <BotIcon className="w-5 h-5" />
+                  Get The App For Android
                 </button>
               </div>
 
