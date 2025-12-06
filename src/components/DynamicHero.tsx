@@ -107,19 +107,19 @@ export const DynamicHero: React.FC = () => {
               </div>
             </div>
 
-            <div className="relative hidden lg:block">
+            <div className="relative mt-12 lg:mt-0">
               <div className="relative z-10">
-                <div className="absolute -inset-8 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
-                <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+                <div className="absolute -inset-4 lg:-inset-8 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
+                <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-4 lg:p-8 border border-white/20 shadow-2xl">
                   <img
                     src="/mockups/financeDashbaord.png"
                     alt="PikoSend App"
-                    className="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
 
-              <div className="absolute -bottom-8 -left-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl animate-fade-up">
+              <div className="hidden lg:flex absolute -bottom-8 -left-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl animate-fade-up">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-white" />
@@ -131,7 +131,7 @@ export const DynamicHero: React.FC = () => {
                 </div>
               </div>
 
-              <div className="absolute -top-8 -right-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <div className="hidden lg:flex absolute -top-8 -right-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center">
                     <Users className="w-6 h-6 text-white" />
