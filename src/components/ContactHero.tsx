@@ -1,6 +1,7 @@
 import React from 'react';
 import { Plus, ArrowDownToLine, Snowflake, MoreHorizontal } from 'lucide-react';
 import { Container } from './Container';
+import { TypingEffect } from './TypingEffect';
 
 export const ContactHero: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ export const ContactHero: React.FC = () => {
 
       <Container className="relative z-10 py-20">
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
-          <div className="mb-16 backdrop-blur-xl bg-black/50 border border-white/20 rounded-3xl p-8 shadow-2xl w-full max-w-md mx-auto">
+          <div className="mb-16 backdrop-blur-xl bg-black/50 border border-white/20 rounded-3xl p-8 shadow-2xl w-full max-w-md mx-auto animate-scale-in">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-white/40"></div>
@@ -64,10 +65,10 @@ export const ContactHero: React.FC = () => {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Get in touch with us
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-up">
+              <TypingEffect texts={['Get in touch with us', 'We\'re here to help', 'Let\'s talk', 'Contact our team']} typingSpeed={80} deletingSpeed={40} pauseDuration={2500} />
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed animate-fade-up" style={{ animationDelay: '0.2s' }}>
               We're here to help. Send us a message and we'll respond within 24 hours.
             </p>
           </div>

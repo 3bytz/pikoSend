@@ -41,3 +41,4 @@ export { AppStoreBadges } from './AppStoreBadges';
 export { ProductsHero } from './ProductsHero';
 export { FeaturesHero } from './FeaturesHero';
 export { BusinessHero } from './BusinessHero';
+export { TypingEffect } from './TypingEffect';

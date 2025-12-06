@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from './Container';
 import { AppStoreBadges } from './AppStoreBadges';
+import { TypingEffect } from './TypingEffect';
 import { Zap, Shield, Clock } from 'lucide-react';
 
 export const FeaturesHero: React.FC = () => {
@@ -18,14 +19,16 @@ export const FeaturesHero: React.FC = () => {
       <Container className="relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-white space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full animate-fade-in">
               <Zap className="w-4 h-4" />
               Platform Features
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight animate-fade-up">
               Built for Speed,
-              <span className="block mt-2">Designed for You</span>
+              <span className="block mt-2">
+                Designed for <TypingEffect texts={['You', 'Success', 'Growth', 'Africa']} typingSpeed={120} deletingSpeed={60} pauseDuration={1800} />
+              </span>
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
@@ -62,17 +65,17 @@ export const FeaturesHero: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative lg:block hidden">
+          <div className="relative block mt-8 lg:mt-0">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-3xl"></div>
-              <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl">
+              <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-4 sm:p-8 shadow-2xl animate-scale-in">
                 <img
                   src="/mockups/financeDashbaord.png"
                   alt="Features Dashboard"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl max-w-[200px]">
+              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-2 sm:p-4 shadow-2xl max-w-[120px] sm:max-w-[200px] animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
                 <img
                   src="/mockups/instant-send.png"
                   alt="Instant Send"

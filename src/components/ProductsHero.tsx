@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from './Container';
 import { AppStoreBadges } from './AppStoreBadges';
+import { TypingEffect } from './TypingEffect';
 import { Zap, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -16,14 +17,21 @@ export const ProductsHero: React.FC = () => {
       <Container className="relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-white space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full animate-fade-in">
               <Zap className="w-4 h-4" />
               Our Products
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight animate-fade-up">
               Everything You Need to
-              <span className="block mt-2">Manage Your Money</span>
+              <span className="block mt-2">
+                <TypingEffect
+                  texts={['Manage Your Money', 'Send Instantly', 'Receive Globally', 'Grow Your Wealth']}
+                  typingSpeed={100}
+                  deletingSpeed={50}
+                  pauseDuration={2000}
+                />
+              </span>
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
@@ -46,18 +54,18 @@ export const ProductsHero: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative lg:block hidden">
+          <div className="relative block">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-2xl"></div>
-            <div className="relative grid grid-cols-2 gap-6">
-              <div className="space-y-6 pt-12">
-                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              <div className="space-y-4 sm:space-y-6 sm:pt-12">
+                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-3 sm:p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300 animate-fade-in-left">
                   <img
                     src="/mockups/instant-send.png"
                     alt="Instant Transfers"
                     className="w-full h-auto rounded-xl"
                   />
                 </div>
-                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-3 sm:p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300 animate-fade-in-left" style={{ animationDelay: '0.2s' }}>
                   <img
                     src="/mockups/wallets.png"
                     alt="Virtual Cards"
@@ -65,15 +73,15 @@ export const ProductsHero: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="space-y-6">
-                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-3 sm:p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300 animate-fade-in-right">
                   <img
                     src="/mockups/financeDashbaord.png"
                     alt="Global Accounts"
                     className="w-full h-auto rounded-xl"
                   />
                 </div>
-                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-3 sm:p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300 animate-fade-in-right" style={{ animationDelay: '0.2s' }}>
                   <img
                     src="/mockups/9_transaction_history_1.jpg"
                     alt="Mobile Wallet"
