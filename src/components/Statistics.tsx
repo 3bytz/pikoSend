@@ -10,7 +10,7 @@ interface Stat {
 
 const stats: Stat[] = [
   { value: 500000, suffix: '+', label: 'Active Users' },
-  { value: 150, suffix: '+', label: 'Countries Supported' },
+  { value: 15, suffix: '+', label: 'Countries Supported' },
   { value: 1000000000, suffix: '+', label: 'Total Transactions' },
   { value: 99, suffix: '%', label: 'Customer Satisfaction' },
 ];

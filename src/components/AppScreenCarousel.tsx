@@ -176,7 +176,7 @@ export const AppScreenCarousel: React.FC = () => {
         </div>
 
         <div className="mt-16 max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-piko-purple/5 to-piko-violet/5 rounded-3xl p-8 md:p-12 border-2 border-piko-purple/20">
+          <div className="bg-gradient-to-r from-piko-purple/5 to-piko-violet/5 rounded-3xl p-3 md:p-12 border-2 border-piko-purple/20">
             <div className="flex items-start gap-6">
               <div className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${screens[activeIndex].gradient} flex items-center justify-center shadow-lg`}>
                 {React.createElement(screens[activeIndex].icon, {

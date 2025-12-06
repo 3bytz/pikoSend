@@ -38,7 +38,7 @@ export const ProductsHero: React.FC = () => {
               Powerful financial tools designed for modern Africa. Send, receive, and manage money with unmatched speed and security.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            {/* <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-purple rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
@@ -46,7 +46,7 @@ export const ProductsHero: React.FC = () => {
                 Get Started Free
                 <ArrowRight className="w-5 h-5" />
               </Link>
-            </div>
+            </div> */}
 
             <div className="pt-6">
               <p className="text-sm text-white/70 mb-4">Download our mobile app</p>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play, CheckCircle2, TrendingUp, Users, Shield, AppleIcon, BotIcon } from 'lucide-react';
 import { Container } from './Container';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '../lib/useIsMobile';
 
 const typingPhrases = [
   'Send Money Instantly',
@@ -23,6 +24,7 @@ export const DynamicHero: React.FC = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(100);
+    const isMobile = useIsMobile();
 
   useEffect(() => {
     const currentPhrase = typingPhrases[currentPhraseIndex];
@@ -75,6 +77,19 @@ export const DynamicHero: React.FC = () => {
                 </span>
               </h1>
 
+              <div className="block lg:hidden relative my-8">
+                <div className="relative z-10">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
+                  <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl p-4 border border-white/20 shadow-2xl">
+                    <img
+                      src="/heroimagenew2.png"
+                      alt="PikoSend App"
+                      className="w-full h-auto rounded-xl shadow-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed max-w-2xl">
                 Join thousands who are already experiencing lightning-fast, secure, and affordable money transfers across Africa.
               </p>
@@ -112,11 +127,23 @@ export const DynamicHero: React.FC = () => {
               <div className="relative z-10">
                 <div className="absolute -inset-4 lg:-inset-8 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
                 <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-4 lg:p-8 border border-white/20 shadow-2xl">
-                  <img
-                    src="/mockups/financeDashbaord.png"
+                   {
+                    isMobile ? <img
+                       src="/mockups/financeDashbaord.png"
+                
+                    alt="PikoSend App"
+                    className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                  /> : <img
+                        src="/heroimagenew2.png"
                     alt="PikoSend App"
                     className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
                   />
+                  }
+                  {/* <img
+                    src="/mockups/financeDashbaord.png"
+                    alt="PikoSend App"
+                    className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                  /> */}
                 </div>
               </div>
 

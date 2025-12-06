@@ -9,6 +9,7 @@ import { Products } from './pages/Products';
 import { FeaturesPage } from './pages/FeaturesPage';
 import { Business } from './pages/Business';
 import { NotFound } from './pages/NotFound';
+import { BlogDetail } from './components/BlogDetail';
 
 function App() {
   return (
@@ -17,10 +18,12 @@ function App() {
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/index" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/business" element={<Business />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster

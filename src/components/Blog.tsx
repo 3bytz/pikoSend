@@ -2,6 +2,7 @@ import React from 'react';
 import { Section } from './Section';
 import { Container } from './Container';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface BlogPost {
   id: string;
@@ -96,10 +97,13 @@ export const Blog: React.FC = () => {
                   {post.excerpt}
                 </p>
 
-                <button className="flex items-center gap-2 text-piko-purple font-medium text-sm hover:gap-3 transition-all">
-                  Read More
-                  <ArrowRight size={16} />
-                </button>
+                <Link
+                    to={`/blog/${post.id}`}
+                    className="flex items-center gap-2 text-piko-purple font-medium text-sm hover:gap-3 transition-all"
+                    >
+                      Read More
+                    <ArrowRight size={16} />
+                </Link>
               </div>
             </article>
           ))}
