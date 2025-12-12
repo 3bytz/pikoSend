@@ -13,8 +13,8 @@ interface SEOProps {
 
 const defaultSEO = {
   title: 'PikoSend - Send Money Anywhere, Anytime',
-  description: 'Send and receive money globally with PikoSend. Fast, secure, and affordable international money transfers with the best exchange rates.',
-  keywords: 'money transfer, international payments, send money, receive money, cross-border payments, remittance, digital wallet, global transfers',
+  description: 'Send and receive money with PikoSend. Fast, secure, and affordable money transfers with the best rates.',
+  keywords: 'money transfer, secure payments, send money, receive money, cross-border payments, remittance, digital wallet',
   ogImage: '/faviconTr.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',

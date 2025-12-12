@@ -91,13 +91,14 @@ export const Navbar: React.FC = () => {
   };
 
   const navLinks: NavLink[] = [
+     { label: 'About Us', href: '/about-us'},
     { label: 'Products', href: '/products' },
     { label: 'Features', href: '/features' },
     { label: 'For Business', href: '/business' },
     {
       label: 'Company',
       dropdown: [
-        { label: 'About Us', href: '#mission', description: 'Our goals and values' },
+       
         { label: 'Testimonials', href: '#testimonials', description: 'What our users say' },
         { label: 'News & Blog', href: '#blog', description: 'Latest updates' },
         { label: 'FAQs', href: '#faq', description: 'Get answers to common questions' },

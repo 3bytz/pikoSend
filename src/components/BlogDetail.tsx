@@ -305,8 +305,8 @@ const blogPostsDetail: BlogPostDetail[] = [
   },
   {
     id: '3',
-    title: 'Freelancer Guide to Getting Paid Globally',
-    excerpt: 'Essential tips for freelancers to receive international payments quickly, securely, and cost-effectively.',
+    title: 'Freelancer Guide to Getting Paid',
+    excerpt: 'Essential tips for freelancers to receive payments quickly, securely, and cost-effectively.',
     content: `
       <p class="lead-text">In today's borderless digital economy, freelancers have unprecedented access to global clients. However, getting paid efficiently across borders remains a significant challenge. This comprehensive guide covers everything you need to know about receiving international payments as a freelancer.</p>
       

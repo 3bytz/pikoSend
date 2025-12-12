@@ -10,6 +10,7 @@ import { FeaturesPage } from './pages/FeaturesPage';
 import { Business } from './pages/Business';
 import { NotFound } from './pages/NotFound';
 import { BlogDetail } from './components/BlogDetail';
+import About from './pages/About';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/index" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about-us" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/business" element={<Business />} />
