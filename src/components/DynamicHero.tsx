@@ -1,56 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Play, CheckCircle2, TrendingUp, Users, Shield, AppleIcon, BotIcon } from 'lucide-react';
-import { Container } from './Container';
-import { Link } from 'react-router-dom';
-import { useIsMobile } from '../lib/useIsMobile';
+import React, { useState, useEffect } from "react";
+import {
+  ArrowRight,
+  Play,
+  CheckCircle2,
+  TrendingUp,
+  Users,
+  Shield,
+  AppleIcon,
+  BotIcon,
+} from "lucide-react";
+import { Container } from "./Container";
+import { Link } from "react-router-dom";
+import { useIsMobile } from "../lib/useIsMobile";
 
 const typingPhrases = [
-  'Send Money Instantly',
-  'Receive Payments Globally',
-  'Manage Multiple Wallets',
-  'Pay Your Bills Easily',
-  'Grow Your Business',
-  'Track Your Spending',
+  "Send Money Instantly",
+  "Receive Payments Securely",
+  "Manage Multiple Wallets",
+  "Pay Your Bills Easily",
+  "Grow Your Business",
+  "Track Your Spending",
 ];
 
 const stats = [
-  { value: '500K+', label: 'Active Users', icon: Users },
-  { value: '$2B+', label: 'Transacted', icon: TrendingUp },
-  { value: '99.9%', label: 'Uptime', icon: Shield },
+  { value: "500K+", label: "Active Users", icon: Users },
+  { value: "$2B+", label: "Transacted", icon: TrendingUp },
+  { value: "99.9%", label: "Uptime", icon: Shield },
 ];
 
 export const DynamicHero: React.FC = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(100);
-    const isMobile = useIsMobile();
+  const [typingSpeed, setTypingSpeed] = useState(200);
+  const isMobile = useIsMobile();
 
-  useEffect(() => {
-    const currentPhrase = typingPhrases[currentPhraseIndex];
+  // useEffect(() => {
+  //   const currentPhrase = typingPhrases[currentPhraseIndex];
 
-    const handleTyping = () => {
-      if (!isDeleting) {
-        if (displayedText.length < currentPhrase.length) {
-          setDisplayedText(currentPhrase.slice(0, displayedText.length + 1));
-          setTypingSpeed(100);
-        } else {
-          setTimeout(() => setIsDeleting(true), 2000);
-        }
-      } else {
-        if (displayedText.length > 0) {
-          setDisplayedText(displayedText.slice(0, -1));
-          setTypingSpeed(50);
-        } else {
-          setIsDeleting(false);
-          setCurrentPhraseIndex((prev) => (prev + 1) % typingPhrases.length);
-        }
-      }
-    };
+  //   const handleTyping = () => {
+  //     if (!isDeleting) {
+  //       if (displayedText.length < currentPhrase.length) {
+  //         setDisplayedText(currentPhrase.slice(0, displayedText.length + 1));
+  //         setTypingSpeed(100);
+  //       } else {
+  //         setTimeout(() => setIsDeleting(true), 2000);
+  //       }
+  //     } else {
+  //       if (displayedText.length > 0) {
+  //         setDisplayedText(displayedText.slice(0, -1));
+  //         setTypingSpeed(50);
+  //       } else {
+  //         setIsDeleting(false);
+  //         setCurrentPhraseIndex((prev) => (prev + 1) % typingPhrases.length);
+  //       }
+  //     }
+  //   };
 
-    const timer = setTimeout(handleTyping, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [displayedText, isDeleting, currentPhraseIndex, typingSpeed]);
+  //   const timer = setTimeout(handleTyping, typingSpeed);
+  //   return () => clearTimeout(timer);
+  // }, [displayedText, isDeleting, currentPhraseIndex, typingSpeed]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-piko-purple via-piko-violet to-piko-purple">
@@ -58,22 +67,29 @@ export const DynamicHero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
       <div className="absolute top-20 left-10 w-72 h-72 bg-piko-violet/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-piko-purple/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-piko-purple/30 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      ></div>
 
       <Container>
         <div className="relative z-10 py-20 md:py-32">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/30">
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold">Africa's Fastest Growing Payments Solution</span>
+                <span className="text-sm font-semibold">
+                  Africa's Fastest Growing Payments Solution
+                </span>
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold mb-6 leading-tight">
-                <span className="block mb-2">The Smartest Way to</span>
-                <span className="block min-h-[1.2em] text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">
-                  {displayedText}
-                  <span className="inline-block w-1 h-[0.9em] bg-white ml-1 animate-pulse"></span>
+                <span className="block mb-2">PikoSend,</span>
+              </h1>
+
+              <h1 className="text-xl md:text-3xl lg:text-4xl font-poppins font-bold mb-6 leading-tight">
+                <span className="block mb-2">
+                  Where payments is just a scan away!
                 </span>
               </h1>
 
@@ -90,8 +106,16 @@ export const DynamicHero: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed max-w-2xl">
-                Join thousands who are already experiencing lightning-fast, secure, and affordable money transfers across Africa.
+              <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl">
+                One QR code at a moment, we are working to revolutionise the way
+                Kenyan consumers and businesses do business. We make things
+                easier for both customers and businesses with our
+                lightning-fast, reasonably priced, and incredibly convenient
+                payment option.
+              </p>
+              <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl">
+                Become one of the thousands of people who are now enjoying
+                quick, safe, and reasonably priced money transfers.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -110,35 +134,62 @@ export const DynamicHero: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap items-center gap-6">
-                {[
-                  'No hidden fees',
-                  'Bank-level security',
-                  '24/7 support',
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-white" />
-                    <span className="text-sm font-medium">{feature}</span>
+                {["No hidden fees", "Bank-level security", "24/7 support"].map(
+                  (feature, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-white" />
+                      <span className="text-sm font-medium">{feature}</span>
+                    </div>
+                  )
+                )}
+              </div>
+              {/* powered by */}
+              <div className="mt-8 flex flex-col items-start sm:items-start w-full">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                  <span className="text-white text-lg font-semibold tracking-wide">
+                    POWERED BY
+                  </span>
+                  <div
+                    className="
+      bg-white/30
+      sm:h-8 sm:w-[2px]
+      h-[2px] w-full
+    "
+                  ></div>
+                  <div className="flex items-center gap-6">
+                    <img
+                      src="/partners/telecharger.png"
+                      alt="Futurizac Logo"
+                      className="h-10 w-auto opacity-90 brightness-110 mix-blend-screen"
+                    />
+
+                    <img
+                      src="/partners/telecharger-1.png"
+                      alt="DTB Bank Logo"
+                      className="h-10 w-auto opacity-90 brightness-110 mix-blend-screen"
+                    />
                   </div>
-                ))}
+                </div>
               </div>
             </div>
-
+            {/* image */}
             <div className="relative mt-12 lg:mt-0">
               <div className="relative z-10">
                 <div className="absolute -inset-4 lg:-inset-8 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
                 <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-4 lg:p-8 border border-white/20 shadow-2xl">
-                   {
-                    isMobile ? <img
-                       src="/mockups/financeDashbaord.png"
-                
-                    alt="PikoSend App"
-                    className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
-                  /> : <img
-                        src="/heroimagenew2.png"
-                    alt="PikoSend App"
-                    className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
-                  />
-                  }
+                  {isMobile ? (
+                    <img
+                      src="/mockups/financeDashbaord.png"
+                      alt="PikoSend App"
+                      className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <img
+                      src="/heroimagenew2.png"
+                      alt="PikoSend App"
+                      className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
                   {/* <img
                     src="/mockups/financeDashbaord.png"
                     alt="PikoSend App"
@@ -153,20 +204,23 @@ export const DynamicHero: React.FC = () => {
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">$2.5M</div>
-                    <div className="text-sm text-white/70">Processed Today</div>
+                    <div className="text-2xl font-bold text-white"></div>
+                    <div className="text-sm text-white/70"></div>
                   </div>
                 </div>
               </div>
 
-              <div className="hidden lg:flex absolute -top-8 -right-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <div
+                className="hidden lg:flex absolute -top-8 -right-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl animate-fade-up"
+                style={{ animationDelay: "0.2s" }}
+              >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center">
                     <Users className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">12K+</div>
-                    <div className="text-sm text-white/70">Active Today</div>
+                    <div className="text-2xl font-bold text-white"></div>
+                    <div className="text-sm text-white/70"></div>
                   </div>
                 </div>
               </div>
@@ -183,7 +237,9 @@ export const DynamicHero: React.FC = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <Icon className="w-8 h-8 mx-auto mb-3 text-white/80" />
-                  <div className="text-3xl md:text-4xl font-bold mb-1">{stat.value}</div>
+                  <div className="text-3xl md:text-4xl font-bold mb-1">
+                    {stat.value}
+                  </div>
                   <div className="text-sm text-white/70">{stat.label}</div>
                 </div>
               );

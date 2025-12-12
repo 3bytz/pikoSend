@@ -5,6 +5,7 @@ interface SectionProps {
   className?: string;
   background?: 'white' | 'soft-grey' | 'purple' | 'lilac';
   id?: string;
+  style?: React.CSSProperties; 
 }
 
 export const Section: React.FC<SectionProps> = ({
@@ -12,6 +13,7 @@ export const Section: React.FC<SectionProps> = ({
   className = '',
   background = 'white',
   id,
+  style = {},
 }) => {
   const bgClass = {
     white: 'bg-white',
@@ -21,7 +23,11 @@ export const Section: React.FC<SectionProps> = ({
   }[background];
 
   return (
-    <section id={id} className={`${bgClass} section-spacing ${className}`}>
+    <section 
+      id={id} 
+      className={`${bgClass} section-spacing ${className}`}
+      style={style}
+    >
       <div className="container-custom">{children}</div>
     </section>
   );

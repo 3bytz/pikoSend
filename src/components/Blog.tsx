@@ -35,8 +35,8 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '3',
-    title: 'Freelancer Guide to Getting Paid Globally',
-    excerpt: 'Essential tips for freelancers to receive international payments quickly, securely, and cost-effectively.',
+    title: 'Freelancer Guide to Getting Paid',
+    excerpt: 'Essential tips for freelancers to receive payments quickly, securely, and cost-effectively.',
     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600',
     date: 'Nov 22, 2025',
     readTime: '6 min read',

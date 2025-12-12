@@ -30,13 +30,13 @@ const personas: Persona[] = [
     features: ['Multi-currency wallet', 'Zero FX markup', 'Local account details', 'Travel insurance'],
     color: '#8B5CF6',
   },
-  {
-    icon: ShoppingCart,
-    title: 'Online Shoppers',
-    description: 'Shop globally without currency worries. Get virtual cards for secure online purchases.',
-    features: ['Instant virtual cards', 'Cashback rewards', 'Purchase protection', 'Budget controls'],
-    color: '#A78BFA',
-  },
+  // {
+  //   icon: ShoppingCart,
+  //   title: 'Online Shoppers',
+  //   description: 'Shop without worries. Get virtual cards for secure online purchases.',
+  //   features: ['Instant virtual cards', 'Cashback rewards', 'Purchase protection', 'Budget controls'],
+  //   color: '#A78BFA',
+  // },
   {
     icon: GraduationCap,
     title: 'Students',

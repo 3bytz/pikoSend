@@ -45,9 +45,9 @@ export const BusinessSection: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-8 bg-gradient-to-br from-piko-purple/20 via-piko-violet/20 to-piko-purple/20 rounded-[40%] blur-3xl"></div>
               <img
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/business/boardRoom.jpg"
                 alt="Business team using PikoSend"
-                className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                className="relative rounded-2xl shadow-2xl w-full h-[600px] object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
                 <div className="flex items-center gap-3 mb-2">
@@ -56,7 +56,7 @@ export const BusinessSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-piko-black">$2.5M+</p>
-                    <p className="text-xs text-piko-medium-grey">Processed this month</p>
+                    <p className="text-xs text-piko-medium-grey">Processed </p>
                   </div>
                 </div>
               </div>

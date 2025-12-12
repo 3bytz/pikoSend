@@ -10,31 +10,37 @@ const businessFeatures = [
     icon: Building2,
     title: 'Business Accounts',
     description: 'Dedicated business accounts with advanced features for managing company finances efficiently.',
+    imageUrl: '/business/businessAccount.webp',
   },
   {
     icon: TrendingUp,
     title: 'Financial Analytics',
     description: 'Powerful insights and reporting tools to track revenue, expenses, and cash flow in real-time.',
+    imageUrl: '/business/financialAnalytics.png',
   },
   {
     icon: Users,
     title: 'Team Management',
     description: 'Add team members with custom permissions and roles for secure collaborative access.',
+    imageUrl: '/business/teamManagement.jpg',
   },
   {
     icon: Wallet,
     title: 'Bulk Payments',
     description: 'Pay multiple employees, suppliers, or vendors at once with our efficient bulk transfer system.',
+    imageUrl: '/business/transfer.webp',
   },
   {
     icon: BarChart3,
     title: 'Expense Tracking',
     description: 'Monitor and categorize business expenses automatically with smart classification.',
+    imageUrl: '/business/expenseTracking.jpeg',
   },
   {
     icon: Lock,
     title: 'API Integration',
     description: 'Seamlessly integrate PikoSend into your existing systems with our robust API.',
+    imageUrl: 'public/business/apiIntegration.webp',
   },
 ];
 
@@ -44,18 +50,21 @@ const solutions = [
     description: 'Scale fast with payment solutions that grow with you. No setup fees, no minimum balance.',
     icon: TrendingUp,
     color: 'from-piko-violet to-piko-purple',
+    imageUrl: '/business/startUps.jpg',
   },
   {
     title: 'For SMEs',
     description: 'Streamline operations with automated payments, invoicing, and financial management tools.',
     icon: Building2,
     color: 'from-piko-purple to-piko-lilac',
+    imageUrl: '/business/sme.webp',
   },
   {
     title: 'For Enterprise',
     description: 'Enterprise-grade solutions with dedicated support, custom integrations, and advanced security.',
     icon: Users,
     color: 'from-piko-violet to-piko-lilac',
+    imageUrl: '/business/boardRoom.jpg',
   },
 ];
 
@@ -81,36 +90,45 @@ export const Business: React.FC = () => {
 
       <Section background="white" className="py-20">
         <Container>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
             {businessFeatures.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={index}
-                  className="group bg-white border-2 border-piko-soft-grey rounded-2xl p-8 transition-all duration-300 hover:border-piko-purple hover:shadow-xl"
+                  className="group bg-white border-2 border-piko-soft-grey rounded-2xl overflow-hidden transition-all duration-300 hover:border-piko-purple hover:shadow-xl"
                 >
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-piko-violet/10 to-piko-purple/10 mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-7 h-7 text-piko-purple" strokeWidth={2} />
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={feature.imageUrl}
+                      alt={feature.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <h3 className="text-xl font-poppins font-bold text-piko-black mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-piko-medium-grey leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <div className="p-8">
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-piko-violet/10 to-piko-purple/10 mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-7 h-7 text-piko-purple" strokeWidth={2} />
+                    </div>
+                    <h3 className="text-xl font-poppins font-bold text-piko-black mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-piko-medium-grey leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               );
             })}
           </div>
 
+        
           <div className="mb-32">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-piko-black mb-4">
                 Solutions for Every Business Size
               </h2>
               <p className="text-lg text-piko-medium-grey max-w-2xl mx-auto">
-                Whether you're just starting or scaling globally, we have the perfect solution for your business
+                Whether you're just starting or scaling, we have the perfect solution for your business
               </p>
             </div>
 
@@ -120,23 +138,32 @@ export const Business: React.FC = () => {
                 return (
                   <div
                     key={index}
-                    className={`relative bg-gradient-to-br ${solution.color} rounded-2xl p-8 text-white overflow-hidden group hover:scale-105 transition-transform duration-300`}
+                    className={`relative bg-gradient-to-br ${solution.color} rounded-2xl overflow-hidden group hover:scale-105 transition-transform duration-300`}
                   >
+                    <div className="h-48 overflow-hidden">
+                      <img
+                        src={solution.imageUrl}
+                        alt={solution.title}
+                        className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500"
+                      />
+                    </div>
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                    <Icon className="w-12 h-12 mb-6 relative z-10" strokeWidth={2} />
-                    <h3 className="text-2xl font-poppins font-bold mb-3 relative z-10">
-                      {solution.title}
-                    </h3>
-                    <p className="text-white/90 leading-relaxed relative z-10">
-                      {solution.description}
-                    </p>
+                    <div className="relative p-8 text-white -mt-16">
+                      <Icon className="w-12 h-12 mb-6 relative z-10" strokeWidth={2} />
+                      <h3 className="text-2xl font-poppins font-bold mb-3 relative z-10">
+                        {solution.title}
+                      </h3>
+                      <p className="text-white/90 leading-relaxed relative z-10">
+                        {solution.description}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <div className="bg-piko-soft-grey rounded-3xl p-12 md:p-16">
+          <div className="bg-piko-soft-grey rounded-3xl p-3 md:p-16">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-poppins font-bold text-piko-black mb-6">
@@ -158,7 +185,7 @@ export const Business: React.FC = () => {
                   <AppStoreBadges variant="light" size="md" />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
                   <Clock className="w-10 h-10 text-piko-purple mx-auto mb-4" />
                   <div className="text-3xl font-bold text-piko-black mb-2">24/7</div>

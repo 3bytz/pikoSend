@@ -1,8 +1,8 @@
-import React from 'react';
-import { Container } from './Container';
-import { AppStoreBadges } from './AppStoreBadges';
-import { TypingEffect } from './TypingEffect';
-import { Zap, Shield, Clock } from 'lucide-react';
+import React from "react";
+import { Container } from "./Container";
+import { AppStoreBadges } from "./AppStoreBadges";
+import { TypingEffect } from "./TypingEffect";
+import { Zap, Shield, Clock } from "lucide-react";
 
 export const FeaturesHero: React.FC = () => {
   return (
@@ -10,13 +10,14 @@ export const FeaturesHero: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage:
+            "url(https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1920)",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-piko-purple/90 via-piko-violet/85 to-piko-lilac/90 backdrop-blur-sm"></div>
       </div>
 
-      <Container className="relative z-10 py-20">
+      <Container className="relative z-10 py-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-white space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full animate-fade-in">
@@ -27,20 +28,29 @@ export const FeaturesHero: React.FC = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight animate-fade-up">
               Built for Speed,
               <span className="block mt-2">
-                Designed for <TypingEffect texts={['You', 'Success', 'Growth', 'Africa']} typingSpeed={120} deletingSpeed={60} pauseDuration={1800} />
+                Designed for{" "}
+                <TypingEffect
+                  texts={["You", "Success", "Growth", "Africa"]}
+                  typingSpeed={320}
+                  deletingSpeed={90}
+                  pauseDuration={1900}
+                />
               </span>
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
-              Experience the most advanced fintech platform in Africa. Every feature crafted with your success in mind.
+              PikoSend streamlines how businesses accept and process payments.
+              From instant transactions to effortless QR payments, every feature
+              is designed to simplify your workflow, reduce waiting times, and
+              deliver a smoother experience for both you and your customers.
             </p>
 
-            <div className="grid grid-cols-3 gap-6 pt-4">
+            <div className="grid grid-cols-3 pt-4 place-items-start">
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 mb-3">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-2xl font-bold">{'<3s'}</div>
+                <div className="text-2xl font-bold">{"<3s"}</div>
                 <div className="text-sm text-white/70">Fast Transfers</div>
               </div>
               <div className="text-center">
@@ -60,7 +70,9 @@ export const FeaturesHero: React.FC = () => {
             </div>
 
             <div className="pt-6">
-              <p className="text-sm text-white/70 mb-4">Get the app and start now</p>
+              <p className="text-sm text-white/70 mb-4">
+                Get the app and start now
+              </p>
               <AppStoreBadges variant="dark" size="md" />
             </div>
           </div>
@@ -75,7 +87,10 @@ export const FeaturesHero: React.FC = () => {
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-2 sm:p-4 shadow-2xl max-w-[120px] sm:max-w-[200px] animate-fade-in-right" style={{ animationDelay: '0.3s' }}>
+              <div
+                className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-2 sm:p-4 shadow-2xl max-w-[120px] sm:max-w-[200px] animate-fade-in-right"
+                style={{ animationDelay: "0.3s" }}
+              >
                 <img
                   src="/mockups/instant-send.png"
                   alt="Instant Send"
