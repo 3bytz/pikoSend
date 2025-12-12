@@ -40,7 +40,7 @@ const businessFeatures = [
     icon: Lock,
     title: 'API Integration',
     description: 'Seamlessly integrate PikoSend into your existing systems with our robust API.',
-    imageUrl: 'public/business/apiIntegration.webp',
+    imageUrl: '/business/apiIntegration.webp',
   },
 ];
 
