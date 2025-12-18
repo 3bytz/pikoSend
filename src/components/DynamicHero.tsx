@@ -98,7 +98,7 @@ export const DynamicHero: React.FC = () => {
                   <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
                   <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl p-4 border border-white/20 shadow-2xl">
                     <img
-                      src="/heroimagenew2.png"
+                      src="/new/hero_designed.png"
                       alt="PikoSend App"
                       className="w-full h-auto rounded-xl shadow-2xl"
                     />
@@ -173,58 +173,23 @@ export const DynamicHero: React.FC = () => {
               </div>
             </div>
             {/* image */}
-            <div className="relative mt-12 lg:mt-0">
+            {isMobile ? null:  <div className="relative mt-12 lg:mt-0">
               <div className="relative z-10">
                 <div className="absolute -inset-4 lg:-inset-8 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
                 <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-4 lg:p-8 border border-white/20 shadow-2xl">
-                  {isMobile ? (
+                  {isMobile ? null
+                  : (
                     <img
-                      src="/mockups/financeDashbaord.png"
-                      alt="PikoSend App"
-                      className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <img
-                      src="/heroimagenew2.png"
+                        src="/new/hero_designed.png"
                       alt="PikoSend App"
                       className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
                     />
                   )}
-                  {/* <img
-                    src="/mockups/financeDashbaord.png"
-                    alt="PikoSend App"
-                    className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
-                  /> */}
-                </div>
-              </div>
-
-              <div className="hidden lg:flex absolute -bottom-8 -left-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl animate-fade-up">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-white"></div>
-                    <div className="text-sm text-white/70"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="hidden lg:flex absolute -top-8 -right-8 bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-xl animate-fade-up"
-                style={{ animationDelay: "0.2s" }}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center">
-                    <Users className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-white"></div>
-                    <div className="text-sm text-white/70"></div>
-                  </div>
+                 
                 </div>
               </div>
             </div>
+              }
           </div>
 
           <div className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/20">

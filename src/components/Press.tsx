@@ -24,7 +24,7 @@ export const Press: React.FC = () => {
   const { ref: marqueeRef, isVisible: marqueeVisible } = useScrollAnimation();
 
   return (
-    <Section background="white" className="py-16 md:py-20 overflow-hidden">
+    <Section background="white" className="py-8 md:py-8 overflow-hidden">
       <Container>
         <div
           ref={headerRef}
@@ -85,40 +85,7 @@ export const Press: React.FC = () => {
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
         </div>
-
-
-        <div className="mt-20 pt-8 border-t border-piko-soft-grey">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {[
-              { value: '50+', label: 'Partners Worldwide', color: 'text-piko-purple' },
-              { value: '100+', label: 'Media Features', color: 'text-piko-purple' },
-              { value: '24/7', label: 'Support Available', color: 'text-piko-violet' },
-              { value: '99.9%', label: 'Uptime Reliability', color: 'text-piko-lilac' }
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
-                  {stat.value}
-                </div>
-                <p className="text-piko-medium-grey text-sm">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* <div className="mt-16 text-center">
-          <p className="text-piko-medium-grey mb-6 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-           Yet To Get The App? 
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.3s' }}>
-            <button className="px-6 py-3 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:scale-105">
-              Download 
-            </button>
-          </div>
-        </div> */}
+    
       </Container>
 
       <style >{`

@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Container } from './Container';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert([{ email, subscribed_at: new Date().toISOString() }]);
+
+      if (error) throw error;
+
+      setSuccess(true);
+      setEmail('');
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (err: any) {
+      if (err.code === '23505') {
+        setError('This email is already subscribed');
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleInternalLink = (href: string) => {
     if (href.startsWith('#')) {
@@ -46,7 +77,7 @@ export const Footer: React.FC = () => {
   const CompanyLinks = [
     { label: 'About Us', href: '#mission' },
     { label: 'Testimonials', href: '#testimonials' },
-    { label: 'News & Blog', href: '#blog' },
+    { label: 'News & Blog', href: '/blog' },
     { label: 'FAQs', href: '#faq' },
   ];
 
@@ -59,8 +90,72 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-piko-plum text-white">
+      {/* Newsletter Section */}
+      <div className="bg-white py-12 border-b border-piko-soft-grey">
+        <Container>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="lg:w-1/2 text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl text-piko-black font-poppins font-bold mb-3">
+                  Stay Updated on Payments
+                </h2>
+                <p className="text-base text-piko-medium-grey leading-relaxed max-w-lg">
+                  Get the latest updates, tips, and exclusive offers delivered to your inbox.
+                </p>
+              </div>
+              
+              <div className="lg:w-1/2 w-full max-w-md">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {success && (
+                    <div className="flex items-center justify-center lg:justify-start gap-2 p-3 bg-piko-purple/10 text-piko-purple rounded-lg">
+                      <CheckCircle size={20} />
+                      <span className="text-sm font-medium">Successfully subscribed!</span>
+                    </div>
+                  )}
+                  
+                  {error && (
+                    <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm text-center lg:text-left">
+                      {error}
+                    </div>
+                  )}
+                  
+                  <div className="relative">
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-6 py-4 pr-36 rounded-full border-2 border-piko-soft-grey focus:border-piko-purple focus:outline-none transition-colors text-base disabled:opacity-50"
+                      required
+                      disabled={loading}
+                    />
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2.5 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] flex items-center gap-2 disabled:opacity-50"
+                    >
+                      {loading ? 'Subscribing...' : (
+                        <>
+                          <Mail size={18} />
+                          Subscribe
+                        </>
+                      )}
+                    </button>
+                  </div>
+                  
+                  <p className="text-xs text-piko-light-grey text-center lg:text-left">
+                    We respect your privacy. Unsubscribe at any time.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Main Footer Content */}
       <Container className="pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-6 md:mb-12">
           <div className="space-y-4 lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Link to="/" className="flex items-center gap-2">

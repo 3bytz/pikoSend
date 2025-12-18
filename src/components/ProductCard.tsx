@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   LucideIcon,
-  ArrowRight,
   CheckCircle2,
-  ChevronRight,
-  ExternalLink,
   Sparkles,
   Zap,
 } from "lucide-react";
@@ -67,7 +63,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       <div
-        className={`relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center p-6 md:p-10 ${
+        className={`relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center p-6 md:p-6 ${
           isEven ? "" : ""
         }`}
       >
@@ -123,48 +119,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             ))}
           </div>
 
-          <div className="pt-4">
-            <Link
-              to="/contact"
-              className={`group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r ${gradient} text-white rounded-2xl font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95 overflow-hidden`}
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Get Started
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            </Link>
-          </div>
         </div>
 
         <div className={`relative ${isEven ? "lg:order-2" : "lg:order-1"}`}>
           <div className="relative group">
-            {/* <div
-              className={`absolute -inset-6 bg-gradient-to-r ${gradient} rounded-4xl opacity-0 group-hover:opacity-20 blur-3xl transition-all duration-700`}
-            ></div> */}
-
-            <div
-              className="relative bg-gradient-to-br from-gray-50 to-white rounded-3xl p-2 md:p-4 shadow-2xl border-8 border-gray-900 overflow-hidden transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-3xl
-     max-w-[260px] md:max-w-[300px] lg:max-w-[330px] xl:max-w-[360px] mx-auto"
-            >
-              {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-20 flex items-center justify-center">
-                <div className="w-16 h-1 bg-gray-700 rounded-full"></div>
-              </div> */}
-
-              <div className="relative aspect-[9/19.5] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 max-w-[260px] md:max-w-[320px] lg:max-w-[360px] xl:max-w-[380px] mx-auto">
+            <div className="relative rounded-3xl overflow-hidden transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-3xl max-w-[260px] md:max-w-[300px] lg:max-w-[330px] xl:max-w-[360px] mx-auto">
+              <div className="relative aspect-[9/19.5] overflow-hidden rounded-3xl">
                 <img
                   src={image}
                   alt={title}
-                  className={`w-full h-full object-contain p-2 md:p-4 transition-all duration-700 ${
+                  className={`w-full h-full object-contain transition-all duration-700 ${
                     isHovered ? "scale-105" : "scale-100"
                   }`}
                   loading="lazy"
                 />
-
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
               </div>
-
-              {/* <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gray-800 rounded-full"></div> */}
             </div>
 
             <div className="absolute -top-4 -right-4 bg-gradient-to-r from-piko-purple to-piko-violet text-white px-4 py-2 rounded-2xl shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300">

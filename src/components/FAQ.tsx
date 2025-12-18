@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Section } from './Section';
 import { Container } from './Container';
-import { Plus, Minus, HelpCircle, MessageCircle, Mail, Shield } from 'lucide-react';
+import { Plus, Minus, HelpCircle, MessageCircle, Mail, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useSwipeable } from 'react-swipeable';
 
 interface FAQItem {
   question: string;
@@ -51,16 +52,49 @@ const faqs: FAQItem[] = [
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+    const getSlidesPerView = () => {
+  if (window.innerWidth < 640) return 1;      
+  if (window.innerWidth < 1024) return 2;    
+  return 3;                                   
+};
+  const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+ const nextSlide = () => {
+  setCurrentSlide((prev) =>
+    prev + 1 < Math.ceil(faqs.length / slidesPerView) ? prev + 1 : prev
+  );
+};
+
+ const prevSlide = () => {
+  setCurrentSlide((prev) => (prev - 1 >= 0 ? prev - 1 : prev));
+};
+
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => nextSlide(),
+    onSwipedRight: () => prevSlide(),
+    trackMouse: true
+  });
+useEffect(() => {
+  const handleResize = () => {
+    setSlidesPerView(getSlidesPerView());
+    setCurrentSlide(0); 
+  };
+
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
   return (
     <Section 
       background="lilac" 
       id='faq'
-      className="relative overflow-hidden"
+      className="relative overflow-hidden py-6"
     >
      
       <div className="absolute inset-0 z-0">
@@ -79,7 +113,7 @@ export const FAQ: React.FC = () => {
       </div>
 
       <Container className="relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-6 md:mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-6">
             <HelpCircle className="w-4 h-4" />
             Need Help?
@@ -93,73 +127,135 @@ export const FAQ: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-4 md:space-y-6">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            const Icon = faq.icon || HelpCircle;
-            
-            return (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl overflow-hidden animate-fade-up border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-xl"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-white/5 transition-all duration-300 group"
-                >
-                  <div className="flex items-start gap-4 md:gap-6 flex-1">
-                    <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      isOpen 
-                        ? 'bg-white text-piko-purple scale-110' 
-                        : 'bg-white/20 text-white group-hover:bg-white/30'
-                    }`}>
-                      <Icon className="w-5 h-5 md:w-6 md:h-6" />
-                    </div>
-                    
-                    <div className="flex-1 text-left">
-                      {faq.category && (
-                        <span className="inline-block px-2.5 py-1 bg-white/10 text-white/80 text-xs font-medium rounded-full mb-2">
-                          {faq.category}
-                        </span>
-                      )}
-                      <h3 className="font-poppins font-semibold text-white text-base md:text-lg pr-4">
-                        {faq.question}
-                      </h3>
-                    </div>
-                  </div>
-                  
-                  <div
-                    className={`flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      isOpen 
-                        ? 'bg-white text-piko-purple shadow-lg scale-110' 
-                        : 'bg-white/20 text-white group-hover:bg-white/30'
-                    }`}
-                  >
-                    {isOpen ? <Minus size={20} /> : <Plus size={20} />}
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div className="px-5 md:px-6 pb-5 md:pb-6 animate-fade-up">
-                    <div className="pl-14 md:pl-20 border-l-2 border-white/30 ml-4">
-                      <p className="text-white/90 leading-relaxed text-sm md:text-base">{faq.answer}</p>
-                      
-                      {index === 0 && (
-                        <div className="mt-4 flex items-center gap-2 text-white/70 text-sm">
-                          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                          Real-time tracking available for all transfers
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        {/* Slider Controls */}
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <button
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+              currentSlide === 0 
+                ? 'bg-white/10 text-white/30 cursor-not-allowed' 
+                : 'bg-white/20 text-white hover:bg-white/30 hover:scale-105'
+            }`}
+          >
+            <ChevronLeft size={20} />
+          </button>
+          
+          <div className="flex items-center gap-2">
+            {Array.from({ length: Math.ceil(faqs.length / slidesPerView) }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx * slidesPerView)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentSlide >= idx * slidesPerView && currentSlide < (idx + 1) * slidesPerView
+                    ? 'bg-white w-8'
+                    : 'bg-white/30'
+                }`}
+              />
+            ))}
+          </div>
+          
+          <button
+            onClick={nextSlide}
+            disabled={currentSlide >= faqs.length - slidesPerView}
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+              currentSlide >= faqs.length - slidesPerView
+                ? 'bg-white/10 text-white/30 cursor-not-allowed' 
+                : 'bg-white/20 text-white hover:bg-white/30 hover:scale-105'
+            }`}
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
 
-        <div className="text-center mt-12 md:mt-16">
+        {/* Horizontal Slider Container */}
+        <div className="relative" {...swipeHandlers}>
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {Array.from({ length: Math.ceil(faqs.length / slidesPerView) }).map((_, slideIndex) => (
+                <div 
+                  key={slideIndex} 
+                  className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 px-4"
+                >
+                  {faqs.slice(slideIndex * slidesPerView, (slideIndex + 1) * slidesPerView).map((faq, index) => {
+                    const actualIndex = slideIndex * slidesPerView + index;
+                    const isOpen = openIndex === actualIndex;
+                    const Icon = faq.icon || HelpCircle;
+                    
+                    return (
+                      <div
+                        key={actualIndex}
+                        className="bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl overflow-hidden animate-fade-up border border-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-xl min-h-[200px] flex flex-col"
+                        style={{ animationDelay: `${actualIndex * 0.05}s` }}
+                      >
+                        <button
+                          onClick={() => toggleFAQ(actualIndex)}
+                          className="w-full flex flex-col items-start justify-between p-5 md:p-6 text-left hover:bg-white/5 transition-all duration-300 group flex-1"
+                        >
+                          <div className="flex items-start gap-4 md:gap-6 w-full">
+                            <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+                              isOpen 
+                                ? 'bg-white text-piko-purple scale-110' 
+                                : 'bg-white/20 text-white group-hover:bg-white/30'
+                            }`}>
+                              <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                            </div>
+                            
+                            <div className="flex-1 text-left">
+                              {faq.category && (
+                                <span className="inline-block px-2.5 py-1 bg-white/10 text-white/80 text-xs font-medium rounded-full mb-2">
+                                  {faq.category}
+                                </span>
+                              )}
+                              <h3 className="font-poppins font-semibold text-white text-base md:text-lg pr-4">
+                                {faq.question}
+                              </h3>
+                            </div>
+                          </div>
+                          
+                          <div className="w-full mt-4 flex items-center justify-between">
+                            <span className="text-white/60 text-xs">
+                              Click to {isOpen ? 'close' : 'expand'}
+                            </span>
+                            <div
+                              className={`flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                                isOpen 
+                                  ? 'bg-white text-piko-purple shadow-lg scale-110' 
+                                  : 'bg-white/20 text-white group-hover:bg-white/30'
+                              }`}
+                            >
+                              {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                            </div>
+                          </div>
+                        </button>
+
+                        {isOpen && (
+                          <div className="px-5 md:px-6 pb-5 md:pb-6 animate-fade-up">
+                            <div className="border-t border-white/30 pt-4">
+                              <p className="text-white/90 leading-relaxed text-sm md:text-base">{faq.answer}</p>
+                              
+                              {actualIndex === 0 && (
+                                <div className="mt-4 flex items-center gap-2 text-white/70 text-sm">
+                                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                                  Real-time tracking available for all transfers
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="hidden md:block text-center mt-12 md:mt-16">
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 md:gap-6 p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
             <div className="flex-1">
               <h4 className="font-poppins font-bold text-white text-xl md:text-2xl mb-2">
@@ -195,15 +291,11 @@ export const FAQ: React.FC = () => {
               <div className="text-2xl md:text-3xl font-bold text-white mb-1">98%</div>
               <div className="text-white/70 text-xs md:text-sm">Satisfaction</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-white mb-1">50+</div>
-              <div className="text-white/70 text-xs md:text-sm">Languages</div>
-            </div>
+            
           </div>
         </div>
       </Container>
 
-  
       <div className="absolute top-20 left-10 w-24 h-24 bg-white/10 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-piko-purple/20 rounded-full blur-3xl opacity-40"></div>
     </Section>

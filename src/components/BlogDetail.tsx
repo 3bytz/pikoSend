@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container } from './Container';
-import { ArrowLeft, Calendar, Clock, User, Share2, Facebook, Twitter, Linkedin, Bookmark, MessageCircle, Tag, TrendingUp, Globe, Lock, Zap } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, User, MessageCircle, Tag } from 'lucide-react';
 
 interface BlogPostDetail {
   id: string;
@@ -505,7 +505,7 @@ export const BlogDetail: React.FC = () => {
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">404</h1>
             <p className="text-xl text-white/90 mb-8 max-w-xl mx-auto">The blog post you're looking for doesn't exist.</p>
             <Link
-              to="/index"
+              to="/blog"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/90 hover:scale-105 hover:shadow-2xl"
             >
               <ArrowLeft size={20} />
@@ -531,7 +531,7 @@ export const BlogDetail: React.FC = () => {
           <div className="relative z-10">
             <div className="mb-8">
               <Link
-                to="/index"
+                to="/blog"
                 className="inline-flex items-center gap-3 px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-full font-medium hover:bg-white/30 transition-all duration-300"
               >
                 <ArrowLeft size={20} />
@@ -614,10 +614,10 @@ export const BlogDetail: React.FC = () => {
                     </div>
 
                     <div className="space-y-4">
-                      <button className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-sm text-white rounded-xl border border-white/30 hover:bg-white/30 transition-all duration-300">
+                      {/* <button className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-sm text-white rounded-xl border border-white/30 hover:bg-white/30 transition-all duration-300">
                         <Bookmark size={20} />
                         Save Article
-                      </button>
+                      </button> */}
                       
                  
                     </div>
@@ -779,7 +779,7 @@ export const BlogDetail: React.FC = () => {
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-piko-black mb-6">
-              Ready to Start Saving on International Transfers?
+              Ready to Start Saving on Transfers?
             </h2>
             <p className="text-xl text-piko-medium-grey mb-10 max-w-2xl mx-auto">
               Join over 500,000 users who trust PikoSend for fast, secure, and affordable money transfers.

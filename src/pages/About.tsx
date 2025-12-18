@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Footer,
-  Newsletter,
-  AppStoreBadges,
-  SEO,
-  BusinessHero,
-} from "../components";
+import { Navbar, Footer, SEO } from "../components";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 import {
@@ -16,38 +9,26 @@ import {
   Wallet,
   BarChart3,
   Lock,
-  Clock,
-  Headphones,
-  CheckCircle2,
   Target,
   Heart,
-  Globe,
   Users2,
-  Briefcase,
   Shield,
-  UserCog,
   ArrowRight,
   Sparkles,
   Award,
-  Zap,
   Globe2,
-  Smartphone,
-  CreditCard,
-  ShieldCheck,
-  BarChart,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const HERO_IMAGE = "/HeroImage3.png";
+const HERO_IMAGE = "/new/about_payment_4_africa.jpeg";
 const STORY_IMAGE = "/Africa-mobile-payment.webp";
-const MISSION_IMAGE = "/inclusionImage.webp";
+const MISSION_IMAGE = "/new/about_vision_mission.jpeg";
 const PATTERN_BG =
   "https://images.unsplash.com/photo-1550684376-efcbd6e3f031?auto=format&fit=crop&w=1600&q=20";
 const AFRICA_MAP =
   "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80";
-const OFFICE_SPACE =
-  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80";
-const HERO_IMAGE2 = "/AfricanPayment.jpeg";
+const OFFICE_SPACE = "/new/AdobeStock_1292566936.jpeg";
+const HERO_IMAGE2 = "/new/AfricanPayment.png";
 
 const coreValues = [
   {
@@ -76,32 +57,32 @@ const coreValues = [
   },
 ];
 
-const whyTrust = [
-  {
-    icon: Clock,
-    metric: "24/7",
-    label: "Support Available",
-    description: "Round-the-clock customer service",
-  },
-  {
-    icon: Users,
-    metric: "10,000+",
-    label: "Active Customers",
-    description: "Growing community across Africa",
-  },
-  {
-    icon: TrendingUp,
-    metric: "99.99%",
-    label: "Uptime SLA",
-    description: "Enterprise-grade reliability",
-  },
-  {
-    icon: Headphones,
-    metric: "< 1min",
-    label: "Avg Response Time",
-    description: "Quick support responses",
-  },
-];
+// const whyTrust = [
+//   {
+//     icon: Clock,
+//     metric: "24/7",
+//     label: "Support Available",
+//     description: "Round-the-clock customer service",
+//   },
+//   {
+//     icon: Users,
+//     metric: "10,000+",
+//     label: "Active Customers",
+//     description: "Growing community across Africa",
+//   },
+//   {
+//     icon: TrendingUp,
+//     metric: "99.99%",
+//     label: "Uptime SLA",
+//     description: "Enterprise-grade reliability",
+//   },
+//   {
+//     icon: Headphones,
+//     metric: "< 1min",
+//     label: "Avg Response Time",
+//     description: "Quick support responses",
+//   },
+// ];
 
 const buildingFeatures = [
   {
@@ -144,7 +125,7 @@ export const About: React.FC = () => {
 
       <Navbar />
       <Section
-        className="relative min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden pt-16 md:pt-20"
+        className="relative min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden pt-12 md:pt-6"
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(90, 42, 162, 0.9), rgba(124, 58, 237, 0.9)), url('${PATTERN_BG}')`,
           backgroundSize: "cover",
@@ -164,7 +145,7 @@ export const About: React.FC = () => {
                 <Sparkles className="w-4 h-4" />
                 About PikoSend
               </div>
-                <h1 className="text-4xl md:text-6xl font-poppins font-bold leading-tight animate-fade-up">
+              <h1 className="text-4xl md:text-6xl font-poppins font-bold leading-tight animate-fade-up">
                 Payments, built for{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-piko-lilac to-white">
                   Africa
@@ -213,8 +194,6 @@ export const About: React.FC = () => {
                 <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-white to-piko-purple rounded-full opacity-10 blur-lg"></div>
               </div>
 
-            
-
               <p className="text-xl text-white/90 leading-relaxed max-w-2xl">
                 We're connecting people and businesses to modern payment rails —
                 making transfers, payrolls and merchant collections effortless
@@ -245,7 +224,7 @@ export const About: React.FC = () => {
                     <img
                       src={HERO_IMAGE}
                       alt="PikoSend team collaborating"
-                      className="w-full h-[500px] object-cover"
+                      className="w-full h-[600px] object-cover"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -306,39 +285,7 @@ export const About: React.FC = () => {
         </div>
       </Section>
 
-      <Section background="white" className="py-12 md:py-16">
-        <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[
-              { value: "15+", label: "African Countries", icon: Globe },
-              { value: "50K+", label: "Transactions Daily", icon: Zap },
-              { value: "99.9%", label: "Uptime", icon: ShieldCheck },
-              { value: "24/7", label: "Support", icon: Headphones },
-            ].map((stat, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-6 rounded-2xl border border-piko-soft-grey hover:border-piko-purple/30 hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-piko-purple/10 to-piko-violet/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <stat.icon className="w-6 h-6 text-piko-purple" />
-                  </div>
-                  <div>
-                    <div className="text-2xl md:text-3xl font-bold text-piko-black">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-piko-medium-grey">
-                      {stat.label}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section background="white" className="py-20 md:py-32 relative">
+      <Section background="white" className="py-6 md:py-8 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-piko-purple/5 to-white"></div>
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-8xl mx-auto relative z-10">
@@ -412,9 +359,9 @@ export const About: React.FC = () => {
 
       <Section
         id="mission"
-        className="py-20 md:py-32 relative"
+        className="py-6 md:py-12 relative"
         style={{
-          backgroundImage: `linear-gradient(rgba(139, 92, 246, 0.57), rgba(124, 58, 237, 0.65)), url('${AFRICA_MAP}')`,
+          backgroundImage: `linear-gradient(135deg, rgba(139, 92, 246, 0.85) 0%, rgba(124, 58, 237, 0.75) 50%, rgba(109, 40, 217, 0.9) 100%), url('${AFRICA_MAP}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -422,102 +369,161 @@ export const About: React.FC = () => {
       >
         <Container>
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="inline-block px-4 py-2 bg-gradient-to-r from-piko-purple/50 to-piko-violet/50 rounded-full text-piko-purple font-medium text-sm mb-4 text-white">
-                Our Purpose
-              </span>
-              <h2 className="text-3xl md:text-5xl font-poppins font-bold text-piko-black mb-6">
+            <div className="text-center mb-3 md:mb-12 relative z-10">
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6 shadow-lg">
+                <div className="w-2 h-2 bg-gradient-to-r from-white to-amber-300 rounded-full animate-pulse"></div>
+                <span className="text-white font-medium text-base">
+                  Our Purpose
+                </span>
+              </div>
+
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-white mb-8 leading-tight">
                 Empowering Africa through{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white drop-shadow-2xl">
                   financial inclusion
                 </span>
               </h2>
-              <p className="text-xl text-piko-medium-grey max-w-3xl mx-auto text-white/90">
-                We make payments accessible, affordable and reliable, helping
-                individuals and businesses access opportunities and grow with
-                confidence.
-              </p>
+
+              <div className="relative inline-block">
+                <p className="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto font-light leading-relaxed relative z-10">
+                  We make payments accessible, affordable and reliable, helping
+                  individuals and businesses access opportunities and grow with
+                  confidence.
+                </p>
+                <div className="absolute -inset-4 bg-gradient-to-r from-piko-purple/20 to-piko-violet/20 blur-2xl rounded-full -z-10"></div>
+              </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
               <div className="space-y-8">
-                <div className="bg-white rounded-3xl p-8 shadow-xl border border-piko-soft-grey hover:shadow-2xl transition-all duration-500">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center flex-shrink-0">
-                      <Target className="w-7 h-7 text-white" />
+                <div className="group bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/40 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="absolute inset-0 bg-gradient-to-br from-piko-purple/5 to-piko-violet/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <Target
+                        className="w-8 h-8 text-white"
+                        strokeWidth={1.5}
+                      />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-poppins font-bold text-piko-black mb-2">
+                      <h3 className="text-2xl md:text-3xl font-poppins font-bold text-piko-black mb-3">
                         Our Vision
                       </h3>
-                      <p className="text-piko-medium-grey">
+                      <p className="text-piko-medium-grey text-lg leading-relaxed">
                         A cashless, connected Africa where people and businesses
                         move money without barriers.
                       </p>
                     </div>
                   </div>
+                  <div className="mt-6 pt-6 border-t border-piko-soft-grey/30">
+                    <div className="flex items-center gap-2 text-piko-purple text-sm font-medium">
+                      <div className="w-2 h-2 bg-piko-purple rounded-full animate-pulse"></div>
+                      Towards a barrier-free Africa
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-white rounded-3xl p-8 shadow-xl border border-piko-soft-grey hover:shadow-2xl transition-all duration-500">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-piko-violet to-piko-lilac flex items-center justify-center flex-shrink-0">
-                      <Heart className="w-7 h-7 text-white" />
+                <div className="group bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/40 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="absolute inset-0 bg-gradient-to-br from-piko-violet/5 to-piko-lilac/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-piko-violet to-piko-lilac flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <Heart className="w-8 h-8 text-white" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-poppins font-bold text-piko-black mb-2">
+                      <h3 className="text-2xl md:text-3xl font-poppins font-bold text-piko-black mb-3">
                         Our Mission
                       </h3>
-                      <p className="text-piko-medium-grey">
+                      <p className="text-piko-medium-grey text-lg leading-relaxed">
                         To build inclusive financial infrastructure that enables
                         economic growth across Africa.
                       </p>
                     </div>
                   </div>
+                  <div className="mt-6 pt-6 border-t border-piko-soft-grey/30">
+                    <div className="flex items-center gap-2 text-piko-violet text-sm font-medium">
+                      <div className="w-2 h-2 bg-piko-violet rounded-full animate-pulse"></div>
+                      Building for economic empowerment
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-piko-purple to-piko-violet rounded-3xl p-8 text-white shadow-2xl">
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
-                      <Users className="w-7 h-7 text-white" />
+                <div className="group bg-gradient-to-r from-piko-purple via-piko-violet to-piko-lilac rounded-3xl p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+                  <div className="relative flex items-start gap-6">
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <Users className="w-8 h-8 text-white" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-poppins font-bold mb-2">
+                      <h3 className="text-2xl md:text-3xl font-poppins font-bold mb-3">
                         Our Impact
                       </h3>
-                      <p className="text-white/90">
+                      <p className="text-white/95 text-lg leading-relaxed">
                         Helping thousands of businesses grow and enabling
                         financial access for underserved communities.
                       </p>
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-white/30">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2 text-white/80 text-sm">
+                        <div className="w-2 h-2 bg-gradient-to-r from-amber-300 to-amber-500 rounded-full animate-pulse"></div>
+                        Creating real change
+                      </div>
+                      <div className="text-lg font-bold text-white ml-auto">
+                        500K+ Lives Impacted
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-piko-purple to-piko-violet rounded-3xl opacity-10 blur-xl"></div>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="absolute -inset-6 bg-gradient-to-r from-piko-purple/20 via-piko-violet/20 to-piko-lilac/20 rounded-3xl blur-2xl opacity-60 animate-pulse"></div>
+                <div className="relative rounded-3xl overflow-hidden shadow-3xl border-2 border-white/30">
                   <img
                     src={MISSION_IMAGE}
                     alt="Mission and vision"
-                    className="w-full h-[650px] object-cover object-top"
+                    className="w-full h-[700px] object-cover object-top transition-transform duration-700 hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center">
-                          <TrendingUp className="w-6 h-6 text-white" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-lg rounded-2xl p-6 shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
+                      <div className="flex items-center gap-6">
+                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center shadow-lg">
+                          <TrendingUp
+                            className="w-8 h-8 text-white"
+                            strokeWidth={1.5}
+                          />
                         </div>
-                        <div>
-                          <p className="font-semibold text-piko-black">
+                        <div className="flex-1">
+                          <p className="font-bold text-piko-black text-xl mb-1">
                             Growing together
                           </p>
-                          <p className="text-sm text-piko-medium-grey">
-                            Building Africa's financial future
+                          <p className="text-piko-medium-grey text-base">
+                            Building Africa's financial future with innovation
+                            and trust
                           </p>
                         </div>
+                        <div className="text-right">
+                          <div className="text-3xl font-bold text-piko-purple">
+                            ↑85%
+                          </div>
+                          <div className="text-xs text-piko-medium-grey">
+                            Growth YOY
+                          </div>
+                        </div>
                       </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute top-6 left-6">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
+                      <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-semibold text-piko-black">
+                        Live Impact
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -525,12 +531,14 @@ export const About: React.FC = () => {
             </div>
           </div>
         </Container>
+
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/5 to-transparent pointer-events-none"></div>
       </Section>
 
-      <Section background="white" className="py-20 md:py-32">
+      <Section background="white" className="py-4 md:py-12">
         <Container>
           <div className="max-w-8xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-4 md:mb-12">
               <span className="inline-block px-4 py-2 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 rounded-full text-piko-purple font-medium text-sm mb-4">
                 What Drives Us
               </span>
@@ -546,7 +554,7 @@ export const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">
               {coreValues.map((value, idx) => {
                 const Icon = value.icon;
                 return (
@@ -580,9 +588,9 @@ export const About: React.FC = () => {
 
       <Section
         background="white"
-        className="py-20 md:py-32 relative overflow-hidden"
+        className="py-8 md:py-12 relative overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.99)), url('${OFFICE_SPACE}')`,
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.78)), url('${OFFICE_SPACE}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -606,7 +614,7 @@ export const About: React.FC = () => {
                   reliably across Africa.
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-2 md:gap-6">
                   {buildingFeatures.map((feature, idx) => {
                     const Icon = feature.icon;
                     return (
@@ -658,7 +666,7 @@ export const About: React.FC = () => {
         </Container>
       </Section>
 
-      <Section background="white" className="py-20 md:py-32 ">
+      {/* <Section background="white" className="py-20 md:py-32 ">
         <Container>
           <div className="max-w-8xl mx-auto">
             <div className="bg-gradient-to-br from-piko-purple/5 via-white to-piko-violet/20 rounded-4xl p-8 md:p-12 border border-piko-purple/10 rounded-3xl">
@@ -731,9 +739,9 @@ export const About: React.FC = () => {
             </div>
           </div>
         </Container>
-      </Section>
+      </Section> */}
 
-      <Section background="white" className="py-6 md:py-20">
+      {/* <Section background="white" className="py-6 md:py-20">
         <Container>
           <div className="max-w-7xl mx-auto">
             <div className="relative overflow-hidden rounded-4xl bg-gradient-to-br from-piko-purple to-piko-violet p-12 md:p-16 text-center rounded-3xl shadow-2xl">
@@ -764,9 +772,8 @@ export const About: React.FC = () => {
             </div>
           </div>
         </Container>
-      </Section>
+      </Section> */}
 
-      <Newsletter />
       <Footer />
     </div>
   );

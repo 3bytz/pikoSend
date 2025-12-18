@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import { queryClient } from './lib/queryClient';
-import { ErrorBoundary } from './components';
+import {  ErrorBoundary } from './components';
 import { Home } from './pages/Home';
 import { Contact } from './pages/Contact';
 import { Products } from './pages/Products';
@@ -11,6 +11,7 @@ import { Business } from './pages/Business';
 import { NotFound } from './pages/NotFound';
 import { BlogDetail } from './components/BlogDetail';
 import About from './pages/About';
+import { BlogPage } from './pages/BlogPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/index" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/blog" element={<BlogPage />} />
           <Route path="/products" element={<Products />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/business" element={<Business />} />
