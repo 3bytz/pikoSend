@@ -1,14 +1,27 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
-import { ChevronLeft, ChevronRight, Smartphone, Zap, Shield, CreditCard, Loader } from 'lucide-react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
-import { Section } from './Section';
-import { Container } from './Container';
+import React, { useRef, useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  // EffectCoverflow,
+} from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Smartphone,
+  Zap,
+  Shield,
+  CreditCard,
+  Loader,
+} from "lucide-react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+import { Section } from "./Section";
+import { Container } from "./Container";
 
 interface AppScreen {
   id: number;
@@ -23,57 +36,63 @@ interface AppScreen {
 const screens: AppScreen[] = [
   {
     id: 1,
-    title: 'Financial Dashboard',
-    subtitle: 'Complete Control',
-    description: 'Monitor your balance, track transactions, and manage your finances all in one beautiful dashboard.',
-    imageSrc: '/mockups/dashboard.jpg',
+    title: "Financial Dashboard",
+    subtitle: "Complete Control",
+    description:
+      "Monitor your balance, track transactions, and manage your finances all in one beautiful dashboard.",
+    imageSrc: "/mockups/dashboard.jpg",
     icon: Smartphone,
-    gradient: 'from-piko-purple to-piko-violet',
+    gradient: "from-piko-purple to-piko-violet",
   },
   {
     id: 2,
-    title: 'Instant Transfers',
-    subtitle: 'Send Money in Seconds',
-    description: 'Transfer funds to anyone, anywhere with just a tap. Fast, secure, and effortless.',
-    imageSrc: '/mockups/instant-send2.jpg',
+    title: "Instant Transfers",
+    subtitle: "Send Money in Seconds",
+    description:
+      "Transfer funds to anyone, anywhere with just a tap. Fast, secure, and effortless.",
+    imageSrc: "/mockups/instant-send2.jpg",
     icon: Zap,
-    gradient: 'from-piko-violet to-piko-purple',
+    gradient: "from-piko-violet to-piko-purple",
   },
   {
     id: 3,
-    title: 'Wallet Management',
-    subtitle: 'Your Digital Wallet',
-    description: 'Create virtual cards, set spending limits, and manage multiple wallets with ease.',
-    imageSrc: '/mockups/Wallet.jpg',
+    title: "Wallet Management",
+    subtitle: "Your Digital Wallet",
+    description:
+      "Create virtual cards, set spending limits, and manage multiple wallets with ease.",
+    imageSrc: "/mockups/Wallet.jpg",
     icon: CreditCard,
-    gradient: 'from-piko-purple to-piko-violet',
+    gradient: "from-piko-purple to-piko-violet",
   },
   {
     id: 4,
-    title: 'Transaction History',
-    subtitle: 'Track Every Payment',
-    description: 'View detailed transaction history with smart filters and instant search capabilities.',
-    imageSrc: '/mockups/9_transaction_history_1.jpg',
+    title: "Transaction History",
+    subtitle: "Track Every Payment",
+    description:
+      "View detailed transaction history with smart filters and instant search capabilities.",
+    imageSrc: "/mockups/9_transaction_history_1.jpg",
     icon: Shield,
-    gradient: 'from-piko-violet to-piko-purple',
+    gradient: "from-piko-violet to-piko-purple",
   },
   {
     id: 5,
-    title: 'Easy Top-Up',
-    subtitle: 'Multiple Payment Options',
-    description: 'Add funds instantly via QR code, bank transfer, or mobile money. Choose what works for you.',
-    imageSrc: '/mockups/10_top-up.jpg',
+    title: "Easy Top-Up",
+    subtitle: "Multiple Payment Options",
+    description:
+      "Add funds instantly via QR code, bank transfer, or mobile money. Choose what works for you.",
+    imageSrc: "/mockups/10_top-up.jpg",
     icon: Smartphone,
-    gradient: 'from-piko-purple to-piko-violet',
+    gradient: "from-piko-purple to-piko-violet",
   },
   {
     id: 6,
-    title: 'QR Payments',
-    subtitle: 'Scan & Pay',
-    description: 'Generate or scan QR codes for instant payments. No typing required.',
-    imageSrc: '/mockups/11_top-up_qr_code_1.jpg',
+    title: "QR Payments",
+    subtitle: "Scan & Pay",
+    description:
+      "Generate or scan QR codes for instant payments. No typing required.",
+    imageSrc: "/mockups/11_top-up_qr_code_1.jpg",
     icon: Zap,
-    gradient: 'from-piko-violet to-piko-purple',
+    gradient: "from-piko-violet to-piko-purple",
   },
 ];
 
@@ -82,8 +101,7 @@ export const AppScreenCarousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
   const [isLoading, setIsLoading] = useState(true);
-
-  // Preload images
+const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
   useEffect(() => {
     const loadImages = async () => {
       const imagePromises = screens.map((screen) => {
@@ -91,7 +109,7 @@ export const AppScreenCarousel: React.FC = () => {
           const img = new Image();
           img.src = screen.imageSrc;
           img.onload = () => {
-            setImagesLoaded(prev => ({ ...prev, [screen.id]: true }));
+            setImagesLoaded((prev) => ({ ...prev, [screen.id]: true }));
             resolve(true);
           };
           img.onerror = reject;
@@ -102,22 +120,22 @@ export const AppScreenCarousel: React.FC = () => {
         await Promise.all(imagePromises);
         setIsLoading(false);
       } catch (error) {
-        console.error('Error loading images:', error);
-        setIsLoading(false); // Continue even if some images fail
+        console.error("Error loading images:", error);
+        setIsLoading(false);
       }
     };
 
     loadImages();
   }, []);
-
-  const handleImageLoad = (id: number) => {
-    setImagesLoaded(prev => ({ ...prev, [id]: true }));
-  };
+  console.log(imagesLoaded, activeIndex);
+  // const handleImageLoad = (id: number) => {
+  //   setImagesLoaded((prev) => ({ ...prev, [id]: true }));
+  // };
 
   return (
-    <Section background="white" id="app-screens">
-      <Container>
-        <div className="text-center mb-12 md:mb-16">
+    <Section background="white" id="app-screens" className="py-4 md:py-8 ">
+      <Container className="w-[99%] px-0">
+        <div className="text-center mb-6 md:mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-sm font-semibold rounded-full mb-4 md:mb-6">
             <Smartphone className="w-4 h-4" />
             App Experience
@@ -129,7 +147,8 @@ export const AppScreenCarousel: React.FC = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-piko-medium-grey max-w-3xl mx-auto px-4">
-            See how our powerful features come together in a beautiful, intuitive interface
+            See how our powerful features come together in a beautiful,
+            intuitive interface
           </p>
         </div>
 
@@ -142,132 +161,106 @@ export const AppScreenCarousel: React.FC = () => {
           </div>
         )}
 
-        <div className={`relative ${isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}`}>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView="auto"
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 2.5,
-              slideShadows: false,
-            }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-              waitForTransition: true,
-            }}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-              renderBullet: (index, className) => {
-                return `<span class="${className} !transition-all duration-300"></span>`;
-              },
-            }}
-            loop={true}
-            speed={800}
-            touchRatio={0.5}
-            resistance={true}
-            resistanceRatio={0.5}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            onSlideChange={(swiper) => {
-              setActiveIndex(swiper.realIndex);
-            }}
-            breakpoints={{
-              320: {
-                spaceBetween: 16,
-                coverflowEffect: {
-                  stretch: 0,
-                  depth: 50,
-                  modifier: 1.5,
+        <div
+          className={`relative ${
+            isLoading
+              ? "opacity-0"
+              : "opacity-100 transition-opacity duration-500"
+          }`}
+        >
+          <div className="-mx-4 md:-mx-0">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              grabCursor
+              loop
+              speed={700}
+              autoplay={{
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              pagination={{
+                clickable: true,
+                dynamicBullets: true,
+              }}
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              slidesPerView={1}
+              centeredSlides={false}
+              spaceBetween={16}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 12,
                 },
-              },
-              768: {
-                spaceBetween: 32,
-                coverflowEffect: {
-                  stretch: 0,
-                  depth: 100,
-                  modifier: 2.5,
+                640: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 16,
                 },
-              },
-              1024: {
-                spaceBetween: 48,
-                coverflowEffect: {
-                  stretch: 0,
-                  depth: 150,
-                  modifier: 3,
+                768: {
+                  slidesPerView: 2.1,
+                  spaceBetween: 24,
                 },
-              },
-            }}
-            className="app-carousel !pb-20"
-          >
-            {screens.map((screen) => {
-              const Icon = screen.icon;
-              return (
-                <SwiperSlide key={screen.id} className="!w-[280px] md:!w-[320px] lg:!w-[360px] xl:!w-[380px] !transition-all !duration-500">
-                  <div className="relative group cursor-grab active:cursor-grabbing">
-                    {/* Gradient glow background */}
-                    <div 
-                      className={`absolute -inset-4 bg-gradient-to-r ${screen.gradient} rounded-3xl opacity-0 blur-xl group-hover:opacity-20 transition-all duration-500 ease-out ${
-                        activeIndex === screen.id - 1 ? 'opacity-10' : ''
-                      }`}
-                    />
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 28,
+                },
+              }}
+              className="app-carousel !pb-14"
+            >
+              {screens.map((screen) => {
+                const Icon = screen.icon;
 
-                    {/* Main card */}
-                    <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden border-4 border-white transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-                      {/* Loading skeleton */}
-                      {!imagesLoaded[screen.id] && (
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse rounded-3xl flex items-center justify-center">
-                          <Loader className="w-8 h-8 text-gray-400 animate-spin" />
+                return (
+                  <SwiperSlide key={screen.id}>
+                    <div className="relative">
+                      {/* Card */}
+                      <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <div className="relative bg-gray-50 flex items-center justify-center">
+                          <img
+                            src={screen.imageSrc}
+                            alt={screen.title}
+                            loading="lazy"
+                            className="
+      w-auto
+      max-h-[420px]
+      md:max-h-[460px]
+      lg:max-h-[500px]
+      object-contain
+      mx-auto
+    "
+                          />
                         </div>
-                      )}
 
-                      {/* Image container with proper aspect ratio */}
-                      <div className="relative aspect-[9/19.5] overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
-                        <img
-                          src={screen.imageSrc}
-                          alt={screen.title}
-                          className={`w-full h-full object-contain transition-all duration-700 group-hover:scale-105 ${
-                            imagesLoaded[screen.id] ? 'opacity-100' : 'opacity-0'
-                          }`}
-                          loading="lazy"
-                          onLoad={() => handleImageLoad(screen.id)}
-                          style={{
-                            objectPosition: 'top center',
-                          }}
-                        />
-                        
-                        {/* Device frame overlay */}
-                        <div className="absolute inset-0 pointer-events-none">
-                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl"></div>
-                          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/5 to-transparent"></div>
+                        {/* Content */}
+                        <div className="p-5">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div
+                              className={`w-10 h-10 rounded-xl bg-gradient-to-br ${screen.gradient} flex items-center justify-center`}
+                            >
+                              <Icon className="w-5 h-5 text-white" />
+                            </div>
+                            <div>
+                              <p className="text-sm text-piko-purple font-semibold">
+                                {screen.subtitle}
+                              </p>
+                              <h4 className="font-poppins font-bold text-piko-black">
+                                {screen.title}
+                              </h4>
+                            </div>
+                          </div>
+
+                          <p className="text-sm text-piko-medium-grey leading-relaxed">
+                            {screen.description}
+                          </p>
                         </div>
                       </div>
-
-                      {/* Screen indicator */}
-                      <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full">
-                        <p className="text-xs text-white font-medium">{screen.id}/{screens.length}</p>
-                      </div>
                     </div>
-
-                    {/* Floating label */}
-                    <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                      <div className={`px-5 py-2.5 bg-gradient-to-r ${screen.gradient} text-white rounded-full shadow-xl font-semibold whitespace-nowrap text-sm backdrop-blur-sm`}>
-                        {screen.subtitle}
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
 
           {/* Navigation buttons */}
           <button
@@ -285,80 +278,6 @@ export const AppScreenCarousel: React.FC = () => {
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 transition-transform" />
           </button>
-
-          {/* Progress indicator */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10">
-            <div className="flex items-center gap-2">
-              {screens.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => swiperRef.current?.slideTo(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === activeIndex 
-                      ? 'w-8 bg-gradient-to-r from-piko-purple to-piko-violet' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Feature description panel */}
-        <div className="mt-12 md:mt-16 max-w-4xl mx-auto px-4">
-          <div className="bg-gradient-to-r from-piko-purple/5 to-piko-violet/5 rounded-3xl p-6 md:p-10 lg:p-12 border-2 border-piko-purple/10 hover:border-piko-purple/20 transition-all duration-300">
-            <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8">
-              <div className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${screens[activeIndex].gradient} flex items-center justify-center shadow-lg transition-all duration-500`}>
-                {React.createElement(screens[activeIndex].icon, {
-                  className: 'w-7 h-7 md:w-8 md:h-8 text-white',
-                  strokeWidth: 2,
-                })}
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-sm text-piko-purple font-semibold">
-                    {screens[activeIndex].subtitle}
-                  </span>
-                  <span className="text-xs text-piko-medium-grey font-medium">
-                    • {activeIndex + 1} of {screens.length}
-                  </span>
-                </div>
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-poppins font-bold text-piko-black mb-3">
-                  {screens[activeIndex].title}
-                </h3>
-                <p className="text-base md:text-lg text-piko-medium-grey leading-relaxed">
-                  {screens[activeIndex].description}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-10 md:mt-12 text-center">
-          <button className="group relative px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95 overflow-hidden">
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              Download the App
-              <svg
-                className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </span>
-            <span className="absolute inset-0 bg-gradient-to-r from-piko-violet to-piko-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          </button>
-          <p className="mt-4 text-sm text-piko-medium-grey">
-            Available on iOS and Android
-          </p>
         </div>
       </Container>
 
@@ -406,12 +325,7 @@ export const AppScreenCarousel: React.FC = () => {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Responsive image container */
-        @media (max-width: 640px) {
-          .app-carousel .swiper-slide {
-            width: 280px !important;
-          }
-        }
+      
       `}</style>
     </Section>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "./Container";
 import { AppStoreBadges } from "./AppStoreBadges";
-import { TypingEffect } from "./TypingEffect";
 import { Zap, Shield, Clock } from "lucide-react";
 
 export const FeaturesHero: React.FC = () => {
@@ -11,13 +10,13 @@ export const FeaturesHero: React.FC = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url(https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1920)",
+            "url(https://images.pexels.com/photos-3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1920)",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-piko-purple/90 via-piko-violet/85 to-piko-lilac/90 backdrop-blur-sm"></div>
       </div>
 
-      <Container className="relative z-10 py-4">
+      <Container className="relative z-10 py-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-white space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full animate-fade-in">
@@ -29,12 +28,9 @@ export const FeaturesHero: React.FC = () => {
               Built for Speed,
               <span className="block mt-2">
                 Designed for{" "}
-                <TypingEffect
-                  texts={["You", "Success", "Growth", "Africa"]}
-                  typingSpeed={320}
-                  deletingSpeed={90}
-                  pauseDuration={1900}
-                />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white">
+                  Africa
+                </span>
               </span>
             </h1>
 
@@ -82,21 +78,12 @@ export const FeaturesHero: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-3xl"></div>
               <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-4 sm:p-8 shadow-2xl animate-scale-in">
                 <img
-                  src="/mockups/financeDashbaord.png"
+                  src="/new/3dHero.png"
                   alt="Features Dashboard"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
               </div>
-              <div
-                className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-2 sm:p-4 shadow-2xl max-w-[120px] sm:max-w-[200px] animate-fade-in-right"
-                style={{ animationDelay: "0.3s" }}
-              >
-                <img
-                  src="/mockups/instant-send.png"
-                  alt="Instant Send"
-                  className="w-full h-auto rounded-xl"
-                />
-              </div>
+            
             </div>
           </div>
         </div>

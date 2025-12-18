@@ -3,18 +3,15 @@ import {
   Navbar,
   DynamicHero,
   Features,
-  Mission,
+
   AppScreenCarousel,
   LiveTestimonials,
   PersonalBusiness,
   HowItWorks,
-  Statistics,
   TrustBadges,
   Testimonial,
   Press,
-  Blog,
   FAQ,
-  Newsletter,
   Footer,
   SEO,
 } from '../components';
@@ -30,19 +27,16 @@ export const Home: React.FC = () => {
       <Navbar />
       <main id="main-content">
         <DynamicHero />
-        <Features />
-        {/* <Mission /> */}
         <AppScreenCarousel />
+        <Features />
         <LiveTestimonials />
         <PersonalBusiness />
         <HowItWorks />
-        <Statistics />
+        {/* <Statistics /> */}
         <TrustBadges />
         <Testimonial />
         <Press />
-        <Blog />
         <FAQ />
-        <Newsletter />
       </main>
       <Footer />
     </div>

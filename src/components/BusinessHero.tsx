@@ -1,17 +1,15 @@
 import React from 'react';
 import { Container } from './Container';
 import { AppStoreBadges } from './AppStoreBadges';
-import { TypingEffect } from './TypingEffect';
 import { Building2, TrendingUp, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export const BusinessHero: React.FC = () => {
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-20">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-4 md:pt-20">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage: 'url(/ForBiz.png)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-piko-violet/90 via-piko-purple/90 to-piko-lilac/85 backdrop-blur-sm"></div>
@@ -28,7 +26,9 @@ export const BusinessHero: React.FC = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight animate-fade-up">
               Power Your Business with
               <span className="block mt-2">
-                <TypingEffect texts={['Smart Payments', 'Instant Transfers', 'Global Reach', 'Seamless Solutions']} typingSpeed={100} deletingSpeed={50} pauseDuration={2000} />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white">
+                  Smart Payments
+                </span>
               </span>
             </h1>
 
@@ -36,22 +36,7 @@ export const BusinessHero: React.FC = () => {
               Everything your business needs to accept payments, pay bills, and manage finances in one powerful platform.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-purple rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105"
-              >
-                Request Demo
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-full font-semibold transition-all duration-300 hover:bg-white/20"
-              >
-                Contact Sales
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-3 gap-4 pt-4">
+            <div className="grid grid-cols-3 gap-4 pt-2 md:pt-4">
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
                 <TrendingUp className="w-8 h-8 mx-auto mb-2" />
                 <div className="text-2xl font-bold">500+</div>
@@ -70,11 +55,11 @@ export const BusinessHero: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative block mt-8 lg:mt-0">
+          <div className="relative block mt-1 md:mt-8 lg:mt-0">
             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-2xl animate-float"></div>
             <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-4 sm:p-8 shadow-2xl transform hover:scale-105 transition-transform duration-500 animate-scale-in">
               <img
-                src="/ForBiz.png"
+                src="/new/3dHero.png"
                 alt="Business Dashboard"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
@@ -82,7 +67,7 @@ export const BusinessHero: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/20">
+        <div className="mt-4 md:mt-12 pt-3 md:pt-8 border-t border-white/20">
           <p className="text-sm text-white/70 mb-4">Manage your business on the go</p>
           <AppStoreBadges variant="dark" size="md" />
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from './Section';
 import { Container } from './Container';
-import { Users, Plane, ShoppingCart, GraduationCap, Briefcase } from 'lucide-react';
+import { Users, Plane, GraduationCap, Briefcase } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';

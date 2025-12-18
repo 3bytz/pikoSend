@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Container } from './Container';
 import { Button } from './Button';
-import { Send, Menu, X, ChevronDown } from 'lucide-react';
+import {  Menu, X, ChevronDown } from 'lucide-react';
 
 interface DropdownItem {
   label: string;
@@ -95,12 +95,12 @@ export const Navbar: React.FC = () => {
     { label: 'Products', href: '/products' },
     { label: 'Features', href: '/features' },
     { label: 'For Business', href: '/business' },
+      { label: 'Blog', href: '/blog' },
     {
       label: 'Company',
       dropdown: [
        
         { label: 'Testimonials', href: '#testimonials', description: 'What our users say' },
-        { label: 'News & Blog', href: '#blog', description: 'Latest updates' },
         { label: 'FAQs', href: '#faq', description: 'Get answers to common questions' },
       ],
     },
@@ -233,7 +233,7 @@ export const Navbar: React.FC = () => {
             to={'/contact'}
               // variant="primary"
               // size="sm"
-              target='_blank'
+              // target='_blank'
               className={!isScrolled ? 'bg-white py-3 px-4 rounded-lg border-0 text-piko-purple hover:bg-opacity-90' : 'bg-piko-purple py-3 px-4 rounded-md text-white hover:bg-opacity-90'}
             >
               Contact Us

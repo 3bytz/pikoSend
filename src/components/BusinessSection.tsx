@@ -45,7 +45,7 @@ export const BusinessSection: React.FC = () => {
             <div className="relative">
               <div className="absolute -inset-8 bg-gradient-to-br from-piko-purple/20 via-piko-violet/20 to-piko-purple/20 rounded-[40%] blur-3xl"></div>
               <img
-                src="/business/boardRoom.jpg"
+                src="/new/business_built for modern business.jpeg"
                 alt="Business team using PikoSend"
                 className="relative rounded-2xl shadow-2xl w-full h-[600px] object-cover"
               />
@@ -101,14 +101,14 @@ export const BusinessSection: React.FC = () => {
               })}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* <div className="flex flex-col sm:flex-row gap-4">
               <button className="px-8 py-4 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:translate-y-[-4px]">
                 Get Started for Business
               </button>
               <button className="px-8 py-4 border-2 border-piko-purple text-piko-purple rounded-full font-medium transition-all duration-300 hover:bg-piko-purple hover:text-white">
                 View API Documentation
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>

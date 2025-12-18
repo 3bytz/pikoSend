@@ -22,75 +22,75 @@ interface AppScreen {
   alignment: "left" | "right";
 }
 
-const screens: AppScreen[] = [
-  {
-    id: 1,
-    title: "Quick & Secure Login",
-    tagline: "Access in Seconds",
-    description:
-      "Experience seamless authentication with biometric login support. Your security is our priority, with multi-factor authentication and bank-level encryption protecting every login.",
-    features: [
-      { icon: Shield, text: "Biometric authentication" },
-      { icon: Zap, text: "Instant access" },
-      { icon: Check, text: "Bank-level security" },
-    ],
-    imageSrc:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    // Image: African person using smartphone for secure login
-    imageAlt: "African user accessing PikoSend securely",
-    alignment: "left",
-  },
-  {
-    id: 2,
-    title: "Your Financial Dashboard",
-    tagline: "Everything at a Glance",
-    description:
-      "Stay on top of your finances with a beautiful, intuitive dashboard. View your balance, recent transactions, and quick actions all in one place.",
-    features: [
-      { icon: Smartphone, text: "Real-time balance updates" },
-      { icon: Clock, text: "Recent transaction history" },
-      { icon: Zap, text: "Quick send & receive" },
-    ],
-    imageSrc:
-      "https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    // Image: African business person monitoring finances
-    imageAlt: "African entrepreneur using financial dashboard",
-    alignment: "right",
-  },
-  {
-    id: 3,
-    title: "Send Money Instantly",
-    tagline: "Fast. Simple. Global.",
-    description:
-      "Send money to anyone, anywhere in the world. Save favorite recipients, schedule future transfers, and track every transaction in real-time.",
-    features: [
-      { icon: Users, text: "Multiple recipients" },
-      { icon: Clock, text: "Schedule transfers" },
-      { icon: Check, text: "Instant notifications" },
-    ],
-    imageSrc:
-      "https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    // Image: African user sending money via mobile app
-    imageAlt: "African user sending money instantly",
-    alignment: "left",
-  },
-  {
-    id: 4,
-    title: "Wallet Management",
-    tagline: "Total Control",
-    description:
-      "Create virtual cards for online shopping, set spending limits, and freeze cards instantly. Keep your transactions secure with disposable card numbers.",
-    features: [
-      { icon: CreditCard, text: "Create virtual cards" },
-      { icon: Shield, text: "Freeze/unfreeze instantly" },
-      { icon: Check, text: "Custom spending limits" },
-    ],
-    imageSrc:
-      "/mockups/Wallet.jpg",
-    imageAlt: "African professional managing digital wallet",
-    alignment: "right",
-  },
-];
+// const screens: AppScreen[] = [
+//   {
+//     id: 1,
+//     title: "Quick & Secure Login",
+//     tagline: "Access in Seconds",
+//     description:
+//       "Experience seamless authentication with biometric login support. Your security is our priority, with multi-factor authentication and bank-level encryption protecting every login.",
+//     features: [
+//       { icon: Shield, text: "Biometric authentication" },
+//       { icon: Zap, text: "Instant access" },
+//       { icon: Check, text: "Bank-level security" },
+//     ],
+//     imageSrc:
+//       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+
+//     imageAlt: "African user accessing PikoSend securely",
+//     alignment: "left",
+//   },
+//   {
+//     id: 2,
+//     title: "Your Financial Dashboard",
+//     tagline: "Everything at a Glance",
+//     description:
+//       "Stay on top of your finances with a beautiful, intuitive dashboard. View your balance, recent transactions, and quick actions all in one place.",
+//     features: [
+//       { icon: Smartphone, text: "Real-time balance updates" },
+//       { icon: Clock, text: "Recent transaction history" },
+//       { icon: Zap, text: "Quick send & receive" },
+//     ],
+//     imageSrc:
+//       "https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+//     // Image: African business person monitoring finances
+//     imageAlt: "African entrepreneur using financial dashboard",
+//     alignment: "right",
+//   },
+//   {
+//     id: 3,
+//     title: "Send Money Instantly",
+//     tagline: "Fast. Simple. Global.",
+//     description:
+//       "Send money to anyone, anywhere in the world. Save favorite recipients, schedule future transfers, and track every transaction in real-time.",
+//     features: [
+//       { icon: Users, text: "Multiple recipients" },
+//       { icon: Clock, text: "Schedule transfers" },
+//       { icon: Check, text: "Instant notifications" },
+//     ],
+//     imageSrc:
+//       "https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+//     // Image: African user sending money via mobile app
+//     imageAlt: "African user sending money instantly",
+//     alignment: "left",
+//   },
+//   {
+//     id: 4,
+//     title: "Wallet Management",
+//     tagline: "Total Control",
+//     description:
+//       "Create virtual cards for online shopping, set spending limits, and freeze cards instantly. Keep your transactions secure with disposable card numbers.",
+//     features: [
+//       { icon: CreditCard, text: "Create virtual cards" },
+//       { icon: Shield, text: "Freeze/unfreeze instantly" },
+//       { icon: Check, text: "Custom spending limits" },
+//     ],
+//     imageSrc:
+//       "/mockups/Wallet.jpg",
+//     imageAlt: "African professional managing digital wallet",
+//     alignment: "right",
+//   },
+// ];
 
 export const AppScreensTimeline: React.FC = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -129,7 +129,7 @@ export const AppScreensTimeline: React.FC = () => {
         <div className="relative" ref={timelineRef}>
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-piko-purple/30 via-piko-violet/30 to-piko-lilac/30 transform -translate-x-1/2 z-0"></div>
 
-          <div className="space-y-6 md:space-y-2">
+          {/* <div className="space-y-6 md:space-y-2">
             {screens.map((screen, index) => {
               const isLeft = screen.alignment === "left";
 
@@ -208,22 +208,18 @@ export const AppScreensTimeline: React.FC = () => {
                           })}
                         </div>
 
-                        {/* <div className="pt-4 border-t border-piko-soft-grey">
-                          <span className="text-piko-light-grey text-sm font-medium">
-                            Screen {screen.id}/{screens.length}
-                          </span>
-                        </div> */}
+                     
                       </div>
                     </div>
                   </div>
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16 md:mt-20 pt-8 border-t border-piko-soft-grey">
+        
+        {/* <div className="text-center mt-16 md:mt-20 pt-8 border-t border-piko-soft-grey">
           <div className="mb-8">
             <h3 className="text-2xl font-poppins font-bold text-piko-black mb-3">
               Ready to get started?
@@ -295,7 +291,7 @@ export const AppScreensTimeline: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </Container>
 
       <style>{`

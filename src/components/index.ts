@@ -25,7 +25,6 @@ export { TrustBadges } from './TrustBadges';
 export { MidBanner } from './MidBanner';
 export { Testimonial } from './Testimonial';
 export { Press } from './Press';
-export { Blog } from './Blog';
 export { FAQ } from './FAQ';
 export { Newsletter } from './Newsletter';
 export { Footer } from './Footer';
