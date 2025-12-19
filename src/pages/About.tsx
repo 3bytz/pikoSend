@@ -160,7 +160,7 @@ export const About: React.FC = () => {
                       <img
                         src={HERO_IMAGE}
                         alt="PikoSend team collaborating"
-                        className="w-full h-[500px] object-cover"
+                        className="w-full h-[500px] object-cover object-center"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -481,10 +481,16 @@ export const About: React.FC = () => {
               <div className="relative">
                 <div className="absolute -inset-6 bg-gradient-to-r from-piko-purple/20 via-piko-violet/20 to-piko-lilac/20 rounded-3xl blur-2xl opacity-60 animate-pulse"></div>
                 <div className="relative rounded-3xl overflow-hidden shadow-3xl border-2 border-white/30">
+                   <img
+                    src='/new/about_vision_mission_mobile.png'
+                    alt="Mission and vision"
+                    className="block md:hidden w-full h-[600px] object-cover object-center transition-transform duration-700 hover:scale-105"
+                    loading="lazy"
+                  />
                   <img
                     src={MISSION_IMAGE}
                     alt="Mission and vision"
-                    className="w-full h-[700px] object-cover object-top transition-transform duration-700 hover:scale-105"
+                    className="hidden md:block w-full h-[700px] object-cover object-top transition-transform duration-700 hover:scale-105"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
