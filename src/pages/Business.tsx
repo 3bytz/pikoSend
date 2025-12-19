@@ -118,9 +118,9 @@ export const Business: React.FC = () => {
       <Navbar />
       <BusinessHero />
 
-      <Section background="white" className="py-12 md:py-2">
+      <Section background="white" className="py-6 md:py-2">
         <Container>
-          <div className="text-center mb-16">
+          <div className="text-center mb-4 md:mb-16">
             <div className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-base font-semibold rounded-full mb-6">
               <Target className="w-5 h-5" />
               <span>Business Features</span>

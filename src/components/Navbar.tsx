@@ -313,8 +313,8 @@ export const Navbar: React.FC = () => {
                   </button>
                 );
               })}
-              <Button variant="primary" size="sm" className="w-full">
-                Get Started
+              <Button variant="primary" size="sm" className="w-full" onClick={() => { navigate('/contact'); setIsMobileMenuOpen(false); }}>
+                Contact Us
               </Button>
             </div>
           </div>

@@ -15,8 +15,8 @@ export const BusinessHero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-piko-violet/90 via-piko-purple/90 to-piko-lilac/85 backdrop-blur-sm"></div>
       </div>
 
-      <Container className="relative z-10 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <Container className="relative z-10 py-16 md:py-20">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center">
           <div className="text-white space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full animate-fade-in">
               <Building2 className="w-4 h-4" />
