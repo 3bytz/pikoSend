@@ -122,7 +122,12 @@ export const FeaturesPage: React.FC = () => {
                       <img
                         src={feature.imageUrl}
                         alt={feature.title}
-                        className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="block md:hidden w-full h-[400px] md:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      />
+                       <img
+                        src={feature.imageUrl}
+                        alt={feature.title}
+                        className="hidden md:block w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                            

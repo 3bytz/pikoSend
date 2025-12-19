@@ -18,7 +18,7 @@ const businessFeatures = [
     ],
     stats: 'Real-time',
     statsLabel: 'Analytics',
-    imageUrl: '/new/business_analytics_api.png',
+    imageUrl: '/new/business_analytics_api_mobile.png',
     gradient: 'from-piko-violet to-piko-lilac',
     accentColor: 'text-piko-violet',
     bgColor: 'bg-piko-violet/10'
@@ -52,7 +52,7 @@ const businessFeatures = [
     ],
     stats: '50+',
     statsLabel: 'API Endpoints',
-    imageUrl: '/new/Business_Bulk_Payments_API_Integration.png',
+    imageUrl: '/new/Business_Bulk_Payments_API_Integration_mobile.png',
     gradient: 'from-piko-lilac to-piko-purple',
     accentColor: 'text-piko-lilac',
     bgColor: 'bg-piko-lilac/10'
@@ -152,7 +152,7 @@ export const Business: React.FC = () => {
                       <img
                         src={feature.imageUrl}
                         alt={feature.title}
-                        className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-[400px] md:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       
