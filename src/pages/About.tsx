@@ -394,14 +394,14 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-              <div className="space-y-8">
+            <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center relative z-10">
+              <div className="space-y-3 md:space-y-8">
                 <div className="group bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/40 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
                   <div className="absolute inset-0 bg-gradient-to-br from-piko-purple/5 to-piko-violet/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                  <div className="relative flex items-start gap-3 md:gap-6">
+                    <div className="w-8 h-8 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
                       <Target
-                        className="w-8 h-8 text-white"
+                        className="w-4 h-4 md:w-8 md:h-8  text-white" 
                         strokeWidth={1.5}
                       />
                     </div>
@@ -425,9 +425,9 @@ export const About: React.FC = () => {
 
                 <div className="group bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/40 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
                   <div className="absolute inset-0 bg-gradient-to-br from-piko-violet/5 to-piko-lilac/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-piko-violet to-piko-lilac flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                      <Heart className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  <div className="relative flex items-start gap-3 md:gap-6">
+                    <div className="w-8 h-8 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-piko-violet to-piko-lilac flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <Heart className="w-4 h-4 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
                     </div>
                     <div>
                       <h3 className="text-2xl md:text-3xl font-poppins font-bold text-piko-black mb-3">
@@ -450,9 +450,9 @@ export const About: React.FC = () => {
                 <div className="group bg-gradient-to-r from-piko-purple via-piko-violet to-piko-lilac rounded-3xl p-8 text-white shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-                  <div className="relative flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-500">
-                      <Users className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  <div className="relative flex items-start gap-3 md:gap-6">
+                    <div className="w-8 h-8 md:w-16 md:h-16 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      <Users className="w-4 h-4 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
                     </div>
                     <div>
                       <h3 className="text-2xl md:text-3xl font-poppins font-bold mb-3">
@@ -490,10 +490,10 @@ export const About: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-lg rounded-2xl p-6 shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
-                      <div className="flex items-center gap-6">
-                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center shadow-lg">
+                      <div className="flex items-center gap-3 md:gap-6">
+                        <div className="w-8 h-8 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center shadow-lg">
                           <TrendingUp
-                            className="w-8 h-8 text-white"
+                            className="w-4 h-4 md:w-8 md:h-8 text-white"
                             strokeWidth={1.5}
                           />
                         </div>
@@ -506,7 +506,7 @@ export const About: React.FC = () => {
                             and trust
                           </p>
                         </div>
-                        <div className="text-right">
+                        <div className="hidden md:block text-right">
                           <div className="text-3xl font-bold text-piko-purple">
                             ↑85%
                           </div>

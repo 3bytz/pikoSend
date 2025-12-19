@@ -40,7 +40,7 @@ export const BusinessSection: React.FC = () => {
   return (
     <Section background="white">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4md:gap-12 items-center">
           <div className="order-2 lg:order-1">
             <div className="relative">
               <div className="absolute -inset-8 bg-gradient-to-br from-piko-purple/20 via-piko-violet/20 to-piko-purple/20 rounded-[40%] blur-3xl"></div>

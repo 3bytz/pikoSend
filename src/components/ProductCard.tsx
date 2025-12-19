@@ -63,7 +63,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       <div
-        className={`relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center p-6 md:p-6 ${
+        className={`relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center p-3 md:p-6 ${
           isEven ? "" : ""
         }`}
       >

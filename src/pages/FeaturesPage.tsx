@@ -88,9 +88,9 @@ export const FeaturesPage: React.FC = () => {
       <Navbar />
       <FeaturesHero />
 
-      <Section background="white" className="py-12 md:py-24">
+      <Section background="white" className="py-6 md:py-24">
         <Container>
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <div className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 text-piko-purple text-base font-semibold rounded-full mb-6">
               <Sparkles className="w-5 h-5" />
               <span>Comprehensive Features</span>
@@ -106,7 +106,7 @@ export const FeaturesPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="space-y-6 md:space-y-2">
+          <div className="space-y-4 md:space-y-2">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               const isEven = index % 2 === 0;
@@ -114,7 +114,7 @@ export const FeaturesPage: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 md:gap-16`}
+                  className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 md:gap-16`}
                 >
                   <div className="lg:w-1/2">
                     <div className={`group relative rounded-3xl overflow-hidden shadow-2xl border border-piko-soft-grey/50 hover:shadow-3xl transition-all duration-500 ${isEven ? 'lg:translate-x-6' : 'lg:-translate-x-6'}`}>

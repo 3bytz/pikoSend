@@ -81,10 +81,10 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-8 md:py-20 bg-gradient-to-br from-gray-50 to-white ">
       <Container>
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-16">
+          <div className="grid lg:grid-cols-2 gap-3 md:gap-12 mb-8 md:mb-16">
       
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-piko-purple/10 to-piko-violet/10 rounded-3xl blur-2xl"></div>
@@ -274,8 +274,9 @@ export const ContactForm: React.FC = () => {
             </div>
           </div>
 
-      
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4  md:gap-6 mb-3 md:mb-12">
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-14 h-14 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-7 h-7 text-piko-purple" />

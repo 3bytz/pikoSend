@@ -146,7 +146,7 @@ export const DynamicHero: React.FC = () => {
               {/* powered by */}
               <div className="mt-8 flex flex-col items-start sm:items-start w-full">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-                  <span className="text-white text-lg font-semibold tracking-wide">
+                  <span className="text-white text-sm md:text-lg font-semibold tracking-wide">
                     POWERED BY
                   </span>
                   <div
@@ -160,36 +160,35 @@ export const DynamicHero: React.FC = () => {
                     <img
                       src="/partners/telecharger.png"
                       alt="Futurizac Logo"
-                      className="h-10 w-auto opacity-90 brightness-110 mix-blend-screen"
+                      className="h-8 md:h-10 w-auto opacity-90 brightness-110 mix-blend-screen"
                     />
 
                     <img
                       src="/partners/telecharger-1.png"
                       alt="DTB Bank Logo"
-                      className="h-10 w-auto opacity-90 brightness-110 mix-blend-screen"
+                      className="h-8 md:h-10 w-auto opacity-90 brightness-110 mix-blend-screen"
                     />
                   </div>
                 </div>
               </div>
             </div>
             {/* image */}
-            {isMobile ? null:  <div className="relative mt-12 lg:mt-0">
-              <div className="relative z-10">
-                <div className="absolute -inset-4 lg:-inset-8 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
-                <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-4 lg:p-8 border border-white/20 shadow-2xl">
-                  {isMobile ? null
-                  : (
-                    <img
+            {isMobile ? null : (
+              <div className="relative mt-12 lg:mt-0">
+                <div className="relative z-10">
+                  <div className="absolute -inset-4 lg:-inset-8 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-2xl"></div>
+                  <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl lg:rounded-3xl p-4 lg:p-8 border border-white/20 shadow-2xl">
+                    {isMobile ? null : (
+                      <img
                         src="/new/hero_designed.png"
-                      alt="PikoSend App"
-                      className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
-                    />
-                  )}
-                 
+                        alt="PikoSend App"
+                        className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-              }
+            )}
           </div>
 
           <div className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/20">

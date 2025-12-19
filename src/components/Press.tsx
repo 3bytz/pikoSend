@@ -42,7 +42,7 @@ export const Press: React.FC = () => {
 
         <div
           ref={marqueeRef}
-          className={`relative flex justify-center items-center mb-12 md:mb-16 flex-col transition-all duration-700 ${
+          className={`relative flex justify-center items-center mb-6 md:mb-16 flex-col transition-all duration-700 ${
             marqueeVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
@@ -71,7 +71,7 @@ export const Press: React.FC = () => {
                       </div>
 
                       <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                        <div className="bg-piko-black text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                        <div className=" text-white text-xs px-2 py-1 rounded whitespace-nowrap">
                           {logo.name}
                         </div>
                       </div>

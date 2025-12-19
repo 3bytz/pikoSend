@@ -95,9 +95,9 @@ export const Products: React.FC = () => {
       <Navbar />
       <ProductsHero />
 
-      <Section background="white" className="py-16 md:py-24">
+      <Section background="white" className="py-12 md:py-24">
         <Container>
-          <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-8 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-poppins font-bold text-piko-black mb-6 animate-fade-up">
               Built for modern
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet">
@@ -114,7 +114,7 @@ export const Products: React.FC = () => {
           </div>
 
           
-          <div className="space-y-16 md:space-y-1">
+          <div className="space-y-4 md:space-y-1">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} isEven={index % 2 === 0} />
             ))}

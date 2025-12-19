@@ -27,7 +27,7 @@ export const ProductsHero: React.FC = () => {
       </div>
 
       <Container className="relative z-10 py-8 sm:py-12 md:py-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center">
           
           <div className="text-white space-y-8">
             <div className="inline-flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-lg border border-white/20 text-white text-base font-semibold rounded-full animate-fade-in">
