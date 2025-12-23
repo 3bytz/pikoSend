@@ -59,7 +59,7 @@ const screens: AppScreen[] = [
     title: "Wallet Management",
     subtitle: "Your Digital Wallet",
     description:
-      "Create virtual cards, set spending limits, and manage multiple wallets with ease.",
+      "Set spending limits, and manage multiple wallets with ease.",
     imageSrc: "/mockups/Wallet.jpg",
     icon: CreditCard,
     gradient: "from-piko-purple to-piko-violet",
