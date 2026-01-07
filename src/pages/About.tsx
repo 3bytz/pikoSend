@@ -171,7 +171,7 @@ export const About: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="absolute bottom-6 left-6 right-6">
+                  <div className="hidden md:block absolute bottom-6 left-6 right-6">
                     <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center">

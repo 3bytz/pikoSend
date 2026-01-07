@@ -179,7 +179,9 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 pt-2">
               <a href="tel:+254706525135" className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition">
                 <Phone size={14} />
-                <span>+254 (706) 525 135</span>
+                <span>+254 110 916538</span> ,
+                <span>+254 110 917569</span>
+               
               </a>
               <a href="mailto:info@pikosend.co.ke" className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition">
                 <Mail size={14} />

@@ -38,7 +38,7 @@ const contactMethods = [
     description: 'Call us directly',
     action: 'Call Now',
     color: 'from-piko-lilac to-piko-purple',
-    link: 'tel:+1234567890'
+    link: 'tel:+254110917569'
   },
   {
     icon: MapPin,
@@ -133,7 +133,7 @@ export const ContactForm: React.FC = () => {
                 <div className="pt-6 border-t border-gray-200">
                   <div className="text-center">
                     <h4 className="font-semibold text-gray-900 mb-3">Emergency Contact</h4>
-                    <div className="text-2xl font-bold text-piko-purple mb-2">+234 123 456 7890</div>
+                    <div className="text-2xl font-bold text-piko-purple mb-2">+254 110 916538</div>
                     <p className="text-sm text-gray-600">Available 24/7 for urgent matters</p>
                   </div>
                 </div>
