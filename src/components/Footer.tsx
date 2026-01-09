@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Container } from './Container';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Container } from "./Container";
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+  CheckCircle,
+} from "lucide-react";
+import { supabase } from "../lib/supabase";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -19,19 +28,19 @@ export const Footer: React.FC = () => {
 
     try {
       const { error } = await supabase
-        .from('newsletter_subscribers')
+        .from("newsletter_subscribers")
         .insert([{ email, subscribed_at: new Date().toISOString() }]);
 
       if (error) throw error;
 
       setSuccess(true);
-      setEmail('');
+      setEmail("");
       setTimeout(() => setSuccess(false), 3000);
     } catch (err: any) {
-      if (err.code === '23505') {
-        setError('This email is already subscribed');
+      if (err.code === "23505") {
+        setError("This email is already subscribed");
       } else {
-        setError('Something went wrong. Please try again.');
+        setError("Something went wrong. Please try again.");
       }
     } finally {
       setLoading(false);
@@ -39,19 +48,19 @@ export const Footer: React.FC = () => {
   };
 
   const handleInternalLink = (href: string) => {
-    if (href.startsWith('#')) {
-      if (window.location.pathname !== '/') {
-        navigate('/');
+    if (href.startsWith("#")) {
+      if (window.location.pathname !== "/") {
+        navigate("/");
         setTimeout(() => {
           const element = document.querySelector(href);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: "smooth" });
           }
         }, 100);
       } else {
         const element = document.querySelector(href);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }
     } else {
@@ -61,31 +70,43 @@ export const Footer: React.FC = () => {
 
   // Match exactly what's in the navbar
   const ProductsLinks = [
-    { label: 'Send Money', href: '/products#send-money' },
-    { label: 'Global Accounts', href: '/products#accounts' },
-    { label: 'Cards', href: '/products#cards' },
-    { label: 'All Products', href: '/products' },
+    { label: "Send Money", href: "/products#send-money" },
+    { label: "Global Accounts", href: "/products#accounts" },
+    { label: "Cards", href: "/products#cards" },
+    { label: "All Products", href: "/products" },
   ];
 
   const BusinessLinks = [
-    { label: 'Business Accounts', href: '/business' },
-    { label: 'API Integration', href: '/business#api' },
-    { label: 'Invoicing', href: '/business#invoicing' },
-    { label: 'Business Tools', href: '/business#tools' },
+    { label: "Business Accounts", href: "/business" },
+    { label: "API Integration", href: "/business#api" },
+    { label: "Invoicing", href: "/business#invoicing" },
+    { label: "Business Tools", href: "/business#tools" },
   ];
 
   const CompanyLinks = [
-    { label: 'About Us', href: '#mission' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'News & Blog', href: '/blog' },
-    { label: 'FAQs', href: '#faq' },
+    { label: "About Us", href: "#mission" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "News & Blog", href: "/blog" },
+    { label: "FAQs", href: "#faq" },
   ];
 
   const socialLinks = [
-    { icon: Facebook, label: 'Facebook', link: "https://web.facebook.com/profile.php?id=61583837009742" },
-    { icon: Twitter, label: 'Twitter', link: "https://x.com/Pikosend" },
-    { icon: Linkedin, label: 'LinkedIn', link: "https://www.linkedin.com/in/pikosend-ke-038902397/" },
-    { icon: Instagram, label: 'Instagram', link: "https://www.instagram.com/pikosend.ke/" },
+    {
+      icon: Facebook,
+      label: "Facebook",
+      link: "https://web.facebook.com/profile.php?id=61583837009742",
+    },
+    { icon: Twitter, label: "Twitter", link: "https://x.com/Pikosend" },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/pikosend-ke-038902397/",
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      link: "https://www.instagram.com/pikosend.ke/",
+    },
   ];
 
   return (
@@ -100,25 +121,28 @@ export const Footer: React.FC = () => {
                   Stay Updated on Payments
                 </h2>
                 <p className="text-base text-piko-medium-grey leading-relaxed max-w-lg">
-                  Get the latest updates, tips, and exclusive offers delivered to your inbox.
+                  Get the latest updates, tips, and exclusive offers delivered
+                  to your inbox.
                 </p>
               </div>
-              
+
               <div className="lg:w-1/2 w-full max-w-md">
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {success && (
                     <div className="flex items-center justify-center lg:justify-start gap-2 p-3 bg-piko-purple/10 text-piko-purple rounded-lg">
                       <CheckCircle size={20} />
-                      <span className="text-sm font-medium">Successfully subscribed!</span>
+                      <span className="text-sm font-medium">
+                        Successfully subscribed!
+                      </span>
                     </div>
                   )}
-                  
+
                   {error && (
                     <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm text-center lg:text-left">
                       {error}
                     </div>
                   )}
-                  
+
                   <div className="relative">
                     <input
                       type="email"
@@ -134,7 +158,9 @@ export const Footer: React.FC = () => {
                       disabled={loading}
                       className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2.5 bg-piko-purple text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] flex items-center gap-2 disabled:opacity-50"
                     >
-                      {loading ? 'Subscribing...' : (
+                      {loading ? (
+                        "Subscribing..."
+                      ) : (
                         <>
                           <Mail size={18} />
                           Subscribe
@@ -142,7 +168,7 @@ export const Footer: React.FC = () => {
                       )}
                     </button>
                   </div>
-                  
+
                   <p className="text-xs text-piko-light-grey text-center lg:text-left">
                     We respect your privacy. Unsubscribe at any time.
                   </p>
@@ -165,7 +191,7 @@ export const Footer: React.FC = () => {
                       src="/faviconTr.png"
                       alt="PikoSend Logo"
                       className="w-full rounded-2xl shadow-lg"
-                      style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
+                      style={{ boxShadow: "0 20px 60px rgba(0, 0, 0, 0.15)" }}
                     />
                   </div>
                 </div>
@@ -173,17 +199,30 @@ export const Footer: React.FC = () => {
               </Link>
             </div>
             <p className="text-sm opacity-80 leading-relaxed max-w-sm">
-              Empowering Africa through financial inclusion. Making payments simple, fast, and accessible for everyone.
+              Empowering Africa through financial inclusion. Making payments
+              simple, fast, and accessible for everyone.
             </p>
 
             <div className="space-y-2 pt-2">
-              <a href="tel:+254706525135" className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition">
+              <a
+                href="tel:+254706525135"
+                className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition"
+              >
                 <Phone size={14} />
-                <span>+254 110 916538</span> ,
-                <span>+254 110 917569</span>
-               
+                <span>+254 110 916538</span>
               </a>
-              <a href="mailto:info@pikosend.co.ke" className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition">
+              <a
+                href="tel:+254706525135"
+                className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition"
+              >
+                <Phone size={14} />
+
+                <span>+254 110 917569</span>
+              </a>
+              <a
+                href="mailto:info@pikosend.co.ke"
+                className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition"
+              >
                 <Mail size={14} />
                 <span>info@pikosend.co.ke</span>
               </a>
@@ -199,7 +238,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm opacity-80">
               {ProductsLinks.map((item) => (
                 <li key={item.href}>
-                  {item.href.startsWith('/') ? (
+                  {item.href.startsWith("/") ? (
                     <Link
                       to={item.href}
                       className="hover:text-piko-lilac hover:opacity-100 transition"
@@ -224,7 +263,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm opacity-80">
               {BusinessLinks.map((item) => (
                 <li key={item.href}>
-                  {item.href.startsWith('/') ? (
+                  {item.href.startsWith("/") ? (
                     <Link
                       to={item.href}
                       className="hover:text-piko-lilac hover:opacity-100 transition"
@@ -287,7 +326,10 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="text-center text-xs opacity-60">
-              <p>&copy; {currentYear} PikoSend. All rights reserved. Powered by Futuriza.</p>
+              <p>
+                &copy; {currentYear} PikoSend. All rights reserved. Powered by
+                Futuriza.
+              </p>
               <p className="mt-1">Licensed and regulated in Kenya.</p>
             </div>
           </div>
