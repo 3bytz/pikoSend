@@ -4,10 +4,11 @@ import { Container } from "./Container";
 import { CheckCircle2, Users, Briefcase } from "lucide-react";
 
 const personalFeatures = [
-  "Send and receive money instantly",
-  "Personal spending insights",
-  "Bill payments automation",
-  "Free personal account",
+  "Send money instantly to a phone number",
+  "Pay at shops and service points using QR codes (Tap & Go)",
+  "Create multiple wallets to separate spending and savings",
+  "Send money directly to bank accounts",
+  "Receive money safely from other networks"
 ];
 
 const businessFeatures = [
@@ -20,7 +21,7 @@ const businessFeatures = [
 
 export const PersonalBusiness: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"personal" | "business">(
-    "personal"
+    "personal",
   );
 
   return (
@@ -55,7 +56,6 @@ export const PersonalBusiness: React.FC = () => {
                 </div>
               </div>
 
-              
               <div className="absolute top-6 left-6 px-4 py-2 bg-white rounded-full shadow-lg">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -68,18 +68,17 @@ export const PersonalBusiness: React.FC = () => {
           </div>
 
           <div className="lg:col-span-2 space-y-8 md:space-y-12">
-          
             <div className="text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-poppins font-bold text-piko-black mb-4">
                 Designed for
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet">
-                  Everyone
+                  Everyday Use
                 </span>
               </h2>
               <p className="text-lg text-piko-medium-grey max-w-2xl">
-                Whether you're managing personal finances or running a business,
-                PikoSend provides the tools you need for seamless financial
-                management.
+                Whether you are running a business or simply want to manage your
+                personal finances better, we provide you with options you need
+                for seamless everyday use.
               </p>
             </div>
 
@@ -110,7 +109,6 @@ export const PersonalBusiness: React.FC = () => {
             </div>
 
             <div className="space-y-8 md:space-y-12">
-              
               {activeTab === "personal" && (
                 <div
                   className={`bg-gradient-to-br from-piko-purple/5 to-transparent rounded-2xl p-6 md:p-8 border-2 transition-all duration-500 border-piko-purple/30 opacity-100`}
@@ -121,7 +119,7 @@ export const PersonalBusiness: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="text-2xl md:text-3xl font-poppins font-bold text-piko-black">
-                        Personal Banking
+                        What You Can Do With PikoSend
                       </h3>
                       <p className="text-piko-medium-grey">
                         Perfect for your everyday financial needs
@@ -173,7 +171,6 @@ export const PersonalBusiness: React.FC = () => {
                 </div>
               )}
 
-              
               {activeTab === "business" && (
                 <div
                   className={`bg-gradient-to-br from-piko-violet/5 to-transparent rounded-2xl p-6 md:p-8 border-2 transition-all duration-500 border-piko-violet/30 opacity-100`}

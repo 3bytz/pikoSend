@@ -50,7 +50,10 @@ export const ProductsHero: React.FC = () => {
             </div>
 
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-xl font-light">
-              Everything you need to send, receive, save, and grow your money all in one app that feels like it was made just for you.
+              Kenya’s most affordable and secure digital payment platform.
+            </p>
+             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-xl font-light">
+              The only digital platform you need to send, receive, save and make everyday payments affordably and safely.
             </p>
 
            

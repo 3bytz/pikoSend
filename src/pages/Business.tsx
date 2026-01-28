@@ -99,12 +99,11 @@ const solutions = [
 ];
 
 const benefits = [
-  'Save time with automated payment workflows',
-  'Reduce costs with competitive transaction fees',
-  'Improve cash flow with real-time tracking',
-  'Increase security with multi-level approval systems',
-  'Scale effortlessly as your business grows',
-  'Access 24/7 dedicated business support',
+  'Reduce costs with some of the lowest transaction fees in the market',
+  'Save time with instant payments and faster cash flow',
+  'Track finances with multi-wallet management and real-time reporting',
+  'Protect your money with end-to-end security and secure PIN access',
+  'Access support anytime via WhatsApp, SMS, phone, email, or social media',
 ];
 
 export const Business: React.FC = () => {
@@ -266,14 +265,17 @@ export const Business: React.FC = () => {
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8 w-fit">
                   <Sparkles className="w-5 h-5 text-white" />
-                  <span className="text-white font-medium">Why Businesses Choose Us</span>
+                  <span className="text-white font-medium">Why Businesses Love Us</span>
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-6">
-                  Why Businesses Choose PikoSend
+                  Why Businesses Love PikoSend
                 </h2>
                 <p className="text-lg text-white/90 mb-8">
-                  Join hundreds of businesses that trust PikoSend for their payment infrastructure
+                  Join hundreds of Kenyan businesses who trust PikoSend for their daily business transactions.
+                </p>
+                <p className="text-lg text-white/90 mb-8">
+                  With PikoSend, you can:
                 </p>
                 <div className="space-y-4 mb-8">
                   {benefits.map((benefit, index) => (

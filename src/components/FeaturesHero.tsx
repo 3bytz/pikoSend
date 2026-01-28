@@ -16,7 +16,7 @@ export const FeaturesHero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-piko-purple/90 via-piko-violet/85 to-piko-lilac/90 backdrop-blur-sm"></div>
       </div>
 
-      <Container className="relative z-10 py-6">
+      <Container className="relative z-10 py-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-white space-y-4 md:space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full animate-fade-in">
@@ -25,20 +25,17 @@ export const FeaturesHero: React.FC = () => {
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight animate-fade-up">
-              Built for Speed,
+              PikoSend,
               <span className="block mt-2">
-                Designed for{" "}
+                 Built for Everyday {" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white">
-                  Africa
+                  Payments
                 </span>
               </span>
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
-              PikoSend streamlines how businesses accept and process payments.
-              From instant transactions to effortless QR payments, every feature
-              is designed to simplify your workflow, reduce waiting times, and
-              deliver a smoother experience for both you and your customers.
+            When building PikoSend, we focused on what matters most for our users: low transaction fees, instant payments, reliable customer support, and absolute data privacy. That’s what makes PikoSend the most preferred partner for everyday payments.
             </p>
 
             <div className="grid grid-cols-3 pt-4 place-items-start">

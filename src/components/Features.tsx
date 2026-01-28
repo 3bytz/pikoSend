@@ -136,7 +136,7 @@ export const Features: React.FC = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-piko-medium-grey max-w-2xl mx-auto">
-            Experience financial services designed for modern Africa
+            Experience a digital payment platform designed for the modern Kenyan
           </p>
         </div>
 

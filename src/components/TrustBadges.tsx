@@ -8,7 +8,7 @@ const trustFeatures = [
     icon: Shield,
     title: "Bank-Level Security",
     description:
-      "256-bit SSL encryption protects all your transactions and personal data",
+      "We use up-to-date security technology designed to protect your money.",
     gradient: "from-blue-500 to-purple-600",
     accentColor: "text-blue-600",
     bgColor: "bg-blue-50",
@@ -20,7 +20,7 @@ const trustFeatures = [
   {
     icon: Lock,
     title: "Regulatory Compliance",
-    description: "Licensed and regulated in multiple jurisdictions worldwide",
+    description: "We are fully licensed and compliant under the Kenyan regulated frameworks.",
     gradient: "from-emerald-500 to-cyan-600",
     accentColor: "text-emerald-600",
     bgColor: "bg-emerald-50",
@@ -33,7 +33,7 @@ const trustFeatures = [
     icon: CheckCircle,
     title: "Certified",
     description:
-      "Meeting the highest international security standards for payment processing",
+      "We meet the highest international data privacy standards",
     gradient: "from-amber-500 to-orange-600",
     accentColor: "text-amber-600",
     bgColor: "bg-amber-50",

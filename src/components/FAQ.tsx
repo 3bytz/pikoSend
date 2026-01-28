@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Section } from './Section';
 import { Container } from './Container';
-import { Plus, Minus, HelpCircle, MessageCircle, Mail, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Plus, Minus, HelpCircle, MessageCircle, Mail, Shield, ChevronLeft, ChevronRight, QrCode, Send, Wallet, Download, Headphones, User, Wifi, Zap } from 'lucide-react';
 import { useSwipeable } from 'react-swipeable';
 
 interface FAQItem {
@@ -13,40 +13,76 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: 'How long does it take to send money internationally?',
-    answer: 'Most international transfers are completed within minutes. However, depending on the destination country and payment method, it can take up to 24 hours.',
+    question: 'Why are PikoSend’s transaction fees so low?',
+    answer: 'PikoSend is built to be an affordable payment solution. Our technology is optimised to reduce operational costs, and we pass those savings directly to our users. We believe digital payments should help you keep more of your money not take it away.',
     icon: MessageCircle,
     category: 'Transfers'
   },
   {
-    question: 'What fees does PikoSend charge?',
-    answer: 'We believe in transparent pricing. Our fees vary depending on the destination and payment method, but we always show you the exact cost upfront. No hidden charges, ever.',
+    question: 'Are there any hidden charges?',
+    answer: 'No. PikoSend uses clear and transparent pricing. You always see the cost before completing a transaction, so there are no surprises.',
     icon: HelpCircle,
     category: 'Pricing'
   },
   {
-    question: 'Is my money safe with PikoSend?',
-    answer: 'Absolutely. We use bank-level encryption and security measures. Your funds are protected by our financial partners and regulated by authorities in multiple jurisdictions.',
+    question: 'Is my money and data safe on PikoSend?',
+    answer: 'Yes. All transactions and user data are protected with end-to-end encryption and secured by your personal PIN known only by you. Your information is private and cannot be accessed without your permission.',
     icon: Shield,
     category: 'Security'
   },
   {
-    question: 'Which countries can I send money to?',
-    answer: 'PikoSend supports transfers to over 150 countries worldwide. You can send money to bank accounts, mobile wallets, or other PikoSend users in most major countries.',
-    icon: MessageCircle,
-    category: 'Coverage'
-  },
-  {
-    question: 'Do I need to verify my identity?',
-    answer: 'Yes, for security and regulatory compliance, we require identity verification. The process is quick and can be completed in minutes by uploading a valid ID document.',
+    question: 'What happens if my phone is lost or stolen?',
+    answer: 'Your account remains secure. The app automatically locks when inactive, and access requires your PIN. Without your PIN, no one can access your funds or transaction history.',
     icon: Shield,
-    category: 'Verification'
+    category: 'Security'
   },
   {
-    question: 'Can I use PikoSend for business payments?',
-    answer: 'Yes! We offer dedicated business accounts with features like team management, API integration, bulk payments, and detailed reporting tools perfect for businesses of all sizes.',
-    icon: HelpCircle,
-    category: 'Business'
+    question: 'How fast are transactions on PikoSend?',
+    answer: 'Most transactions are completed in under 30 seconds. The app is designed to be quick and simple, even for first-time users or bulk payments.',
+    icon: Zap,
+    category: 'Transfers'
+  },
+  {
+    question: 'Does PikoSend use a lot of internet data?',
+    answer: 'No. PikoSend is optimised to use very little data, even for frequent users. This helps you save on data costs while transacting daily.',
+    icon: Wifi,
+    category: 'App Features'
+  },
+  {
+    question: 'Can I send money to people who are not on PikoSend?',
+    answer: 'Yes. You can send money to users in other networks or directly to supported bank accounts. The recipient does not need to have the PikoSend app.',
+    icon: Send,
+    category: 'Transfers'
+  },
+  {
+    question: 'How does the multi-wallet feature help me?',
+    answer: 'Multi-wallets allow you to separate your money by purpose such as spending, savings, rent, school fees, or business income. This helps you stay organised and in control of your finances.',
+    icon: Wallet,
+    category: 'App Features'
+  },
+  {
+    question: 'How do QR code payments work?',
+    answer: 'Simply scan a QR code, confirm the amount, and complete the payment. It’s fast, secure, and removes the need to carry cash or wait in line.',
+    icon: QrCode,
+    category: 'Payments'
+  },
+  {
+    question: 'What is a Human ATM?',
+    answer: 'A Human ATM is a trusted local merchant who helps users deposit or withdraw cash from their PikoSend wallet. This service is coming soon and will launch after regulatory approvals are complete.',
+    icon: User,
+    category: 'Services'
+  },
+  {
+    question: 'What if I need help or support?',
+    answer: 'Our customer support team is easy to reach. You can contact us via WhatsApp, SMS, phone call, email, or social media anytime of the day.',
+    icon: Headphones,
+    category: 'Support'
+  },
+  {
+    question: 'How do I get started with PikoSend?',
+    answer: 'Download the app, sign up in minutes, and start sending, paying, and managing your money right away.',
+    icon: Download,
+    category: 'Getting Started'
   },
 ];
 

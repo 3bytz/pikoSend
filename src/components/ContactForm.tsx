@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Loader2, MessageSquare, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Loader2, MessageSquare, Mail, Phone, MapPin, ArrowRight, Globe } from 'lucide-react';
 import { contactFormSchema, ContactFormInput } from '../lib/validations';
 import { useContactForm } from '../hooks/useContactForm';
 import { Container } from './Container';
@@ -84,9 +84,9 @@ export const ContactForm: React.FC = () => {
     <section className="py-8 md:py-20 bg-gradient-to-br from-gray-50 to-white ">
       <Container>
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-3 md:gap-12 mb-8 md:mb-16">
+          <div className="grid lg:grid-cols-1 gap-3 md:gap-12 mb-8 md:mb-16">
       
-            <div className="relative">
+            {/* <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-piko-purple/10 to-piko-violet/10 rounded-3xl blur-2xl"></div>
               
               <div className="relative bg-white rounded-3xl shadow-2xl p-6 md:p-8 border border-gray-100">
@@ -138,7 +138,7 @@ export const ContactForm: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Contact Form */}
             <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-8 border border-gray-100">
@@ -275,15 +275,14 @@ export const ContactForm: React.FC = () => {
           </div>
 
 
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4  md:gap-6 mb-3 md:mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4  md:gap-6 mb-3 md:mb-12">
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-14 h-14 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-7 h-7 text-piko-purple" />
+                <Globe className="w-7 h-7 text-piko-purple" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-lg">Email Us</h3>
+              <h3 className="font-semibold text-gray-900 mb-2 text-lg">Visit the Office</h3>
               <a href="mailto:support@pikosend.com" className="text-piko-purple hover:underline text-base font-medium">
-                support@pikosend.com
+                Vision Towers, Muthithi Road, Westlands, Kenya
               </a>
               <p className="text-gray-600 text-sm mt-2">General inquiries</p>
             </div>
@@ -298,7 +297,7 @@ export const ContactForm: React.FC = () => {
               <p className="text-gray-500 text-xs mt-2">Weekends: Emergency only</p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+            {/* <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-14 h-14 bg-gradient-to-r from-piko-purple/10 to-piko-violet/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Loader2 className="w-7 h-7 text-piko-purple" />
               </div>
@@ -306,7 +305,7 @@ export const ContactForm: React.FC = () => {
               <p className="text-gray-700 text-base font-medium">Within 24 hours</p>
               <p className="text-gray-600 text-sm">On business days</p>
               <p className="text-green-600 text-xs font-medium mt-2">✔ Priority for urgent matters</p>
-            </div>
+            </div> */}
           </div>
           
           {/* <div className="bg-gradient-to-r from-piko-purple to-piko-violet rounded-3xl p-8 md:p-12 text-center text-white overflow-hidden relative">

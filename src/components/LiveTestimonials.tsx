@@ -22,7 +22,7 @@ export const LiveTestimonials: React.FC = () => {
             </h2>
 
             <p className="text-lg md:text-xl text-piko-medium-grey mb-8 leading-relaxed">
-              Thousands of satisfied customers across Africa trust PikoSend for
+              Thousands of satisfied customers across Kenya trust PikoSend for
               their daily transactions, business payments, and personal
               transfers.
             </p>

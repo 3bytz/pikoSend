@@ -12,8 +12,10 @@ import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 import {
 
+  Banknote,
   CreditCard,
   Globe,
+  SendIcon,
   Smartphone,
   Zap,
 
@@ -25,15 +27,13 @@ import {
 const products = [
   {
     icon: Zap,
-    title: "Instant Transfers",
+    title: "PikoSend Wallet",
     description:
-      "Send money to anyone, anywhere within seconds. Real-time processing with support and minimal fees.",
+      "Your main digital wallet for everyday payments. You can use it to send, receive, and store money.",
     features: [
-      "Real-time processing",
-      "Low fees",
-      "Instant notifications",
-      "24/7 availability",
-      "Bank-grade security",
+      "Daily payments and transfers",
+      "People tired of high fees",
+      "Cashless convenience",
     ],
     gradient: "from-piko-purple to-piko-violet",
     image: "/mockups/instantTransfer.jpg",
@@ -41,46 +41,55 @@ const products = [
   },
   {
     icon: Globe,
-    title: "Qr Code Payment",
+    title: "QR Payments (Tap & Go)",
     description:
-      "Just open the app, scan the merchant QR code, enter the amount, and voilà! Payment done. Perfect for businesses and freelancers.",
-    features: ["Competitive rates", "Easy conversion", "Batch payments"],
+      "You can pay or accept payments instantly by simply scanning a QR code. No cash handling. No POS machines. Just faster transactions.",
+    features: ["Shops, supermarkets, petrol stations and all retail outlets", "Everyday in-person payments", "Faster checkout experiences"],
     gradient: "from-piko-violet to-piko-lilac",
     image: "/mockups/sendbyQR.jpg",
     tag: "Business",
   },
   {
     icon: CreditCard,
-    title: "Wallet Management",
+    title: "Multi-Wallets",
     description:
-      "Perfect for secure online shopping with spending controls and real-time alerts.",
+      "Create multiple wallets within your account to separate spending, savings, bill payments or group contributions. Multi-wallets help you stay organised without the need to open multiple accounts.",
     features: [
-      "Instant creation",
-      "Freeze/unfreeze",
-      "Spending limits",
-      "Transaction alerts",
-      "Expiry control",
+      "Budgeting and money control",
+      "Separating personal and shared funds",
+      "Clear financial tracking",
+
     ],
     gradient: "from-piko-lilac to-piko-purple",
     image: "/mockups/Wallet.jpg",
     tag: "Secure",
   },
   {
-    icon: Smartphone,
-    title: "Mobile ATM",
+    icon: Banknote,
+    title: "Human ATM (Coming Soon)",
     description:
-      "Add cash to your wallet using a nearby cash agent. Withdraw cash from your wallet via agent.",
+      "A community-based agent network that will allow cash deposits and withdrawals through trusted merchants. Regulatory approvals are in progress.",
     features: [
-      "Easy top-ups",
-      "Bill payments",
-      "Transaction history",
-      "Budget tracking",
-      "QR payments",
-      "Savings goals",
+     
     ],
     gradient: "from-piko-purple to-piko-violet",
     image: "/mockups/ATM.jpg",
     tag: "All-in-One",
+  },
+    {
+    icon: SendIcon,
+    title: "Bank Transfers",
+    description:
+      "With PikoSend, you can also send money directly from your PikoSend wallet to supported banks via Pesapal. Ideal for paying rent, school fees, or suppliers at low cost.",
+    features: [
+      "Budgeting and money control",
+      "Separating personal and shared funds",
+      "Clear financial tracking",
+
+    ],
+    gradient: "from-piko-lilac to-piko-purple",
+    image: "/mockups/Wallet.jpg",
+    tag: "Secure",
   },
 ];
 
@@ -98,18 +107,17 @@ export const Products: React.FC = () => {
       <Section background="white" className="py-12 md:py-24">
         <Container>
           <div className="text-center max-w-4xl mx-auto mb-8 md:mb-16">
-            <h2 className="text-3xl md:text-5xl font-poppins font-bold text-piko-black mb-6 animate-fade-up">
-              Built for modern
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold text-piko-black mb-6 animate-fade-up tracking-12">
+              Simple, Affordable Payment Options Built for your 
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet">
-                African finance
+                Everyday Use
               </span>
             </h2>
             <p
               className="text-lg text-piko-medium-grey max-w-2xl mx-auto animate-fade-up"
               style={{ animationDelay: "0.1s" }}
             >
-              We combine cutting-edge technology with deep local understanding
-              to deliver exceptional value.
+             Built to save you time, money, and stress.
             </p>
           </div>
 

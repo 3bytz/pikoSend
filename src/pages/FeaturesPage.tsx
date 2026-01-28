@@ -8,13 +8,12 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 const features = [
   {
     icon: Zap,
-    title: 'Lightning-Fast Transactions',
-    description: 'Experience payments completed in seconds. Our optimized infrastructure ensures your business runs smoothly and customers stay happy with instant transfers.',
+    title: 'Low & Transparent Transaction Fees',
+    description: 'Our pricing is simple and affordable. No hidden charges. No surprises. You always know what you’re paying before you confirm a transaction.',
     details: [
-      'Complete transfers in under 3 seconds',
-      'Real-time processing 24/7',
-      'Optimized African network routes',
-      'Instant payment notifications'
+      'Low transaction fees starting from 0.5%',
+      'No set up fees',
+      'No hidden charges',
     ],
     stats: '< 3 sec',
     statsLabel: 'Average speed',
@@ -25,13 +24,13 @@ const features = [
   },
   {
     icon: Globe,
-    title: 'QR Code Payments & Merchant Integration',
-    description: 'Seamless payment solutions for businesses of all sizes. Accept payments via QR codes and integrate with your existing POS systems effortlessly.',
+    title: 'Multi-Wallet Control',
+    description: 'PikoSend allows you to organise your money the way you want. You can create, name, and manage multiple wallets without extra cost. Easily save for rent, school fees, vacation and many more, all in one platform.',
     details: [
-      'One-scan QR code payments',
-      'Easy POS integration',
-      'Real-time settlement',
-      'Multi-store management'
+      'Move money across wallets at no cost',
+      'Real-time transaction alerts',
+      'Spending limits',
+      'Free/Unfreeze'
     ],
     stats: '99.8%',
     statsLabel: 'Success rate',
@@ -42,12 +41,12 @@ const features = [
   },
   {
     icon: Shield,
-    title: 'Bank-Grade Security & Privacy',
-    description: 'Your security is our top priority. Advanced encryption and strict privacy measures protect every transaction and keep your data completely private.',
+    title: 'Strong Data Privacy & Security',
+    description: 'With PikoSend, your money and data are fully protected. Every transaction is secured with end-to-end encryption, your PIN keeps access private, and the app locks automatically when not in use  so your money stays exactly where it should.',
     details: [
-      '256-bit military-grade encryption',
+      'Strict data privacy compliance',
+      'No sell or share data policy',
       'Real-time fraud detection',
-      'Strict data protection compliance',
       'Never share or sell your data'
     ],
     stats: '100%',
@@ -59,17 +58,31 @@ const features = [
   },
   {
     icon: Users,
-    title: '24/7 Support & Affordable Pricing',
-    description: 'Get expert assistance anytime and enjoy transparent, low-cost pricing that helps you earn more, whether you\'re a small vendor or large enterprise.',
+    title: 'Accessible Customer Support',
+    description: 'Nothing is more frustrating than not being able to reach for help when you need it.  That’s why at PikoSend, we strongly believe in good and accessible customer support. Our team is always available whether it’s WhatsApp, SMS, phone, email, or social media  so you can get help quickly whenever you need it.',
     details: [
-      '24/7 multilingual support team',
+      '24/7 multilingual support',
       'Under 1 minute response time',
-      'Low fees starting from 0.5%',
-      'No hidden charges or setup fees'
     ],
     stats: '24/7',
     statsLabel: 'Support',
     imageUrl: '/new/features_expert.jpeg',
+    gradient: 'from-piko-violet to-piko-purple',
+    accentColor: 'text-piko-violet',
+    bgColor: 'bg-piko-violet/10'
+  },
+   {
+    icon: Users,
+    title: 'Send Money Your Way',
+    description: 'With PikoSend, sending money is simple, fast, and flexible. Choose the method that works best for you:',
+    details: [
+      'Send by Phone (to Mpesa)',
+      'Send by Wallet',
+      'Send to Bank (Pesalink)',
+    ],
+    stats: '< 40 secs',
+    statsLabel: 'Send Money',
+    imageUrl: '',
     gradient: 'from-piko-violet to-piko-purple',
     accentColor: 'text-piko-violet',
     bgColor: 'bg-piko-violet/10'
@@ -96,13 +109,13 @@ export const FeaturesPage: React.FC = () => {
               <span>Comprehensive Features</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-poppins font-bold text-piko-black mb-6">
-              Everything You Need for{' '}
+              Your everyday partner for{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet">
-                Seamless Payments
+                seamless payments
               </span>
             </h2>
             <p className="text-xl text-piko-medium-grey max-w-3xl mx-auto">
-              Powerful tools designed to simplify payments, enhance security, and grow your business
+              Offering practical financial services designed to make everyday transactions easier.
             </p>
           </div>
 
