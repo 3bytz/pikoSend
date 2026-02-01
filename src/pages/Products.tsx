@@ -16,7 +16,6 @@ import {
   CreditCard,
   Globe,
   SendIcon,
-  Smartphone,
   Zap,
 
  
@@ -82,13 +81,11 @@ const products = [
     description:
       "With PikoSend, you can also send money directly from your PikoSend wallet to supported banks via Pesapal. Ideal for paying rent, school fees, or suppliers at low cost.",
     features: [
-      "Budgeting and money control",
-      "Separating personal and shared funds",
-      "Clear financial tracking",
+     
 
     ],
     gradient: "from-piko-lilac to-piko-purple",
-    image: "/mockups/Wallet.jpg",
+    image: "/mockups/SendbyBank.jpg",
     tag: "Secure",
   },
 ];

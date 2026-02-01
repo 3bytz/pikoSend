@@ -48,14 +48,14 @@ export const LiveTestimonials: React.FC = () => {
               <div className="hidden md:block h-16 w-px bg-piko-soft-grey"></div>
               <div className="md:hidden w-12 h-px bg-piko-soft-grey"></div>
 
-              <div>
+              {/* <div>
                 <div className="text-3xl md:text-4xl font-bold text-piko-black mb-1">
                   500K+
                 </div>
                 <div className="text-sm text-piko-medium-grey">
                   Active users
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4">

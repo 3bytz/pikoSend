@@ -118,7 +118,7 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="lg:w-1/2 text-center lg:text-left">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl text-piko-black font-poppins font-bold mb-3">
-                  Stay Updated on Payments
+                  Affordable payments, built for real life
                 </h2>
                 <p className="text-base text-piko-medium-grey leading-relaxed max-w-lg">
                   Get the latest updates, tips, and exclusive offers delivered

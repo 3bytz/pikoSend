@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Loader2, MessageSquare, Mail, Phone, MapPin, ArrowRight, Globe } from 'lucide-react';
+import { Loader2, Phone, Globe } from 'lucide-react';
 import { contactFormSchema, ContactFormInput } from '../lib/validations';
 import { useContactForm } from '../hooks/useContactForm';
 import { Container } from './Container';
@@ -15,40 +15,40 @@ const subjects = [
   'Other',
 ];
 
-const contactMethods = [
-  {
-    icon: MessageSquare,
-    title: 'Live Chat',
-    description: 'Get instant support from our team',
-    action: 'Start Chat',
-    color: 'from-piko-purple to-piko-violet',
-    link: '#live-chat'
-  },
-  {
-    icon: Mail,
-    title: 'Email Support',
-    description: 'Send us an email anytime',
-    action: 'Send Email',
-    color: 'from-piko-violet to-piko-lilac',
-    link: 'mailto:support@pikosend.com'
-  },
-  {
-    icon: Phone,
-    title: 'Phone Support',
-    description: 'Call us directly',
-    action: 'Call Now',
-    color: 'from-piko-lilac to-piko-purple',
-    link: 'tel:+254110917569'
-  },
-  {
-    icon: MapPin,
-    title: 'Visit Office',
-    description: 'Come see us in person',
-    action: 'View Location',
-    color: 'from-piko-purple to-piko-violet',
-    link: '#location'
-  }
-];
+// const contactMethods = [
+//   {
+//     icon: MessageSquare,
+//     title: 'Live Chat',
+//     description: 'Get instant support from our team',
+//     action: 'Start Chat',
+//     color: 'from-piko-purple to-piko-violet',
+//     link: '#live-chat'
+//   },
+//   {
+//     icon: Mail,
+//     title: 'Email Support',
+//     description: 'Send us an email anytime',
+//     action: 'Send Email',
+//     color: 'from-piko-violet to-piko-lilac',
+//     link: 'mailto:support@pikosend.com'
+//   },
+//   {
+//     icon: Phone,
+//     title: 'Phone Support',
+//     description: 'Call us directly',
+//     action: 'Call Now',
+//     color: 'from-piko-lilac to-piko-purple',
+//     link: 'tel:+254110917569'
+//   },
+//   {
+//     icon: MapPin,
+//     title: 'Visit Office',
+//     description: 'Come see us in person',
+//     action: 'View Location',
+//     color: 'from-piko-purple to-piko-violet',
+//     link: '#location'
+//   }
+// ];
 
 export const ContactForm: React.FC = () => {
   const { mutate, isPending } = useContactForm();
@@ -59,7 +59,7 @@ export const ContactForm: React.FC = () => {
     watch,
     formState: { errors },
   } = useForm<ContactFormInput>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(contactFormSchema) as any,
     defaultValues: {
       full_name: '',
       email: '',

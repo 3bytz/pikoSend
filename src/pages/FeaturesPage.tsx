@@ -51,7 +51,7 @@ const features = [
     ],
     stats: '100%',
     statsLabel: 'Secure',
-    imageUrl: '/features/bankGradeSec.jpg',
+    imageUrl: '/features/organisedWallets.jpeg',
     gradient: 'from-piko-purple to-piko-lilac',
     accentColor: 'text-piko-lilac',
     bgColor: 'bg-piko-lilac/10'
@@ -82,7 +82,7 @@ const features = [
     ],
     stats: '< 40 secs',
     statsLabel: 'Send Money',
-    imageUrl: '',
+    imageUrl: '/features/sendMoneyUrWay.png',
     gradient: 'from-piko-violet to-piko-purple',
     accentColor: 'text-piko-violet',
     bgColor: 'bg-piko-violet/10'
@@ -164,9 +164,9 @@ export const FeaturesPage: React.FC = () => {
                       </p>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-2">
                       {feature.details.map((detail, idx) => (
-                        <div key={idx} className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-piko-soft-grey hover:border-piko-purple/30 hover:shadow-md transition-all duration-300">
+                        <div key={idx} className="flex items-start gap-2 p-4 rounded-2xl bg-white border border-piko-soft-grey hover:border-piko-purple/30 hover:shadow-md transition-all duration-300">
                           <div className={`w-10 h-10 rounded-lg ${feature.bgColor} flex items-center justify-center flex-shrink-0`}>
                             <CheckCircle className={`w-5 h-5 ${feature.accentColor}`} strokeWidth={2} />
                           </div>

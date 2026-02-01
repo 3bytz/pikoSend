@@ -177,3 +177,10 @@
     transform: translateX(0);
   }
 }
+.turnstile-widget {
+  margin: 0 auto;
+}
+
+.turnstile-widget iframe {
+  border-radius: 12px;
+}
