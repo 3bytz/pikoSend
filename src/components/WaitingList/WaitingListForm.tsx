@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import PhoneInput from "react-phone-number-input";
@@ -17,7 +17,7 @@ import {
   WaitingListFormInput,
 } from "../../utils/validation";
 import { useWaitingList } from "../../hooks/useWaitingList";
-import { TurnstileWidget } from "../TurnstileWidget";
+import { TurnstileWidget, TurnstileWidgetRef } from "../TurnstileWidget";
 import toast from "react-hot-toast";
 
 const steps = [
@@ -26,7 +26,6 @@ const steps = [
   { id: 3, title: "Confirmation", icon: CheckCircle },
 ];
 
-// Step 1
 const Step1BasicInfo: React.FC<{
   register: any;
   errors: any;
@@ -34,8 +33,6 @@ const Step1BasicInfo: React.FC<{
   setValue: any;
 }> = ({ register, errors, watch, setValue }) => {
   const userType = watch("userType");
-  const country = watch("country") || "KE";
-  console.log("Selected country in Step1:", country);
 
   return (
     <div className="space-y-6 animate-fade-in">
@@ -173,7 +170,7 @@ const Step1BasicInfo: React.FC<{
       {userType === "personal" && (
         <div>
           <label className="block text-sm font-medium text-piko-black mb-2">
-            Email Address (Optional)
+            Email Address *
           </label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-piko-medium-grey w-5 h-5" />
@@ -184,6 +181,7 @@ const Step1BasicInfo: React.FC<{
                 errors.personalEmail ? "border-red-500" : "border-grey"
               } focus:outline-none focus:ring-2 focus:ring-piko-purple/30 focus:border-piko-purple transition`}
               placeholder="john@example.com"
+              required
             />
           </div>
           {errors.personalEmail && (
@@ -197,7 +195,6 @@ const Step1BasicInfo: React.FC<{
   );
 };
 
-// Step 2
 const Step2UsageDetails: React.FC<{
   register: any;
   errors: any;
@@ -344,6 +341,26 @@ const Step2UsageDetails: React.FC<{
 
       <div>
         <label className="block text-sm font-medium text-piko-black mb-2">
+          How did you hear about us? *
+        </label>
+        <select
+          {...register("source")}
+          className="w-full px-4 py-3 rounded-xl border border-grey focus:outline-none focus:ring-2 focus:ring-piko-purple/30 focus:border-piko-purple transition bg-white"
+          required
+        >
+          <option value="">Select an option</option>
+          <option value="landing_page">Landing Page</option>
+          <option value="referral">Referral</option>
+          <option value="social_media">Social Media</option>
+          <option value="other">Other</option>
+        </select>
+        {errors.source && (
+          <p className="mt-1 text-sm text-red-600">{errors.source.message}</p>
+        )}
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-piko-black mb-2">
           Referral Code (Optional)
         </label>
         <input
@@ -357,22 +374,20 @@ const Step2UsageDetails: React.FC<{
   );
 };
 
-// Main WaitingListForm Component
 const WaitingListForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [honeypot, setHoneypot] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const turnstileRef = useRef<TurnstileWidgetRef>(null);
   const {
     submitForm,
-    isLoading,
     error,
     success,
     submissionId,
     resetForm,
     canSubmit,
   } = useWaitingList();
-  console.log(isLoading)
 
   const {
     register,
@@ -381,43 +396,94 @@ const WaitingListForm: React.FC = () => {
     setValue,
     trigger,
     formState: { errors },
-    // getValues,
   } = useForm<WaitingListFormInput | any>({
     resolver: zodResolver(waitingListSchema),
     mode: "onChange",
     defaultValues: {
       userType: "personal",
       country: "KE",
+       source: "landing_page",
     },
   });
-  // const userType = watch("userType");
 
-  // Turnstile callbacks
+  const watchFields = watch([
+  "userType",
+  "firstName",
+  "lastName",
+  "phone",
+  "personalEmail",
+  "businessName",
+  "businessEmail",
+  "physicalAddress",
+  "contactFirstName",
+  "contactLastName",
+  "contactPhone",
+  "contactEmail",
+  "referralCode",
+  "source", 
+  "country"
+]);
+
   const handleTurnstileVerify = (token: string) => {
+    if (turnstileToken) return;
     setTurnstileToken(token);
   };
 
-  const handleTurnstileError = () => {
-    toast.error("Failed to verify. Please try again.");
+  const handleTurnstileError = (error: any) => {
+    console.error("Turnstile error:", error);
+    
+    let errorMessage = "Failed to verify. Please try again.";
+    
+    if (error?.code === '110200') {
+      errorMessage = "Domain verification failed. Please ensure this domain is registered in Cloudflare Turnstile.";
+      console.error("Turnstile domain error: Make sure to add this domain to your Cloudflare Turnstile allowed domains list.");
+    }
+    
+    toast.error(errorMessage);
     setTurnstileToken(null);
+    
+    if (error?.code !== '110200' && turnstileRef.current) {
+      turnstileRef.current.reset();
+    }
   };
 
   const handleTurnstileExpire = () => {
     toast.error("Verification expired. Please try again.");
     setTurnstileToken(null);
+    if (turnstileRef.current) {
+      turnstileRef.current.reset();
+    }
   };
+
+  useEffect(() => {
+    if (error) {
+      setTurnstileToken(null);
+      if (turnstileRef.current) {
+        turnstileRef.current.reset();
+      }
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (currentStep !== 3) {
+      setTurnstileToken(null);
+      if (turnstileRef.current) {
+        turnstileRef.current.reset();
+      }
+    }
+  }, [currentStep]);
 
   const nextStep = async () => {
     let isValid = false;
     if (currentStep === 1) {
-      const userType = watch("userType");
+      const userType = watchFields[0];
       if (userType === "personal") {
-        isValid = await trigger(["firstName", "lastName", "phone"]);
+        isValid = await trigger(["firstName", "lastName", "phone", "personalEmail"]);
       } else {
-        isValid = await trigger(["businessName", "phone"]);
+        isValid = await trigger(["businessName", "phone", "businessEmail"]);
       }
     } else if (currentStep === 2) {
-      isValid = await trigger(["userType"]);
+      isValid = await trigger(["userType", "source"]);
     }
 
     if (isValid && currentStep < steps.length) {
@@ -443,36 +509,64 @@ const WaitingListForm: React.FC = () => {
     }
 
     if (honeypot) {
-      // Bot detected
       toast.error("Submission failed. Please try again.");
+      return;
+    }
+
+    const sitekey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+    if (!sitekey || sitekey.trim() === '') {
+      toast.error("Verification system is not configured. Please contact support.");
+      console.error("Turnstile sitekey is missing in environment variables");
       return;
     }
 
     try {
       setIsSubmitting(true);
-      await submitForm(data, turnstileToken);
+      
+      const payload = {
+        ...data,
+        source: data.source || "landing_page",
+        turnstileToken: turnstileToken,
+        timestamp: Date.now(),
+      };
+      
+      await submitForm(payload, turnstileToken);
       toast.success("Successfully joined waiting list!");
-      // Reset Turnstile token after successful submission
-      setTurnstileToken(null);
     } catch (error: any) {
       console.error("Submission error:", error);
-      toast.error(error.message || "Something went wrong. Please try again later.");
-      // Reset Turnstile on error so user can try again
+      
+      let errorMessage = error.message || "Something went wrong. Please try again later.";
+      
+      if (errorMessage.includes('Turnstile verification is required') || 
+          errorMessage.includes('invalid turnstile token')) {
+        errorMessage = "Verification failed. Please complete the CAPTCHA again.";
+      }
+      
+      toast.error(errorMessage);
       setTurnstileToken(null);
+      if (turnstileRef.current) {
+        turnstileRef.current.reset();
+      }
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Step 3 - Confirmation
+  useEffect(() => {
+    if (success) {
+      setTurnstileToken(null);
+      if (turnstileRef.current) {
+        turnstileRef.current.reset();
+      }
+    }
+  }, [success]);
+
   const Step3Confirmation: React.FC<{
-    watch: any;
-    onSubmit: () => void;
+    watchFields: any[];
     isSubmitting: boolean;
     turnstileToken: string | null;
-  }> = ({ watch, onSubmit, isSubmitting, turnstileToken }) => {
-    const formData = watch();
-    const isBusiness = formData.userType === "business";
+  }> = ({ watchFields, isSubmitting, turnstileToken }) => {
+    const isBusiness = watchFields[0] === "business";
 
     return (
       <div className="animate-fade-in">
@@ -487,25 +581,25 @@ const WaitingListForm: React.FC = () => {
                 <div className="flex justify-between border-b border-grey/50 pb-2">
                   <span className="text-piko-medium-grey">Business Name:</span>
                   <span className="font-medium text-piko-black text-right">
-                    {formData.businessName}
+                    {watchFields[5]}
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-grey/50 pb-2">
                   <span className="text-piko-medium-grey">Business Email:</span>
                   <span className="font-medium text-piko-black text-right">
-                    {formData.businessEmail}
+                    {watchFields[6]}
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-grey/50 pb-2">
                   <span className="text-piko-medium-grey">Contact Person:</span>
                   <span className="font-medium text-piko-black text-right">
-                    {formData.contactFirstName} {formData.contactLastName}
+                    {watchFields[8]} {watchFields[9]}
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-grey/50 pb-2">
                   <span className="text-piko-medium-grey">Contact Phone:</span>
                   <span className="font-medium text-piko-black text-right">
-                    {formData.contactPhone || formData.phone}
+                    {watchFields[10] || watchFields[3]}
                   </span>
                 </div>
               </>
@@ -514,38 +608,45 @@ const WaitingListForm: React.FC = () => {
                 <div className="flex justify-between border-b border-grey/50 pb-2">
                   <span className="text-piko-medium-grey">Name:</span>
                   <span className="font-medium text-piko-black text-right">
-                    {formData.firstName} {formData.lastName}
+                    {watchFields[1]} {watchFields[2]}
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-grey/50 pb-2">
                   <span className="text-piko-medium-grey">Phone:</span>
                   <span className="font-medium text-piko-black text-right">
-                    {formData.phone}
+                    {watchFields[3]}
                   </span>
                 </div>
-                {formData.personalEmail && (
-                  <div className="flex justify-between border-b border-grey/50 pb-2">
-                    <span className="text-piko-medium-grey">Email:</span>
-                    <span className="font-medium text-piko-black text-right">
-                      {formData.personalEmail}
-                    </span>
-                  </div>
-                )}
+                <div className="flex justify-between border-b border-grey/50 pb-2">
+                  <span className="text-piko-medium-grey">Email:</span>
+                  <span className="font-medium text-piko-black text-right">
+                    {watchFields[4]}
+                  </span>
+                </div>
               </>
             )}
 
             <div className="flex justify-between border-b border-grey/50 pb-2">
               <span className="text-piko-medium-grey">Account Type:</span>
               <span className="font-medium text-piko-black text-right capitalize">
-                {formData.userType}
+                {watchFields[0]}
               </span>
             </div>
 
-            {formData.referralCode && (
+            <div className="flex justify-between border-b border-grey/50 pb-2">
+              <span className="text-piko-medium-grey">How you heard about us:</span>
+              <span className="font-medium text-piko-black text-right capitalize">
+                {watchFields[13] === "landing_page" ? "Landing Page" :
+                 watchFields[13] === "social_media" ? "Social Media" :
+                 watchFields[13] === "referral" ? "Referral" : "Other"}
+              </span>
+            </div>
+
+            {watchFields[12] && (
               <div className="flex justify-between border-b border-grey/50 pb-2">
                 <span className="text-piko-medium-grey">Referral Code:</span>
                 <span className="font-medium text-piko-black text-right">
-                  {formData.referralCode}
+                  {watchFields[12]}
                 </span>
               </div>
             )}
@@ -565,19 +666,20 @@ const WaitingListForm: React.FC = () => {
           </label>
         </div>
 
-        {/* Turnstile Widget */}
         <div className="mb-6 flex justify-center">
-          <TurnstileWidget
-            sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY || ""}
-            onVerify={handleTurnstileVerify}
-            onError={handleTurnstileError}
-            onExpire={handleTurnstileExpire}
-          />
+          {currentStep === 3 && (
+            <TurnstileWidget
+              ref={turnstileRef}
+              sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY || ""}
+              onVerify={handleTurnstileVerify}
+              onError={handleTurnstileError}
+              onExpire={handleTurnstileExpire}
+            />
+          )}
         </div>
 
         <button
-          type="button"
-          onClick={onSubmit}
+          type="submit"
           disabled={isSubmitting || !turnstileToken}
           className="w-full px-8 py-3 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
         >
@@ -609,21 +711,21 @@ const WaitingListForm: React.FC = () => {
           Thank you for joining the PikoSend waiting list. We've sent a
           confirmation to{" "}
           <span className="font-semibold text-piko-black">
-            {watch("phone")}
+            {watchFields[3]}
           </span>{" "}
-          {watch("userType") === "business" && watch("businessEmail") && (
+          {watchFields[0] === "business" && watchFields[6] && (
             <>
               and{" "}
               <span className="font-semibold text-piko-black">
-                {watch("businessEmail")}
+                {watchFields[6]}
               </span>
             </>
           )}
-          {watch("userType") === "personal" && watch("personalEmail") && (
+          {watchFields[0] === "personal" && watchFields[4] && (
             <>
               and{" "}
               <span className="font-semibold text-piko-black">
-                {watch("personalEmail")}
+                {watchFields[4]}
               </span>
             </>
           )}
@@ -649,6 +751,9 @@ const WaitingListForm: React.FC = () => {
             resetForm();
             setCurrentStep(1);
             setTurnstileToken(null);
+            if (turnstileRef.current) {
+              turnstileRef.current.reset();
+            }
           }}
           className="px-6 py-3 border-2 border-piko-purple text-piko-purple rounded-full font-semibold hover:bg-piko-purple hover:text-white transition-colors"
         >
@@ -660,7 +765,6 @@ const WaitingListForm: React.FC = () => {
 
   return (
     <div className="relative">
-      {/* Honeypot field */}
       <div style={{ position: "absolute", left: "-9999px" }}>
         <input
           type="text"
@@ -672,7 +776,6 @@ const WaitingListForm: React.FC = () => {
         />
       </div>
 
-      {/* Progress Steps */}
       <div className="flex justify-between items-center mb-8 relative">
         <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-piko-soft-grey -translate-y-1/2 z-0"></div>
 
@@ -750,8 +853,7 @@ const WaitingListForm: React.FC = () => {
 
         {currentStep === 3 && (
           <Step3Confirmation
-            watch={watch}
-            onSubmit={handleSubmit(onSubmit)}
+            watchFields={watchFields}
             isSubmitting={isSubmitting}
             turnstileToken={turnstileToken}
           />

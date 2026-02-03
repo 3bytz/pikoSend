@@ -45,12 +45,12 @@ export const submitWaitingList = async (
   turnstileToken: string,
 ): Promise<WaitingListResponse> => {
   try {
+    
     const payload = {
-      user_type:
-        formData.userType === "personal" ? "individual" : "organisation",
+      user_type: formData.userType === "personal" ? "individual" : "organisation",
       first_name: formData.firstName,
       last_name: formData.lastName,
-      individual_email: formData.personalEmail,
+      personal_email: formData.personalEmail, 
       organisation_name: formData.businessName,
       phone: formData.phone,
       organisation_email: formData.businessEmail,
@@ -59,10 +59,11 @@ export const submitWaitingList = async (
       contact_last_name: formData.contactLastName,
       contact_phone: formData.contactPhone,
       contact_email: formData.contactEmail,
-      source: "website_waiting_list",
+      source: formData.source || "landing_page", 
       turnstile_token: turnstileToken,
       timestamp: Date.now(),
       referral_code: formData.referralCode,
+      country: formData.country,
     };
 
     const response = await waitingListAPI.post<WaitingListResponse>(

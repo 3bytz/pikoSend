@@ -127,10 +127,10 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
 
     loadImages();
   }, []);
-  console.log(imagesLoaded, activeIndex);
-  // const handleImageLoad = (id: number) => {
-  //   setImagesLoaded((prev) => ({ ...prev, [id]: true }));
-  // };
+  // console.log(imagesLoaded, activeIndex);
+  const handleImageLoad = (id: number) => {
+    setImagesLoaded((prev) => ({ ...prev, [id]: true }));
+  };
 
   return (
     <Section background="white" id="app-screens" className="py-4 md:py-8 ">

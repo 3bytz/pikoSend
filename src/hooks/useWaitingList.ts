@@ -15,30 +15,30 @@ export const useWaitingList = () => {
     return Date.now() - lastSubmissionTime > fiveMinutes;
   }, [lastSubmissionTime]);
 
-  const submitForm = useCallback(async (formData: WaitingListFormData, turnstileToken: string) => {
-    if (!turnstileToken) {
-      throw new Error('Turnstile verification is required');
-    }
+ const submitForm = useCallback(async (formData: WaitingListFormData, turnstileToken: string) => {
+  if (!turnstileToken) {
+    throw new Error('Turnstile verification is required');
+  }
 
-    setIsLoading(true);
-    setError(null);
+  setIsLoading(true);
+  setError(null);
 
-    try {
-      const result = await submitWaitingList(formData, turnstileToken);
-      const now = Date.now();
-      setLastSubmissionTime(now);
-      localStorage.setItem('pikosend_last_submission', now.toString());
-      
-      setSuccess(true);
-      setSubmissionId(result.data?.id || null);
-      return result;
-    } catch (err: any) {
-      setError(err.message || 'Submission failed. Please try again.');
-      throw err;
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+  try {
+    const result = await submitWaitingList(formData, turnstileToken);
+    const now = Date.now();
+    setLastSubmissionTime(now);
+    localStorage.setItem('pikosend_last_submission', now.toString());
+    
+    setSuccess(true);
+    setSubmissionId(result.data?.id || null);
+    return result;
+  } catch (err: any) {
+    setError(err.message || 'Submission failed. Please try again.');
+    throw err;
+  } finally {
+    setIsLoading(false);
+  }
+}, []);
 
   const resetForm = useCallback(() => {
     setError(null);

@@ -15,6 +15,7 @@ export interface WaitingListFormData {
   contactPhone?: string;
   contactEmail?: string;
   referralCode?: string;
+  source: 'landing_page' | 'referral' | 'social_media' | 'other';
 }
 
 export interface WaitingListResponse {

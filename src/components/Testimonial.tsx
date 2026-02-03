@@ -109,9 +109,7 @@ export const Testimonial: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleLiveTestimonials, setVisibleLiveTestimonials] = useState<LiveTestimonial[]>([]);
   const [liveIndex, setLiveIndex] = useState(0);
-  console.log(liveIndex);
 
-  
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % detailedTestimonials.length);
   };
