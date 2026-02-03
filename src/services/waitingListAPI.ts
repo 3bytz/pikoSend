@@ -3,24 +3,12 @@ import { WaitingListFormData, WaitingListResponse } from "../types/waitingList";
 
 const waitingListAPI = axios.create({
   baseURL:
-    import.meta.env.VITE_REACT_APP_API_URL || "http://localhost:3000/join-waiting-list",
+    import.meta.env.VITE_REACT_APP_API_URL || "https://api.dev.futurizac.io",
   timeout: 15000,
   headers: {
     "Content-Type": "application/json",
     "X-Requested-With": "XMLHttpRequest",
   },
-});
-
-waitingListAPI.interceptors.request.use((config) => {
-  const token = localStorage.getItem("csrf_token");
-  if (token) {
-    config.headers["X-CSRF-Token"] = token;
-  }
-
-  config.headers["X-Request-ID"] =
-    `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-
-  return config;
 });
 
 waitingListAPI.interceptors.response.use(
@@ -46,25 +34,33 @@ export const submitWaitingList = async (
 ): Promise<WaitingListResponse> => {
   try {
     
-    const payload = {
-      user_type: formData.userType === "personal" ? "individual" : "organisation",
-      first_name: formData.firstName,
-      last_name: formData.lastName,
-      personal_email: formData.personalEmail, 
-      organisation_name: formData.businessName,
-      phone: formData.phone,
-      organisation_email: formData.businessEmail,
-      physical_address: formData.physicalAddress,
-      contact_first_name: formData.contactFirstName,
-      contact_last_name: formData.contactLastName,
-      contact_phone: formData.contactPhone,
-      contact_email: formData.contactEmail,
-      source: formData.source || "landing_page", 
-      turnstile_token: turnstileToken,
-      timestamp: Date.now(),
-      referral_code: formData.referralCode,
-      country: formData.country,
-    };
+    const payload: any = {
+  user_type: formData.userType === "personal" ? "individual" : "organisation",
+  phone: formData.phone,
+  source: formData.source || "landing_page", 
+  turnstile_token: turnstileToken,
+};
+
+if (formData.userType === "personal") {
+  Object.assign(payload, {
+    first_name: formData.firstName,
+    last_name: formData.lastName,
+    personal_email: formData.personalEmail,
+  });
+}
+
+if (formData.userType === "business") {
+  Object.assign(payload, {
+    organisation_name: formData.businessName,
+    organisation_email: formData.businessEmail,
+    physical_address: formData.physicalAddress,
+    contact_first_name: formData.contactFirstName,
+    contact_last_name: formData.contactLastName,
+    contact_phone: formData.contactPhone,
+    contact_email: formData.contactEmail,
+  });
+}
+
 
     const response = await waitingListAPI.post<WaitingListResponse>(
       "/join-waiting-list",

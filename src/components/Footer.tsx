@@ -68,7 +68,6 @@ export const Footer: React.FC = () => {
     }
   };
 
-  // Match exactly what's in the navbar
   const ProductsLinks = [
     { label: "Send Money", href: "/products#send-money" },
     { label: "Global Accounts", href: "/products#accounts" },
@@ -220,11 +219,11 @@ export const Footer: React.FC = () => {
                 <span>+254 110 917569</span>
               </a>
               <a
-                href="mailto:info@pikosend.co.ke"
+                href="mailto:info@pikosend.com"
                 className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition"
               >
                 <Mail size={14} />
-                <span>info@pikosend.co.ke</span>
+                <span>info@pikosend.com</span>
               </a>
               <div className="flex items-center gap-2 text-sm opacity-80">
                 <MapPin size={14} />

@@ -163,7 +163,6 @@ useEffect(() => {
           </p>
         </div>
 
-        {/* Slider Controls */}
         <div className="flex items-center justify-center gap-4 mb-8">
           <button
             onClick={prevSlide}
@@ -204,7 +203,7 @@ useEffect(() => {
           </button>
         </div>
 
-        {/* Horizontal Slider Container */}
+     
         <div className="relative" {...swipeHandlers}>
           <div className="overflow-hidden">
             <div 

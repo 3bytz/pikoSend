@@ -696,72 +696,73 @@ const WaitingListForm: React.FC = () => {
     );
   };
 
-  if (success) {
-    return (
-      <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl p-8 text-center animate-fade-in border border-emerald-200">
-        <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+if (success) {
+  return (
+    <div className="bg-white rounded-2xl p-8 text-center animate-fade-in border border-piko-soft-grey shadow-lg">
+    
+      <div className="relative mb-6">
+        <div className="absolute inset-0 bg-gradient-to-r from-piko-purple to-piko-violet blur-lg opacity-30 rounded-full w-32 h-32 mx-auto" />
+        <div className="relative w-20 h-20 mx-auto bg-gradient-to-r from-piko-purple to-piko-violet rounded-full flex items-center justify-center shadow-md">
           <CheckCircle className="w-10 h-10 text-white" />
         </div>
-
-        <h3 className="text-2xl font-bold text-piko-black mb-4">
-          You're on the list! 🎉
-        </h3>
-
-        <p className="text-piko-medium-grey mb-6">
-          Thank you for joining the PikoSend waiting list. We've sent a
-          confirmation to{" "}
-          <span className="font-semibold text-piko-black">
-            {watchFields[3]}
-          </span>{" "}
-          {watchFields[0] === "business" && watchFields[6] && (
-            <>
-              and{" "}
-              <span className="font-semibold text-piko-black">
-                {watchFields[6]}
-              </span>
-            </>
-          )}
-          {watchFields[0] === "personal" && watchFields[4] && (
-            <>
-              and{" "}
-              <span className="font-semibold text-piko-black">
-                {watchFields[4]}
-              </span>
-            </>
-          )}
-          .
-        </p>
-
-        <div className="bg-white rounded-xl p-4 mb-6">
-          <div className="text-sm text-piko-medium-grey mb-2">
-            Your submission ID:
-          </div>
-          <div className="font-mono text-piko-purple bg-piko-purple/5 p-2 rounded-lg">
-            {submissionId || "PS-" + Date.now().toString().slice(-8)}
-          </div>
-        </div>
-
-        <p className="text-sm text-piko-medium-grey mb-6">
-          We'll notify you as soon as PikoSend is available in your area. Expect
-          early access offers and exclusive updates!
-        </p>
-
-        <button
-          onClick={() => {
-            resetForm();
-            setCurrentStep(1);
-            setTurnstileToken(null);
-            if (turnstileRef.current) {
-              turnstileRef.current.reset();
-            }
-          }}
-          className="px-6 py-3 border-2 border-piko-purple text-piko-purple rounded-full font-semibold hover:bg-piko-purple hover:text-white transition-colors"
-        >
-          Add Another Person
-        </button>
       </div>
-    );
-  }
+
+      <h3 className="text-2xl font-bold text-piko-black mb-3">
+        Successfully Joined! 🎉
+      </h3>
+
+      {/* Description */}
+      <p className="text-piko-medium-grey mb-6">
+        You're now on the PikoSend waiting list. We'll contact you at:
+      </p>
+      <div className="mb-6 space-y-3">
+        <div className="inline-flex items-center gap-2 bg-piko-purple/5 px-4 py-2 rounded-full">
+          <span className="text-sm text-piko-medium-grey">Phone:</span>
+          <span className="font-semibold text-piko-purple">{watch("phone")}</span>
+        </div>
+        {watch("userType") === "business" && watch("businessEmail") && (
+          <div className="inline-flex items-center gap-2 bg-piko-violet/5 px-4 py-2 rounded-full">
+            <span className="text-sm text-piko-medium-grey">Email:</span>
+            <span className="font-semibold text-piko-violet">{watch("businessEmail")}</span>
+          </div>
+        )}
+        {watch("userType") === "personal" && watch("personalEmail") && (
+          <div className="inline-flex items-center gap-2 bg-piko-violet/5 px-4 py-2 rounded-full">
+            <span className="text-sm text-piko-medium-grey">Email:</span>
+            <span className="font-semibold text-piko-violet">{watch("personalEmail")}</span>
+          </div>
+        )}
+      </div>
+
+  
+      <div className="mb-6">
+        <div className="text-sm text-piko-medium-grey mb-2">
+          Reference Number:
+        </div>
+        <div className="font-mono text-sm text-piko-purple bg-piko-purple/10 px-4 py-2 rounded-lg border border-piko-purple/20">
+          {submissionId || "PS-" + Date.now().toString().slice(-8)}
+        </div>
+      </div>
+
+      {/* CTA Button */}
+      <button
+        onClick={() => {
+          resetForm();
+          setCurrentStep(1);
+          setTurnstileToken(null);
+        }}
+        className="w-full px-6 py-3 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+      >
+        Register Another Account
+      </button>
+
+      {/* Note */}
+      <p className="text-xs text-piko-medium-grey mt-4">
+        You'll receive early access offers and product updates via SMS/email
+      </p>
+    </div>
+  );
+}
 
   return (
     <div className="relative">

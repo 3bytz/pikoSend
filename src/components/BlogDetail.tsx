@@ -519,7 +519,7 @@ export const BlogDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+
       <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-piko-purple via-piko-violet to-piko-purple">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -614,10 +614,7 @@ export const BlogDetail: React.FC = () => {
                     </div>
 
                     <div className="space-y-4">
-                      {/* <button className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-sm text-white rounded-xl border border-white/30 hover:bg-white/30 transition-all duration-300">
-                        <Bookmark size={20} />
-                        Save Article
-                      </button> */}
+                 
                       
                  
                     </div>

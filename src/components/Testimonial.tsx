@@ -47,8 +47,8 @@ const liveTestimonials: LiveTestimonial[] = [
     id: 1,
     name: 'Amina K.',
     avatar: '👩🏾‍💼',
-    message: 'Just sent money to my family in Lagos!',
-    action: 'sent $500',
+    message: 'Just sent money to my family!',
+    action: 'sent 500',
     time: '2 seconds ago',
     rating: 5,
     image: '/avatar.png',
@@ -58,7 +58,7 @@ const liveTestimonials: LiveTestimonial[] = [
     name: 'John M.',
     avatar: '👨🏽‍💼',
     message: 'The fastest transfer I\'ve ever made',
-    action: 'received $1,200',
+    action: 'received 1,200',
     time: '5 seconds ago',
     rating: 5,
     image: '/avatar.png',
@@ -78,7 +78,7 @@ const liveTestimonials: LiveTestimonial[] = [
     name: 'David A.',
     avatar: '👨🏾‍🔧',
     message: 'Perfect for my business payments',
-    action: 'sent $3,400',
+    action: 'sent 3,400',
     time: '12 seconds ago',
     rating: 5,
     image: '/avatar.png',
@@ -98,7 +98,7 @@ const liveTestimonials: LiveTestimonial[] = [
     name: 'Peter W.',
     avatar: '👨🏿‍💼',
     message: 'Best rates for international transfers',
-    action: 'sent $850',
+    action: 'sent 850',
     time: '18 seconds ago',
     rating: 5,
     image: '/avatar.png',
@@ -108,7 +108,7 @@ const liveTestimonials: LiveTestimonial[] = [
 export const Testimonial: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleLiveTestimonials, setVisibleLiveTestimonials] = useState<LiveTestimonial[]>([]);
-  const [liveIndex, setLiveIndex] = useState(0);
+
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % detailedTestimonials.length);
@@ -120,14 +120,11 @@ export const Testimonial: React.FC = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setLiveIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % liveTestimonials.length;
-        setVisibleLiveTestimonials((prev) => {
-          const newTestimonial = liveTestimonials[nextIndex];
-          const updated = [newTestimonial, ...prev].slice(0, 3);
-          return updated;
-        });
-        return nextIndex;
+      setVisibleLiveTestimonials((prev) => {
+        const nextIndex = (prev.length > 0 ? liveTestimonials.indexOf(prev[0]) + 1 : 0) % liveTestimonials.length;
+        const newTestimonial = liveTestimonials[nextIndex];
+        const updated = [newTestimonial, ...prev].slice(0, 3);
+        return updated;
       });
     }, 3000);
 
