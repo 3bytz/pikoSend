@@ -4,7 +4,6 @@ import {
   Navigation,
   Pagination,
   Autoplay,
-  // EffectCoverflow,
 } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import {
@@ -58,8 +57,7 @@ const screens: AppScreen[] = [
     id: 3,
     title: "Wallet Management",
     subtitle: "Your Digital Wallet",
-    description:
-      "Set spending limits, and manage multiple wallets with ease.",
+    description: "Set spending limits, and manage multiple wallets with ease.",
     imageSrc: "/mockups/Wallet.jpg",
     icon: CreditCard,
     gradient: "from-piko-purple to-piko-violet",
@@ -98,20 +96,15 @@ const screens: AppScreen[] = [
 
 export const AppScreenCarousel: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
   const [isLoading, setIsLoading] = useState(true);
-const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+
   useEffect(() => {
     const loadImages = async () => {
       const imagePromises = screens.map((screen) => {
         return new Promise((resolve, reject) => {
           const img = new Image();
           img.src = screen.imageSrc;
-          img.onload = () => {
-            setImagesLoaded((prev) => ({ ...prev, [screen.id]: true }));
-            resolve(true);
-          };
+          img.onload = () => resolve(true);
           img.onerror = reject;
         });
       });
@@ -127,11 +120,7 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
 
     loadImages();
   }, []);
-  console.log(imagesLoaded, activeIndex);
-  // const handleImageLoad = (id: number) => {
-  //   setImagesLoaded((prev) => ({ ...prev, [id]: true }));
-  // };
-
+  
   return (
     <Section background="white" id="app-screens" className="py-4 md:py-8 ">
       <Container className="w-[99%] px-0">
@@ -184,7 +173,6 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
                 dynamicBullets: true,
               }}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
-              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
               slidesPerView={1}
               centeredSlides={false}
               spaceBetween={16}
@@ -214,7 +202,6 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
                 return (
                   <SwiperSlide key={screen.id}>
                     <div className="relative">
-                      {/* Card */}
                       <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                         <div className="relative bg-gray-50 flex items-center justify-center">
                           <img
@@ -232,7 +219,6 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
                           />
                         </div>
 
-                        {/* Content */}
                         <div className="p-5">
                           <div className="flex items-center gap-3 mb-3">
                             <div
@@ -262,7 +248,6 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
             </Swiper>
           </div>
 
-          {/* Navigation buttons */}
           <button
             onClick={() => swiperRef.current?.slidePrev()}
             className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-2xl flex items-center justify-center text-piko-purple hover:bg-piko-purple hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 group"
@@ -320,12 +305,9 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
           background-image: linear-gradient(to right, rgba(0,0,0,0.1), transparent) !important;
         }
 
-        /* Smooth transitions */
         .app-carousel .swiper-wrapper {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-      
       `}</style>
     </Section>
   );

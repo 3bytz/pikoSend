@@ -17,6 +17,9 @@ import {
   Sparkles,
   Award,
   Globe2,
+  ShieldCheckIcon,
+  QrCodeIcon,
+  PiggyBank,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -33,26 +36,32 @@ const HERO_IMAGE2 = "/new/AfricanPayment.png";
 const coreValues = [
   {
     icon: Target,
-    title: "Customer-first",
-    text: "We design our products around the needs of users across Africa — simple, fast, and friendly.",
+    title: "Speed & Efficiency",
+    text: "We respect your time. Every transaction on PikoSend is designed to be fast, smooth, and hassle-free.",
     gradient: "from-piko-purple to-piko-violet",
   },
   {
     icon: Shield,
-    title: "Security & Trust",
-    text: "Built with industry-standard security and multi-layer protections so your money is safe.",
+    title: "Trust",
+    text: "Our customers know where their money is, how it’s protected, and that we’ll always do what’s right.",
     gradient: "from-piko-violet to-piko-lilac",
   },
   {
     icon: Users2,
-    title: "Inclusion",
-    text: "We bring payments to the unbanked and underserved, enabling economic participation.",
+    title: "Innovation",
+    text: " We continuously improve and adopt modern technology to make digital payments simpler, smarter, and more accessible.",
     gradient: "from-piko-lilac to-piko-purple",
   },
   {
     icon: TrendingUp,
-    title: "Growth",
-    text: "We help businesses scale with reliable payouts, analytics, and integrations.",
+    title: "Inclusivity",
+    text: "Everyone deserves access to financial services. PikoSend is built to support individuals and  business owners from all walks of life.",
+    gradient: "from-piko-purple to-piko-violet",
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: "Security",
+    text: "We protect your funds and personal information with strong, end-to-end security measures at every step.",
     gradient: "from-piko-purple to-piko-violet",
   },
 ];
@@ -87,29 +96,29 @@ const coreValues = [
 const buildingFeatures = [
   {
     icon: Wallet,
-    title: "Payments & Payouts",
+    title: "Multi-Wallets",
     description:
-      "Fast, transparent and low-cost transfers for businesses and individuals.",
+      "Separate personal and business funds, track income streams, and manage savings effortlessly.",
     gradient: "from-piko-purple/20 to-piko-violet/20",
   },
   {
-    icon: BarChart3,
-    title: "Analytics & Insights",
+    icon: QrCodeIcon,
+    title: "Tap & Go QR Payments",
     description:
-      "Real-time reporting that helps businesses make smarter decisions.",
+      "Accept payments instantly with QR codes - no cash, no queues, no delays.",
     gradient: "from-piko-violet/20 to-piko-lilac/20",
   },
   {
-    icon: Lock,
-    title: "Compliance & Security",
+    icon: PiggyBank,
+    title: "Instant Bank Transfers",
     description:
-      "Comprehensive processes to keep transactions safe and compliant.",
+      "Send money directly to any Pesalink-enabled bank account.",
     gradient: "from-piko-lilac/20 to-piko-purple/20",
   },
   {
-    icon: Building2,
-    title: "Integrations",
-    description: "APIs and plugins that integrate with your stack easily.",
+    icon: BarChart3,
+    title: "Real-Time Reporting",
+    description: "Track every transaction and generate reports instantly.",
     gradient: "from-piko-purple/20 to-piko-violet/20",
   },
 ];
@@ -146,9 +155,9 @@ export const About: React.FC = () => {
                 About PikoSend
               </div>
               <h1 className="text-4xl md:text-6xl font-poppins font-bold leading-tight animate-fade-up">
-                Payments, built for{" "}
+                Everyday Payments Made{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-piko-lilac to-white">
-                  Africa
+                  Easy
                 </span>
               </h1>
               {/* for mobile */}
@@ -195,9 +204,7 @@ export const About: React.FC = () => {
               </div>
 
               <p className="text-xl text-white/90 leading-relaxed max-w-2xl">
-                We're connecting people and businesses to modern payment rails —
-                making transfers, payrolls and merchant collections effortless
-                across the continent.
+               At PikoSend, we believe access to safe, affordable and easy to use digital payments should be available to everyone. Our platform is designed to support financial inclusion through simplicity, security, and smart technology.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Link
@@ -327,16 +334,10 @@ export const About: React.FC = () => {
                 From humble beginnings to pan-African impact
               </h2>
               <p className="text-lg text-piko-medium-grey leading-relaxed mb-6">
-                PikoSend began as a small team of engineers and product builders
-                who believed payments in Africa could be simpler and more
-                inclusive. We started by solving the pain of cross-border
-                transfers and local payouts for small businesses.
+                PikoSend is a mobile-first digital banking and payments application built to make everyday financial transactions simple, affordable, and secure for every Kenyan.
               </p>
               <p className="text-lg text-piko-medium-grey leading-relaxed mb-8">
-                Today, we've grown into a full-stack payment platform that
-                supports merchants, startups and enterprises across the
-                continent, partnering with banks and payment providers to remove
-                friction and lower costs for our users.
+               We believe that financial inclusion is a right, not a privilege. Everyone deserves access to modern, cashless payment solutions that work reliably, cost less, and respect user privacy. That belief is at the heart of everything we build at PikoSend.
               </p>
 
               <div className="flex items-center gap-4 mt-8">
@@ -373,22 +374,20 @@ export const About: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6 shadow-lg">
                 <div className="w-2 h-2 bg-gradient-to-r from-white to-amber-300 rounded-full animate-pulse"></div>
                 <span className="text-white font-medium text-base">
-                  Our Purpose
+                  Our Purpose 
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-white mb-8 leading-tight">
-                Empowering Africa through{" "}
+                Built for Everyday {" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white drop-shadow-2xl">
-                  financial inclusion
+                  Payments
                 </span>
               </h2>
 
               <div className="relative inline-block">
                 <p className="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto font-light leading-relaxed relative z-10">
-                  We make payments accessible, affordable and reliable, helping
-                  individuals and businesses access opportunities and grow with
-                  confidence.
+               With low fees, strong security, and an easy-to-use app, we’re making digital payments work better for everyone.
                 </p>
                 <div className="absolute -inset-4 bg-gradient-to-r from-piko-purple/20 to-piko-violet/20 blur-2xl rounded-full -z-10"></div>
               </div>
@@ -410,8 +409,7 @@ export const About: React.FC = () => {
                         Our Vision
                       </h3>
                       <p className="text-piko-medium-grey text-lg leading-relaxed">
-                        A cashless, connected Africa where people and businesses
-                        move money without barriers.
+                       To be the most trusted and innovative digital payments platform in Africa, empowering individuals and enterprises to thrive in a fast-moving digital economy.
                       </p>
                     </div>
                   </div>
@@ -434,8 +432,7 @@ export const About: React.FC = () => {
                         Our Mission
                       </h3>
                       <p className="text-piko-medium-grey text-lg leading-relaxed">
-                        To build inclusive financial infrastructure that enables
-                        economic growth across Africa.
+                        Our mission is to empower individuals, businesses, and communities with fast, secure, and reliable digital financial solutions.Our goal is to simplify everyday transactions and expand financial inclusion for all.
                       </p>
                     </div>
                   </div>
@@ -459,8 +456,7 @@ export const About: React.FC = () => {
                         Our Impact
                       </h3>
                       <p className="text-white/95 text-lg leading-relaxed">
-                        Helping thousands of businesses grow and enabling
-                        financial access for underserved communities.
+                     We are committed to helping thousands of Kenyans access affordable, secure digital payments so they can manage, move, and protect their money with confidence.
                       </p>
                     </div>
                   </div>
@@ -609,15 +605,13 @@ export const About: React.FC = () => {
                   Our Platform
                 </span>
                 <h2 className="text-3xl md:text-4xl font-poppins font-bold text-piko-black mb-6">
-                  Building the future of{" "}
+                  Smart Tools for{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-piko-purple to-piko-violet">
-                    African payments
+                    Growing Businesses
                   </span>
                 </h2>
                 <p className="text-lg text-piko-medium-grey mb-8 leading-relaxed">
-                  PikoSend builds payment infrastructure that helps
-                  entrepreneurs, gig workers and small businesses handle money
-                  reliably across Africa.
+                  We empower you to stay on top of transactions, track your income, and run your business with confidence and efficiency.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-2 md:gap-6">

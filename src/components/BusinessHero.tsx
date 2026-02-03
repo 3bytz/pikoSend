@@ -15,7 +15,7 @@ export const BusinessHero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-piko-violet/90 via-piko-purple/90 to-piko-lilac/85 backdrop-blur-sm"></div>
       </div>
 
-      <Container className="relative z-10 py-16 md:py-20">
+      <Container className="relative z-10 py-16 md:py-20 leading-32">
         <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center">
           <div className="text-white space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full animate-fade-in">
@@ -23,17 +23,17 @@ export const BusinessHero: React.FC = () => {
               For Business
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-tight animate-fade-up">
-              Power Your Business with
-              <span className="block mt-2">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold leading-normal animate-fade-up">
+            Power your Business <span className='block my-4'>  with Affordable </span>
+              <span className="block mt-4">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white">
-                  Smart Payments
+                    Transactions
                 </span>
               </span>
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
-              Everything your business needs to accept payments, pay bills, and manage finances in one powerful platform.
+              Accept payments, pay bills, track and manage your financials all in one simple but powerful platform designed to help your business thrive.
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-2 md:pt-4">

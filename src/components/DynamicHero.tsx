@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   ArrowRight,
-  Play,
   CheckCircle2,
   TrendingUp,
   Users,
@@ -12,15 +11,16 @@ import {
 import { Container } from "./Container";
 import { Link } from "react-router-dom";
 import { useIsMobile } from "../lib/useIsMobile";
+import { WaitingListCTA } from "./WaitingList/WaitingListCTA";
 
-const typingPhrases = [
-  "Send Money Instantly",
-  "Receive Payments Securely",
-  "Manage Multiple Wallets",
-  "Pay Your Bills Easily",
-  "Grow Your Business",
-  "Track Your Spending",
-];
+// const typingPhrases = [
+//   "Send Money Instantly",
+//   "Receive Payments Securely",
+//   "Manage Multiple Wallets",
+//   "Pay Your Bills Easily",
+//   "Grow Your Business",
+//   "Track Your Spending",
+// ];
 
 const stats = [
   { value: "500K+", label: "Active Users", icon: Users },
@@ -29,10 +29,10 @@ const stats = [
 ];
 
 export const DynamicHero: React.FC = () => {
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(200);
+  // const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  // const [displayedText, setDisplayedText] = useState("");
+  // const [isDeleting, setIsDeleting] = useState(false);
+  // const [typingSpeed, setTypingSpeed] = useState(200);
   const isMobile = useIsMobile();
 
   // useEffect(() => {
@@ -124,14 +124,16 @@ export const DynamicHero: React.FC = () => {
                   className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/90 hover:scale-105 hover:shadow-2xl"
                 >
                   <AppleIcon className="w-5 h-5" />
-                  Get The App For IOS
+                  Get for IOS
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <button className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/20">
                   <BotIcon className="w-5 h-5" />
-                  Get The App For Android
+                  Get for Android
                 </button>
+                 <WaitingListCTA />
               </div>
+              
 
               <div className="flex flex-wrap items-center gap-6">
                 {["No hidden fees", "Bank-level security", "24/7 support"].map(

@@ -14,23 +14,23 @@ const steps: Step[] = [
   {
     number: "01",
     icon: UserPlus,
-    title: "Create Your Account",
+    title: "Download the App",
     description:
-      "Sign up in minutes with just your email. No complicated paperwork or long waiting times.",
+      "Download the PikoSend app from the App Store or Google Play and install it on your phone.",
   },
   {
     number: "02",
     icon: CheckCircle,
-    title: "Verify Your Identity",
+    title: "Sign Up Securely",
     description:
-      "Quick and secure verification process. Upload your ID and get approved within 24 hours.",
+      "Create your account in minutes and set your secure PIN to protect your money.",
   },
   {
     number: "03",
     icon: Zap,
-    title: "Start Sending Money",
+    title: "Start Sending & Paying",
     description:
-      "Add funds and start sending money. Enjoy instant transfers and competitive rates.",
+      "Send, pay, and manage money instantly at low cost.",
   },
 ];
 
@@ -92,7 +92,7 @@ export const HowItWorks: React.FC = () => {
                     
                         <div className="flex-1 pt-1">
                           <div className="flex items-center gap-3 mb-2">
-                            <div
+                            {/* <div
                               className={`p-2 rounded-lg ${
                                 index === 0
                                   ? "bg-piko-purple/10 text-piko-purple"
@@ -102,7 +102,7 @@ export const HowItWorks: React.FC = () => {
                               }`}
                             >
                               <Icon size={20} strokeWidth={1.5} />
-                            </div>
+                            </div> */}
                             <h3 className="text-xl font-poppins font-bold text-piko-black">
                               {step.title}
                             </h3>

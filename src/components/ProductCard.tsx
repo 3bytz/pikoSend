@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  LucideIcon,
-  CheckCircle2,
-  Sparkles,
-  Zap,
-} from "lucide-react";
+import { LucideIcon, CheckCircle2, Sparkles, Zap } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 interface ProductCardProps {
@@ -100,25 +95,32 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <p className="text-lg text-piko-medium-grey leading-relaxed max-w-xl">
             {description}
           </p>
+          
+          {features.length > 0 && (
+            <>
+              <p className={`text-sm md:text-base font-bold text-piko-black ${isEven ? 'lg:text-left' : 'lg:text-left'}`}>
+                Best For:{" "}
+              </p>
+              <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 py-4 ${isEven ? 'lg:justify-items-start' : 'lg:justify-items-start'}`}>
+                {features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white/50 backdrop-blur-sm border border-white/50 hover:border-piko-purple/30 transition-all duration-300 group"
+                  >
+                    <div
+                      className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-white" />
+                    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
-            {features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-3 p-3 rounded-xl bg-white/50 backdrop-blur-sm border border-white/50 hover:border-piko-purple/30 transition-all duration-300 group"
-              >
-                <div
-                  className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <CheckCircle2 className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-sm md:text-base font-medium text-piko-black">
-                  {feature}
-                </span>
+                    <span className="text-sm md:text-base font-medium text-piko-black">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-
+            </>
+          )}
         </div>
 
         <div className={`relative ${isEven ? "lg:order-2" : "lg:order-1"}`}>

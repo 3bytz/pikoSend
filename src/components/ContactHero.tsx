@@ -46,16 +46,16 @@ export const ContactHero: React.FC = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-poppins font-bold leading-tight animate-fade-up">
-                We're Here to
+                We’re Here When 
                 <span className="block mt-2 md:mt-4">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white">
-                    Help You Succeed
+                    You Need Us
                   </span>
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
-                Have questions or need support? Our dedicated team is available 24/7 to assist you. Whether you're a new user or growing your business, we're committed to helping you succeed.
+                Have questions or need help with your transactions or account? Our dedicated customer support team is available 24/7 to help you. Feel free to reach out to us through WhatsApp, SMS, phone, email, or social media.
               </p>
             </div>
 
@@ -97,8 +97,8 @@ export const ContactHero: React.FC = () => {
                   <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-white/30">
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-white">
-                        <div className="text-lg font-bold mb-1">Ready to Help</div>
-                        <div className="text-sm text-white/80">Our experts are ready to help</div>
+                        <div className="text-lg font-bold mb-1">Need support?</div>
+                        <div className="text-sm text-white/80">Get Real Help from Real People, 24/7</div>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>

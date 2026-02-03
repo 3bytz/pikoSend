@@ -22,7 +22,7 @@ export const LiveTestimonials: React.FC = () => {
             </h2>
 
             <p className="text-lg md:text-xl text-piko-medium-grey mb-8 leading-relaxed">
-              Thousands of satisfied customers across Africa trust PikoSend for
+              Thousands of satisfied customers across Kenya trust PikoSend for
               their daily transactions, business payments, and personal
               transfers.
             </p>
@@ -48,14 +48,14 @@ export const LiveTestimonials: React.FC = () => {
               <div className="hidden md:block h-16 w-px bg-piko-soft-grey"></div>
               <div className="md:hidden w-12 h-px bg-piko-soft-grey"></div>
 
-              <div>
+              {/* <div>
                 <div className="text-3xl md:text-4xl font-bold text-piko-black mb-1">
                   500K+
                 </div>
                 <div className="text-sm text-piko-medium-grey">
                   Active users
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex flex-wrap gap-3 md:gap-4">
@@ -80,7 +80,7 @@ export const LiveTestimonials: React.FC = () => {
             </div>
           </div>
 
-          {/* img section */}
+          
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-piko-purple/20 to-piko-violet/20 rounded-3xl blur-2xl"></div>
 
@@ -91,14 +91,14 @@ export const LiveTestimonials: React.FC = () => {
                 className="block md:hidden w-full h-96 object-cover object-center"
               />
 
-              {/* Desktop image */}
+              
               <img
                 src="/new/landing_happy_users.jpeg"
                 alt="Happy users celebrating with PikoSend"
                 className="hidden md:block w-full h-96 object-cover object-center"
               />
 
-              {/* Overlay with stats */}
+              
               <div className="absolute inset-0 bg-gradient-to-t from-piko-plum/90 via-piko-purple/40 to-transparent">
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="grid grid-cols-3 gap-6">
@@ -130,7 +130,7 @@ export const LiveTestimonials: React.FC = () => {
                 </div>
               </div>
 
-              {/* Floating badge */}
+              
               <div className="absolute top-6 right-6 px-4 py-2 bg-white rounded-full shadow-lg">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -141,7 +141,7 @@ export const LiveTestimonials: React.FC = () => {
               </div>
             </div>
 
-            {/* Decorative elements */}
+            
             <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-br from-piko-purple/20 to-piko-violet/20 rounded-full blur-xl"></div>
             <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-piko-purple/20 to-piko-violet/20 rounded-full blur-xl"></div>
           </div>

@@ -68,7 +68,6 @@ export const Footer: React.FC = () => {
     }
   };
 
-  // Match exactly what's in the navbar
   const ProductsLinks = [
     { label: "Send Money", href: "/products#send-money" },
     { label: "Global Accounts", href: "/products#accounts" },
@@ -118,7 +117,7 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="lg:w-1/2 text-center lg:text-left">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl text-piko-black font-poppins font-bold mb-3">
-                  Stay Updated on Payments
+                  Affordable payments, built for real life
                 </h2>
                 <p className="text-base text-piko-medium-grey leading-relaxed max-w-lg">
                   Get the latest updates, tips, and exclusive offers delivered
@@ -220,11 +219,11 @@ export const Footer: React.FC = () => {
                 <span>+254 110 917569</span>
               </a>
               <a
-                href="mailto:info@pikosend.co.ke"
+                href="mailto:info@pikosend.com"
                 className="flex items-center gap-2 text-sm opacity-80 hover:opacity-100 transition"
               >
                 <Mail size={14} />
-                <span>info@pikosend.co.ke</span>
+                <span>info@pikosend.com</span>
               </a>
               <div className="flex items-center gap-2 text-sm opacity-80">
                 <MapPin size={14} />

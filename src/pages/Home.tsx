@@ -15,6 +15,7 @@ import {
   Footer,
   SEO,
 } from '../components';
+import { FloatingWaitingListCTA } from '../components/WaitingList/WaitingListCTA';
 
 export const Home: React.FC = () => {
   return (
@@ -39,6 +40,7 @@ export const Home: React.FC = () => {
         <FAQ />
       </main>
       <Footer />
+      <FloatingWaitingListCTA />
     </div>
   );
 };

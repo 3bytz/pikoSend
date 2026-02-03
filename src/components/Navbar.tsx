@@ -117,12 +117,12 @@ export const Navbar: React.FC = () => {
     },
   ];
 
-  // Check if current page is active
-  const isActive = (href?: string) => {
-    if (!href) return false;
-    if (href.startsWith("#")) return false;
-    return location.pathname === href;
-  };
+  // // Check if current page is active
+  // const isActive = (href?: string) => {
+  //   if (!href) return false;
+  //   if (href.startsWith("#")) return false;
+  //   return location.pathname === href;
+  // };
 
   return (
     <nav
