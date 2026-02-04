@@ -79,7 +79,7 @@ export const DynamicHero: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/30">
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                 <span className="text-sm font-semibold">
-                  Africa's Fastest Growing Payments Solution
+                  Kenya’s Fastest Growing Digital Payment Platform
                 </span>
               </div>
 
@@ -89,7 +89,7 @@ export const DynamicHero: React.FC = () => {
 
               <h1 className="text-xl md:text-3xl lg:text-4xl font-poppins font-bold mb-6 leading-tight">
                 <span className="block mb-2">
-                  Where payments is just a scan away!
+                  Powering every transaction.
                 </span>
               </h1>
 
@@ -107,16 +107,11 @@ export const DynamicHero: React.FC = () => {
               </div>
 
               <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl">
-                One QR code at a moment, we are working to revolutionise the way
-                Kenyan consumers and businesses do business. We make things
-                easier for both customers and businesses with our
-                lightning-fast, reasonably priced, and incredibly convenient
-                payment option.
+            Switch to PikoSend today and save money with Kenya’s most affordable, secure digital payment platform for everyday use.
+Enjoy lower transaction rates, multiple payment options and 24/7 customer support that’s accessible and very responsive.
+
               </p>
-              <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl">
-                Become one of the thousands of people who are now enjoying
-                quick, safe, and reasonably priced money transfers.
-              </p>
+            
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link

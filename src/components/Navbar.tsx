@@ -94,28 +94,29 @@ export const Navbar: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const navLinks: NavLink[] = [
-    { label: "About Us", href: "/about-us" },
-    { label: "Products", href: "/products" },
-    { label: "Features", href: "/features" },
-    { label: "For Business", href: "/business" },
-    { label: "Blog", href: "/blog" },
-    {
-      label: "Company",
-      dropdown: [
-        {
-          label: "Testimonials",
-          href: "#testimonials",
-          description: "What our users say",
-        },
-        {
-          label: "FAQs",
-          href: "#faq",
-          description: "Get answers to common questions",
-        },
-      ],
-    },
-  ];
+const navLinks: NavLink[] = [
+  { label: "About Us", href: "/about-us" },
+  { label: "Products", href: "/products" },
+  { label: "Features", href: "/features" },
+  { label: "Pricing", href: "/pricing" }, 
+  { label: "For Business", href: "/business" },
+  { label: "Blog", href: "/blog" },
+  {
+    label: "Company",
+    dropdown: [
+      {
+        label: "Testimonials",
+        href: "#testimonials",
+        description: "What our users say",
+      },
+      {
+        label: "FAQs",
+        href: "#faq",
+        description: "Get answers to common questions",
+      },
+    ],
+  },
+];
 
   // // Check if current page is active
   // const isActive = (href?: string) => {

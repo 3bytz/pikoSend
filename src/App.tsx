@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import { queryClient } from './lib/queryClient';
-import { ErrorBoundary } from './components';
+import { ErrorBoundary, Pricing } from './components';
 import { Home } from './pages/Home';
 import { Contact } from './pages/Contact';
 import { Products } from './pages/Products';
@@ -32,6 +32,7 @@ function App() {
               <Route path="/features" element={<FeaturesPage />} />
               <Route path="/business" element={<Business />} />
               <Route path="/blog/:id" element={<BlogDetail />} />
+              <Route path="/pricing" element={<Pricing />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             
