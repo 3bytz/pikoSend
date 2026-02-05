@@ -3,6 +3,7 @@ import { Section } from "./Section";
 import { Container } from "./Container";
 import { CheckCircle2, Users, Briefcase } from "lucide-react";
 
+
 const personalFeatures = [
   "Send money instantly to a phone number",
   "Pay at shops and service points using QR codes (Tap & Go)",
@@ -244,12 +245,14 @@ export const PersonalBusiness: React.FC = () => {
                     </p>
                   </div>
                   <div className="flex gap-4">
+                    
                     <button className="px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full font-medium hover:bg-white/30 transition-colors">
                       Get on AppStore
                     </button>
                     <button className="px-6 py-3 bg-white text-piko-purple rounded-full font-medium hover:bg-white/90 transition-colors">
                       Get on Google Play
                     </button>
+                    {/* <WaitingListCTA /> */}
                   </div>
                 </div>
               </div>

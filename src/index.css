@@ -184,3 +184,40 @@
 .turnstile-widget iframe {
   border-radius: 12px;
 }
+.waitlist-modal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 58, 237, 0.3) #F5F7FA;
+}
+
+.waitlist-modal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.waitlist-modal-scrollbar::-webkit-scrollbar-track {
+  background: #F5F7FA;
+  border-radius: 4px;
+  margin: 4px;
+}
+
+.waitlist-modal-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(124, 58, 237, 0.3), rgba(124, 58, 237, 0.5));
+  border-radius: 4px;
+  border: 2px solid #F5F7FA;
+}
+
+.waitlist-modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgba(124, 58, 237, 0.5), rgba(124, 58, 237, 0.7));
+}
+
+.waitlist-modal-scrollbar::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, rgba(124, 58, 237, 0.7), rgba(124, 58, 237, 0.9));
+}
+
+.waitlist-modal-scrollbar::-webkit-scrollbar-corner {
+  background: #F5F7FA;
+}
+
+.waitlist-modal-scrollbar {
+  scroll-behavior: smooth;
+}

@@ -38,7 +38,7 @@ export const WaitingListModal: React.FC = () => {
 
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div
-          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl animate-scale-in"
+          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl animate-scale-in waitlist-modal-scrollbar"
           onClick={(e) => e.stopPropagation()}
         >
           <button
@@ -59,7 +59,7 @@ export const WaitingListModal: React.FC = () => {
                   Priority Access Waitlist
                 </h2>
                 <p className="text-white/80 text-sm">
-                  Join 500+ early adopters
+                  Join early adopters
                 </p>
               </div>
             </div>

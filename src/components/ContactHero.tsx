@@ -9,6 +9,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { Container } from './Container';
+import { AppStoreBadges } from './AppStoreBadges';
 // import { AppStoreBadges } from './AppStoreBadges';
 
 export const ContactHero: React.FC = () => {
@@ -74,10 +75,10 @@ export const ContactHero: React.FC = () => {
             </div>
 
         
-            {/* <div className="pt-4 md:pt-6 animate-fade-up" style={{ animationDelay: '0.6s' }}>
+            <div className="pt-4 md:pt-6 animate-fade-up" style={{ animationDelay: '0.6s' }}>
               <p className="text-base text-white/80 mb-4">Get instant support on mobile</p>
               <AppStoreBadges variant="light" size="md" />
-            </div> */}
+            </div>
           </div>
 
           

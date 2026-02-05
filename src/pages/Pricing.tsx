@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Footer, SEO } from "../components";
+import { Navbar, Footer, SEO, AppStoreBadges } from "../components";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 import {
@@ -7,16 +7,12 @@ import {
   Users,
   Building2,
   CheckCircle2,
-  ArrowRight,
   Sparkles,
   Shield,
   Zap,
   TrendingUp,
-  Calculator,
-  Percent,
   Clock,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import { WaitingListCTA } from "../components/WaitingList/WaitingListCTA";
 
 const individualTransferData = [
@@ -291,41 +287,6 @@ const businessCashData = [
   { min: 7501, max: 20000, deposit: "Free", withdraw: 60 },
   { min: 20001, max: 50000, deposit: "Free", withdraw: 60 },
   { min: 50001, max: 100000, deposit: "Free", withdraw: 60 },
-];
-
-const pricingFeatures = [
-  {
-    icon: Shield,
-    title: "No Hidden Fees",
-    description:
-      "Transparent pricing with no surprises. Know exactly what you'll pay upfront.",
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
-  },
-  {
-    icon: Zap,
-    title: "Lowest Rates",
-    description:
-      "Enjoy some of the most competitive rates in the market for money transfers.",
-    color: "text-amber-600",
-    bgColor: "bg-amber-50",
-  },
-  {
-    icon: Clock,
-    title: "Instant Processing",
-    description:
-      "Payments are processed instantly with real-time updates and notifications.",
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-50",
-  },
-  {
-    icon: TrendingUp,
-    title: "Volume Discounts",
-    description:
-      "Higher transaction volumes qualify for discounted rates. Contact us for enterprise pricing.",
-    color: "text-piko-purple",
-    bgColor: "bg-piko-purple/10",
-  },
 ];
 
 export const Pricing: React.FC = () => {
@@ -749,7 +710,12 @@ export const Pricing: React.FC = () => {
                   >
                     Contact Sales
                   </Link> */}
-                  <WaitingListCTA />
+                  <div className="pt-6 pb-16 md:pb-20 lg:pb-24">
+                    <p className="text-sm text-white/70 mb-4">
+                      Get the app and start now
+                    </p>
+                    <AppStoreBadges variant="dark" size="md" />
+                  </div>
                 </div>
                 <div className="pt-6 border-t border-white/20">
                   <div className="flex items-center justify-center gap-4 text-sm text-white/80">

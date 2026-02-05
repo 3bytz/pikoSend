@@ -2,9 +2,9 @@ import React from "react";
 import {
   ArrowRight,
   CheckCircle2,
-  TrendingUp,
-  Users,
-  Shield,
+  // TrendingUp,
+  // Users,
+  // Shield,
   AppleIcon,
   BotIcon,
 } from "lucide-react";
@@ -22,11 +22,11 @@ import { WaitingListCTA } from "./WaitingList/WaitingListCTA";
 //   "Track Your Spending",
 // ];
 
-const stats = [
-  { value: "500K+", label: "Active Users", icon: Users },
-  { value: "$2B+", label: "Transacted", icon: TrendingUp },
-  { value: "99.9%", label: "Uptime", icon: Shield },
-];
+// const stats = [
+//   { value: "500K+", label: "Active Users", icon: Users },
+//   { value: "$2B+", label: "Transacted", icon: TrendingUp },
+//   { value: "99.9%", label: "Uptime", icon: Shield },
+// ];
 
 export const DynamicHero: React.FC = () => {
   // const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -189,7 +189,7 @@ Enjoy lower transaction rates, multiple payment options and 24/7 customer suppor
           </div>
 
           <div className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/20">
-            {stats.map((stat, index) => {
+            {/* {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
                 <div
@@ -204,7 +204,7 @@ Enjoy lower transaction rates, multiple payment options and 24/7 customer suppor
                   <div className="text-sm text-white/70">{stat.label}</div>
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       </Container>

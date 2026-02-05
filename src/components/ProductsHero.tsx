@@ -66,6 +66,7 @@ export const ProductsHero: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-4">
                 <AppStoreBadges variant="light" size="lg" />
+                
               </div>
             </div>
 
@@ -109,14 +110,14 @@ export const ProductsHero: React.FC = () => {
                   
                   <div className="absolute bottom-6 right-6">
                     <div className="bg-white/20 backdrop-blur-lg rounded-xl px-4 py-2 border border-white/30">
-                      <div className="text-white text-sm">Active Users: <span className="font-bold">24,589</span></div>
+                      <div className="text-white text-sm">24/7 <span className="font-bold">customer support</span></div>
                     </div>
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 mt-6">
                   <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                    <div className="text-white/70 text-xs mb-1">Transfers Today</div>
+                    <div className="text-white/70 text-xs mb-1">Support Over Transfers of</div>
                     <div className="text-white text-xl font-bold">2.4K</div>
                   </div>
                   <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">

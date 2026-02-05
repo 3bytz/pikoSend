@@ -35,7 +35,7 @@ export const FeaturesHero: React.FC = () => {
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
-            When building PikoSend, we focused on what matters most for our users: low transaction fees, instant payments, reliable customer support, and absolute data privacy. That’s what makes PikoSend the most preferred partner for everyday payments.
+            When building PikoSend, we focused on what matters most for our users: low transaction fees, instant payments, reliable customer support, and absolute data privacy. That's what makes PikoSend the most preferred partner for everyday payments.
             </p>
 
             <div className="grid grid-cols-3 pt-4 place-items-start">
@@ -62,7 +62,7 @@ export const FeaturesHero: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-6">
+            <div className="pt-6 pb-16 md:pb-20 lg:pb-24"> 
               <p className="text-sm text-white/70 mb-4">
                 Get the app and start now
               </p>
@@ -72,7 +72,7 @@ export const FeaturesHero: React.FC = () => {
 
           <div className="relative block mt-1 md:mt-8 lg:mt-0">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl blur-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-4 transparent rounded-3xl blur-3xl"></div>
               <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-4 sm:p-8 shadow-2xl animate-scale-in">
                 <img
                   src="/new/3dHero.png"
@@ -80,18 +80,19 @@ export const FeaturesHero: React.FC = () => {
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
               </div>
-            
             </div>
           </div>
         </div>
       </Container>
 
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden -mb-1">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto"
+          className="w-full h-full"
+          preserveAspectRatio="none"
         >
           <path
             d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"

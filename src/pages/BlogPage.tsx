@@ -3,7 +3,7 @@ import { Navbar, Footer, SEO } from '../components';
 import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { ArrowRight, Calendar, Clock, Search, Tag, User, Share2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 interface BlogPost {
   id: string;
@@ -374,9 +374,9 @@ export const BlogPage: React.FC = () => {
               <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
                 Want us to write about something specific? Let us know what financial topics interest you most.
               </p>
-              <button className="px-10 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <Link to="/contact" className="px-10 py-4 bg-white text-piko-purple rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                 Suggest a Topic
-              </button>
+              </Link>
             </div>
           </div>
         </Container>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Apple, Play } from 'lucide-react';
+import { WaitingListCTA } from './WaitingList/WaitingListCTA';
 
 interface AppStoreBadgesProps {
   variant?: 'default' | 'dark' | 'light';
@@ -32,6 +33,7 @@ export const AppStoreBadges: React.FC<AppStoreBadgesProps> = ({
 
   return (
     <div className={`flex flex-col sm:flex-row gap-4 ${className}`}>
+      
       <a
         href="https://apps.apple.com"
         target="_blank"
@@ -57,6 +59,7 @@ export const AppStoreBadges: React.FC<AppStoreBadgesProps> = ({
           <span className="font-bold">Google Play</span>
         </div>
       </a>
+      <WaitingListCTA />
     </div>
   );
 };
