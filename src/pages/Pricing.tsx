@@ -8,12 +8,8 @@ import {
   Building2,
   CheckCircle2,
   Sparkles,
-  Shield,
-  Zap,
-  TrendingUp,
-  Clock,
+
 } from "lucide-react";
-import { WaitingListCTA } from "../components/WaitingList/WaitingListCTA";
 
 const individualTransferData = [
   {

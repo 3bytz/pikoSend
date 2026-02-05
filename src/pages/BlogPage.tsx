@@ -3,7 +3,7 @@ import { Navbar, Footer, SEO } from '../components';
 import { Section } from '../components/Section';
 import { Container } from '../components/Container';
 import { ArrowRight, Calendar, Clock, Search, Tag, User, Share2 } from 'lucide-react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface BlogPost {
   id: string;
