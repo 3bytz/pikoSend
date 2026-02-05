@@ -3,12 +3,10 @@ import { Navbar, Footer, SEO } from "../components";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 import {
-  Building2,
   TrendingUp,
   Users,
   Wallet,
   BarChart3,
-  Lock,
   Target,
   Heart,
   Users2,
@@ -22,6 +20,7 @@ import {
   PiggyBank,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { WaitingListCTA } from "../components/WaitingList/WaitingListCTA";
 
 const HERO_IMAGE = "/new/about_payment_4_africa.jpeg";
 const STORY_IMAGE = "/Africa-mobile-payment.webp";
@@ -111,8 +110,7 @@ const buildingFeatures = [
   {
     icon: PiggyBank,
     title: "Instant Bank Transfers",
-    description:
-      "Send money directly to any Pesalink-enabled bank account.",
+    description: "Send money directly to any Pesalink-enabled bank account.",
     gradient: "from-piko-lilac/20 to-piko-purple/20",
   },
   {
@@ -204,7 +202,10 @@ export const About: React.FC = () => {
               </div>
 
               <p className="text-xl text-white/90 leading-relaxed max-w-2xl">
-               At PikoSend, we believe access to safe, affordable and easy to use digital payments should be available to everyone. Our platform is designed to support financial inclusion through simplicity, security, and smart technology.
+                At PikoSend, we believe access to safe, affordable and easy to
+                use digital payments should be available to everyone. Our
+                platform is designed to support financial inclusion through
+                simplicity, security, and smart technology.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Link
@@ -221,6 +222,7 @@ export const About: React.FC = () => {
                   Download For Android
                   <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                 </Link>
+                <WaitingListCTA />
               </div>
             </div>
             <div className="hidden md:block relative">
@@ -334,10 +336,15 @@ export const About: React.FC = () => {
                 From humble beginnings to pan-African impact
               </h2>
               <p className="text-lg text-piko-medium-grey leading-relaxed mb-6">
-                PikoSend is a mobile-first digital banking and payments application built to make everyday financial transactions simple, affordable, and secure for every Kenyan.
+                PikoSend is a mobile-first digital banking and payments
+                application built to make everyday financial transactions
+                simple, affordable, and secure for every Kenyan.
               </p>
               <p className="text-lg text-piko-medium-grey leading-relaxed mb-8">
-               We believe that financial inclusion is a right, not a privilege. Everyone deserves access to modern, cashless payment solutions that work reliably, cost less, and respect user privacy. That belief is at the heart of everything we build at PikoSend.
+                We believe that financial inclusion is a right, not a privilege.
+                Everyone deserves access to modern, cashless payment solutions
+                that work reliably, cost less, and respect user privacy. That
+                belief is at the heart of everything we build at PikoSend.
               </p>
 
               <div className="flex items-center gap-4 mt-8">
@@ -374,12 +381,12 @@ export const About: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6 shadow-lg">
                 <div className="w-2 h-2 bg-gradient-to-r from-white to-amber-300 rounded-full animate-pulse"></div>
                 <span className="text-white font-medium text-base">
-                  Our Purpose 
+                  Our Purpose
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-poppins font-bold text-white mb-8 leading-tight">
-                Built for Everyday {" "}
+                Built for Everyday{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-white drop-shadow-2xl">
                   Payments
                 </span>
@@ -387,7 +394,8 @@ export const About: React.FC = () => {
 
               <div className="relative inline-block">
                 <p className="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto font-light leading-relaxed relative z-10">
-               With low fees, strong security, and an easy-to-use app, we’re making digital payments work better for everyone.
+                  With low fees, strong security, and an easy-to-use app, we're
+                  making digital payments work better for everyone.
                 </p>
                 <div className="absolute -inset-4 bg-gradient-to-r from-piko-purple/20 to-piko-violet/20 blur-2xl rounded-full -z-10"></div>
               </div>
@@ -400,7 +408,7 @@ export const About: React.FC = () => {
                   <div className="relative flex items-start gap-3 md:gap-6">
                     <div className="w-8 h-8 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
                       <Target
-                        className="w-4 h-4 md:w-8 md:h-8  text-white" 
+                        className="w-4 h-4 md:w-8 md:h-8 text-white"
                         strokeWidth={1.5}
                       />
                     </div>
@@ -409,7 +417,9 @@ export const About: React.FC = () => {
                         Our Vision
                       </h3>
                       <p className="text-piko-medium-grey text-lg leading-relaxed">
-                       To be the most trusted and innovative digital payments platform in Africa, empowering individuals and enterprises to thrive in a fast-moving digital economy.
+                        To be the most trusted and innovative digital payments
+                        platform in Africa, empowering individuals and
+                        enterprises to thrive in a fast-moving digital economy.
                       </p>
                     </div>
                   </div>
@@ -425,14 +435,20 @@ export const About: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-piko-violet/5 to-piko-lilac/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative flex items-start gap-3 md:gap-6">
                     <div className="w-8 h-8 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-piko-violet to-piko-lilac flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                      <Heart className="w-4 h-4 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
+                      <Heart
+                        className="w-4 h-4 md:w-8 md:h-8 text-white"
+                        strokeWidth={1.5}
+                      />
                     </div>
                     <div>
                       <h3 className="text-2xl md:text-3xl font-poppins font-bold text-piko-black mb-3">
                         Our Mission
                       </h3>
                       <p className="text-piko-medium-grey text-lg leading-relaxed">
-                        Our mission is to empower individuals, businesses, and communities with fast, secure, and reliable digital financial solutions.Our goal is to simplify everyday transactions and expand financial inclusion for all.
+                        Our mission is to empower individuals, businesses, and
+                        communities with fast, secure, and reliable digital
+                        financial solutions.Our goal is to simplify everyday
+                        transactions and expand financial inclusion for all.
                       </p>
                     </div>
                   </div>
@@ -449,14 +465,19 @@ export const About: React.FC = () => {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
                   <div className="relative flex items-start gap-3 md:gap-6">
                     <div className="w-8 h-8 md:w-16 md:h-16 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-500">
-                      <Users className="w-4 h-4 md:w-8 md:h-8 text-white" strokeWidth={1.5} />
+                      <Users
+                        className="w-4 h-4 md:w-8 md:h-8 text-white"
+                        strokeWidth={1.5}
+                      />
                     </div>
                     <div>
                       <h3 className="text-2xl md:text-3xl font-poppins font-bold mb-3">
                         Our Impact
                       </h3>
                       <p className="text-white/95 text-lg leading-relaxed">
-                     We are committed to helping thousands of Kenyans access affordable, secure digital payments so they can manage, move, and protect their money with confidence.
+                        We are committed to helping thousands of Kenyans access
+                        affordable, secure digital payments so they can manage,
+                        move, and protect their money with confidence.
                       </p>
                     </div>
                   </div>
@@ -477,8 +498,8 @@ export const About: React.FC = () => {
               <div className="relative">
                 <div className="absolute -inset-6 bg-gradient-to-r from-piko-purple/20 via-piko-violet/20 to-piko-lilac/20 rounded-3xl blur-2xl opacity-60 animate-pulse"></div>
                 <div className="relative rounded-3xl overflow-hidden shadow-3xl border-2 border-white/30">
-                   <img
-                    src='/new/about_vision_mission_mobile.png'
+                  <img
+                    src="/new/about_vision_mission_mobile.png"
                     alt="Mission and vision"
                     className="block md:hidden w-full h-[600px] object-cover object-center transition-transform duration-700 hover:scale-105"
                     loading="lazy"
@@ -490,35 +511,6 @@ export const About: React.FC = () => {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <div className="bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-lg rounded-2xl p-6 shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
-                      <div className="flex items-center gap-3 md:gap-6">
-                        <div className="w-8 h-8 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center shadow-lg">
-                          <TrendingUp
-                            className="w-4 h-4 md:w-8 md:h-8 text-white"
-                            strokeWidth={1.5}
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <p className="font-bold text-piko-black text-xl mb-1">
-                            Growing together
-                          </p>
-                          <p className="text-piko-medium-grey text-base">
-                            Building Africa's financial future with innovation
-                            and trust
-                          </p>
-                        </div>
-                        <div className="hidden md:block text-right">
-                          <div className="text-3xl font-bold text-piko-purple">
-                            ↑85%
-                          </div>
-                          <div className="text-xs text-piko-medium-grey">
-                            Growth YOY
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
                   <div className="absolute top-6 left-6">
                     <div className="bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
@@ -526,6 +518,37 @@ export const About: React.FC = () => {
                       <span className="text-sm font-semibold text-piko-black">
                         Live Impact
                       </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Moved overlay outside the image container */}
+                <div className="mt-6 md:mt-8">
+                  <div className="bg-gradient-to-r from-white/95 to-white/90 backdrop-blur-lg rounded-2xl p-6 shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
+                    <div className="flex items-center gap-3 md:gap-6">
+                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-piko-purple to-piko-violet flex items-center justify-center shadow-lg">
+                        <TrendingUp
+                          className="w-6 h-6 md:w-8 md:h-8 text-white"
+                          strokeWidth={1.5}
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-bold text-piko-black text-xl md:text-2xl mb-1">
+                          Growing together
+                        </p>
+                        <p className="text-piko-medium-grey text-base md:text-lg">
+                          Building Africa's financial future with innovation and
+                          trust
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl md:text-3xl font-bold text-piko-purple">
+                          ↑85%
+                        </div>
+                        <div className="text-xs md:text-sm text-piko-medium-grey">
+                          Growth YOY
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -611,7 +634,8 @@ export const About: React.FC = () => {
                   </span>
                 </h2>
                 <p className="text-lg text-piko-medium-grey mb-8 leading-relaxed">
-                  We empower you to stay on top of transactions, track your income, and run your business with confidence and efficiency.
+                  We empower you to stay on top of transactions, track your
+                  income, and run your business with confidence and efficiency.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-2 md:gap-6">

@@ -1,3 +1,4 @@
+export { Pricing } from '../pages/Pricing';
 export { Button } from './Button';
 export { Section } from './Section';
 export { Container } from './Container';
@@ -16,7 +17,6 @@ export { BusinessSection } from './BusinessSection';
 export { HowItWorks } from './HowItWorks';
 export { Statistics } from './Statistics';
 export { TrustBadges } from './TrustBadges';
-
 export { Testimonial } from './Testimonial';
 export { Press } from './Press';
 export { FAQ } from './FAQ';

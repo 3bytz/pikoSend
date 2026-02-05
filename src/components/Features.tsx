@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Section } from './Section';
 import { Container } from './Container';
-import { Zap, Shield, Smile, Headphones, ArrowRight, CheckCircle } from 'lucide-react';
+import { Zap, Shield, DollarSign, MessageCircle, Rocket, Wifi, Users, ArrowRight, CheckCircle } from 'lucide-react';
 
 const features = [
   {
@@ -37,37 +37,85 @@ const features = [
     statLabel: 'Secure Rate'
   },
   {
-    icon: Smile,
-    title: 'User-Friendly',
-    description: 'Intuitive design makes sending and receiving money simple. No technical expertise needed for anyone to use.',
+    icon: DollarSign,
+    title: 'Affordable, Transparent Fees',
+    description: 'High charges shouldn\'t be the cost of convenience. PikoSend offers some of the lowest transaction fees available, so you keep more of your money every time you send, pay, or receive money.',
     details: [
-      'Simple 3-step process',
-      'Multi-language support',
-      'Accessible interface',
-      'Mobile-first design'
+      'Some of the lowest transaction fees',
+      'Transparent pricing with no hidden costs',
+      'No surprise deductions',
+      'Keep more of your money'
     ],
     gradient: 'from-emerald-400 to-green-500',
     accentColor: 'text-emerald-600',
     bgColor: 'bg-emerald-50',
-    stat: '4.9★',
-    statLabel: 'App Rating'
+    stat: 'Lowest',
+    statLabel: 'Fees'
   },
   {
-    icon: Headphones,
-    title: '24/7 Support',
-    description: 'Our dedicated team is available anytime. Get help with any questions or issues day or night.',
+    icon: MessageCircle,
+    title: 'Support You Can Easily Reach',
+    description: 'When you need help, you can actually talk to us. Our customer support team is available via multiple channels for your convenience.',
     details: [
-      '24/7 live chat support',
-      'Multi-channel assistance',
-      '2-minute response time',
-      'Expert financial advisors'
+      'Available via WhatsApp & SMS',
+      'Phone and email support',
+      'Social media assistance',
+      'Multi-channel accessibility'
     ],
     gradient: 'from-purple-400 to-pink-500',
     accentColor: 'text-purple-600',
     bgColor: 'bg-purple-50',
-    stat: '24/7',
-    statLabel: 'Availability'
+    stat: 'Multi',
+    statLabel: 'Channels'
   },
+  {
+    icon: Rocket,
+    title: 'Fast and Simple',
+    description: 'Every transaction is designed to be completed in three easy steps and in under 30 seconds. No complicated menus, no delays.',
+    details: [
+      '3-step transaction process',
+      'Under 30 seconds completion',
+      'No complicated menus',
+      'Streamlined user experience'
+    ],
+    gradient: 'from-red-400 to-pink-500',
+    accentColor: 'text-red-600',
+    bgColor: 'bg-red-50',
+    stat: '3-Step',
+    statLabel: 'Process'
+  },
+  {
+    icon: Wifi,
+    title: 'Low Data Usage',
+    description: 'PikoSend uses minimal data even for frequent transactions, making it accessible even with limited connectivity.',
+    details: [
+      'Minimal data consumption',
+      'Works with limited connectivity',
+      'Optimized for low bandwidth',
+      'Accessible in all network conditions'
+    ],
+    gradient: 'from-indigo-400 to-blue-500',
+    accentColor: 'text-indigo-600',
+    bgColor: 'bg-indigo-50',
+    stat: 'Low',
+    statLabel: 'Data Use'
+  },
+  {
+    icon: Users,
+    title: 'For Everyday Use',
+    description: 'Designed for everyday personal use and for sellers and service providers who want to accept digital payments, reduce fees, and keep personal and business money separate.',
+    details: [
+      'Personal and business use',
+      'Accept digital payments easily',
+      'Reduce transaction fees',
+      'Separate personal & business funds'
+    ],
+    gradient: 'from-violet-400 to-purple-500',
+    accentColor: 'text-violet-600',
+    bgColor: 'bg-violet-50',
+    stat: 'Dual',
+    statLabel: 'Purpose'
+  }
 ];
 
 export const Features: React.FC = () => {

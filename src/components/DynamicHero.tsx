@@ -2,9 +2,9 @@ import React from "react";
 import {
   ArrowRight,
   CheckCircle2,
-  TrendingUp,
-  Users,
-  Shield,
+  // TrendingUp,
+  // Users,
+  // Shield,
   AppleIcon,
   BotIcon,
 } from "lucide-react";
@@ -22,11 +22,11 @@ import { WaitingListCTA } from "./WaitingList/WaitingListCTA";
 //   "Track Your Spending",
 // ];
 
-const stats = [
-  { value: "500K+", label: "Active Users", icon: Users },
-  { value: "$2B+", label: "Transacted", icon: TrendingUp },
-  { value: "99.9%", label: "Uptime", icon: Shield },
-];
+// const stats = [
+//   { value: "500K+", label: "Active Users", icon: Users },
+//   { value: "$2B+", label: "Transacted", icon: TrendingUp },
+//   { value: "99.9%", label: "Uptime", icon: Shield },
+// ];
 
 export const DynamicHero: React.FC = () => {
   // const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -79,7 +79,7 @@ export const DynamicHero: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/30">
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                 <span className="text-sm font-semibold">
-                  Africa's Fastest Growing Payments Solution
+                  Kenya’s Fastest Growing Digital Payment Platform
                 </span>
               </div>
 
@@ -89,7 +89,7 @@ export const DynamicHero: React.FC = () => {
 
               <h1 className="text-xl md:text-3xl lg:text-4xl font-poppins font-bold mb-6 leading-tight">
                 <span className="block mb-2">
-                  Where payments is just a scan away!
+                  Powering every transaction.
                 </span>
               </h1>
 
@@ -107,16 +107,11 @@ export const DynamicHero: React.FC = () => {
               </div>
 
               <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl">
-                One QR code at a moment, we are working to revolutionise the way
-                Kenyan consumers and businesses do business. We make things
-                easier for both customers and businesses with our
-                lightning-fast, reasonably priced, and incredibly convenient
-                payment option.
+            Switch to PikoSend today and save money with Kenya’s most affordable, secure digital payment platform for everyday use.
+Enjoy lower transaction rates, multiple payment options and 24/7 customer support that’s accessible and very responsive.
+
               </p>
-              <p className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed max-w-2xl">
-                Become one of the thousands of people who are now enjoying
-                quick, safe, and reasonably priced money transfers.
-              </p>
+            
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
@@ -194,7 +189,7 @@ export const DynamicHero: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/20">
-            {stats.map((stat, index) => {
+            {/* {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
                 <div
@@ -209,7 +204,7 @@ export const DynamicHero: React.FC = () => {
                   <div className="text-sm text-white/70">{stat.label}</div>
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       </Container>

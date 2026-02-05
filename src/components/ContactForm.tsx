@@ -207,7 +207,7 @@ export const ContactForm: React.FC = () => {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2 text-lg">Office Hours</h3>
               <p className="text-gray-700 text-base font-medium">Monday - Friday</p>
-              <p className="text-gray-600 text-sm">8AM - 6PM WAT</p>
+              <p className="text-gray-600 text-sm">8AM - 6PM EAT</p>
               <p className="text-gray-500 text-xs mt-2">Weekends: Emergency only</p>
             </div>
 

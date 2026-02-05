@@ -384,7 +384,7 @@ const WaitingListForm: React.FC = () => {
     submitForm,
     error,
     success,
-    submissionId,
+    // submissionId,
     resetForm,
     canSubmit,
   } = useWaitingList();
@@ -737,11 +737,11 @@ if (success) {
   
       <div className="mb-6">
         <div className="text-sm text-piko-medium-grey mb-2">
-          Reference Number:
+          Welcome to the PikoSend! We're excited to have you on board and can't wait to share our product with you. In the meantime, feel free to join our community channels and follow us on social media for updates and sneak peeks.
         </div>
-        <div className="font-mono text-sm text-piko-purple bg-piko-purple/10 px-4 py-2 rounded-lg border border-piko-purple/20">
+        {/* <div className="font-mono text-sm text-piko-purple bg-piko-purple/10 px-4 py-2 rounded-lg border border-piko-purple/20">
           {submissionId || "PS-" + Date.now().toString().slice(-8)}
-        </div>
+        </div> */}
       </div>
 
       {/* CTA Button */}
@@ -753,7 +753,7 @@ if (success) {
         }}
         className="w-full px-6 py-3 bg-gradient-to-r from-piko-purple to-piko-violet text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
       >
-        Register Another Account
+        Register Again
       </button>
 
       {/* Note */}
