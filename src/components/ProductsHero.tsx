@@ -1,8 +1,7 @@
-import React from 'react';
-import { Container } from './Container';
-import { AppStoreBadges } from './AppStoreBadges';
-import {  Sparkles } from 'lucide-react';
-
+import React from "react";
+import { Container } from "./Container";
+import { AppStoreBadges } from "./AppStoreBadges";
+import { Sparkles } from "lucide-react";
 
 export const ProductsHero: React.FC = () => {
   return (
@@ -14,21 +13,23 @@ export const ProductsHero: React.FC = () => {
             <div className="absolute top-1/4 right-0 w-96 h-96 bg-piko-violet/30 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-piko-lilac/40 rounded-full blur-3xl"></div>
           </div>
-          
+
           <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent"></div>
         </div>
-        
+
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+              backgroundSize: "60px 60px",
+            }}
+          ></div>
         </div>
       </div>
 
       <Container className="relative z-10 py-8 sm:py-12 md:py-20 w-full">
         <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center">
-          
           <div className="text-white space-y-8">
             <div className="inline-flex items-center gap-3 px-5 py-3 bg-white/10 backdrop-blur-lg border border-white/20 text-white text-base font-semibold rounded-full animate-fade-in">
               <Sparkles className="w-5 h-5" />
@@ -42,31 +43,33 @@ export const ProductsHero: React.FC = () => {
                   Simple
                 </span>
               </h1>
-              
+
               <div className="flex items-center gap-4">
                 <div className="w-12 h-px bg-gradient-to-r from-white to-transparent"></div>
-                <p className="text-lg text-white/80 italic">For modern Africa</p>
+                <p className="text-lg text-white/80 italic">
+                  For modern Africa
+                </p>
               </div>
             </div>
 
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-xl font-light">
               Kenya’s most affordable and secure digital payment platform.
             </p>
-             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-xl font-light">
-              The only digital platform you need to send, receive, save and make everyday payments affordably and safely.
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-xl font-light">
+              The only digital platform you need to send, receive, save and make
+              everyday payments affordably and safely.
             </p>
-
-           
 
             <div className="pt-1 md:pt-6">
               <div className="inline-flex items-center gap-3 mb-6">
                 <div className="w-6 h-px bg-gradient-to-r from-white/50 to-transparent"></div>
-                <p className="text-white/80 text-sm font-medium">Also available on mobile</p>
+                <p className="text-white/80 text-sm font-medium">
+                  Also available on mobile
+                </p>
                 <div className="w-6 h-px bg-gradient-to-r from-transparent to-white/50"></div>
               </div>
-              <div className="flex flex-wrap gap-4">
-                <AppStoreBadges variant="light" size="lg" />
-                
+              <div className="pt-6 pb-16 md:pb-20 lg:pb-24">
+                <AppStoreBadges variant="dark" size="md" />
               </div>
             </div>
 
@@ -90,13 +93,13 @@ export const ProductsHero: React.FC = () => {
 
           <div className="relative">
             <div className="absolute -inset-8 bg-gradient-to-r from-piko-purple/40 via-piko-violet/30 to-piko-lilac/20 rounded-3xl blur-3xl animate-pulse-slow"></div>
-            
+
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-tr from-piko-purple via-piko-violet to-piko-lilac rounded-3xl opacity-20 blur-xl"></div>
-              
+
               <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 p-6 shadow-2xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white to-transparent"></div>
-                
+
                 <div className="relative h-[500px] rounded-2xl overflow-hidden">
                   <img
                     src="/new/AfricanPayment.png"
@@ -105,23 +108,27 @@ export const ProductsHero: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                   <div className="absolute inset-0 bg-gradient-to-tr from-piko-purple/10 via-transparent to-piko-violet/10"></div>
-                  
-              
-                  
+
                   <div className="absolute bottom-6 right-6">
                     <div className="bg-white/20 backdrop-blur-lg rounded-xl px-4 py-2 border border-white/30">
-                      <div className="text-white text-sm">24/7 <span className="font-bold">customer support</span></div>
+                      <div className="text-white text-sm">
+                        24/7 <span className="font-bold">customer support</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-3 gap-4 mt-6">
                   <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                    <div className="text-white/70 text-xs mb-1">Support Over Transfers of</div>
+                    <div className="text-white/70 text-xs mb-1">
+                      Support Over Transfers of
+                    </div>
                     <div className="text-white text-xl font-bold">2.4K</div>
                   </div>
                   <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                    <div className="text-white/70 text-xs mb-1">Success Rate</div>
+                    <div className="text-white/70 text-xs mb-1">
+                      Success Rate
+                    </div>
                     <div className="text-white text-xl font-bold">99.7%</div>
                   </div>
                   <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
