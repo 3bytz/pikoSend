@@ -68,25 +68,28 @@ export const Footer: React.FC = () => {
     }
   };
 
+  // Updated links to match navbar structure
   const ProductsLinks = [
-    { label: "Send Money", href: "/products#send-money" },
-    { label: "Global Accounts", href: "/products#accounts" },
-    { label: "Cards", href: "/products#cards" },
-    { label: "All Products", href: "/products" },
+    { label: "Products", href: "/products" },
+    { label: "Features", href: "/features" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Web App", href: "https://app.pikosend.com", external: true },
   ];
 
   const BusinessLinks = [
-    { label: "Business Accounts", href: "/business" },
-    { label: "API Integration", href: "/business#api" },
-    { label: "Invoicing", href: "/business#invoicing" },
-    { label: "Business Tools", href: "/business#tools" },
+    { label: "For Business", href: "/business" },
+    // { label: "API Integration", href: "/business#api" },
+    { label: "Pricing", href: "/pricing" },
+    // { label: "Invoicing", href: "/business#invoicing" },
+    // { label: "Business Tools", href: "/business#tools" },
   ];
 
   const CompanyLinks = [
-    { label: "About Us", href: "#mission" },
+    { label: "About Us", href: "/about-us" },
     { label: "Testimonials", href: "#testimonials" },
-    { label: "News & Blog", href: "/blog" },
+    { label: "Blog", href: "/blog" },
     { label: "FAQs", href: "#faq" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   const socialLinks = [
@@ -107,6 +110,41 @@ export const Footer: React.FC = () => {
       link: "https://www.instagram.com/pikosend.ke/",
     },
   ];
+
+  const renderLink = (item: { label: string; href: string; external?: boolean }) => {
+    if (item.external) {
+      return (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-piko-lilac hover:opacity-100 transition"
+        >
+          {item.label}
+        </a>
+      );
+    }
+    
+    if (item.href.startsWith("/")) {
+      return (
+        <Link
+          to={item.href}
+          className="hover:text-piko-lilac hover:opacity-100 transition"
+        >
+          {item.label}
+        </Link>
+      );
+    }
+    
+    return (
+      <button
+        onClick={() => handleInternalLink(item.href)}
+        className="hover:text-piko-lilac hover:opacity-100 transition text-left"
+      >
+        {item.label}
+      </button>
+    );
+  };
 
   return (
     <footer className="bg-piko-plum text-white">
@@ -233,25 +271,11 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-poppins font-semibold mb-4">Products</h4>
+            <h4 className="font-poppins font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3 text-sm opacity-80">
               {ProductsLinks.map((item) => (
                 <li key={item.href}>
-                  {item.href.startsWith("/") ? (
-                    <Link
-                      to={item.href}
-                      className="hover:text-piko-lilac hover:opacity-100 transition"
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={() => handleInternalLink(item.href)}
-                      className="hover:text-piko-lilac hover:opacity-100 transition text-left"
-                    >
-                      {item.label}
-                    </button>
-                  )}
+                  {renderLink(item)}
                 </li>
               ))}
             </ul>
@@ -262,21 +286,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm opacity-80">
               {BusinessLinks.map((item) => (
                 <li key={item.href}>
-                  {item.href.startsWith("/") ? (
-                    <Link
-                      to={item.href}
-                      className="hover:text-piko-lilac hover:opacity-100 transition"
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={() => handleInternalLink(item.href)}
-                      className="hover:text-piko-lilac hover:opacity-100 transition text-left"
-                    >
-                      {item.label}
-                    </button>
-                  )}
+                  {renderLink(item)}
                 </li>
               ))}
             </ul>
@@ -287,22 +297,9 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm opacity-80">
               {CompanyLinks.map((item) => (
                 <li key={item.href}>
-                  <button
-                    onClick={() => handleInternalLink(item.href)}
-                    className="hover:text-piko-lilac hover:opacity-100 transition text-left"
-                  >
-                    {item.label}
-                  </button>
+                  {renderLink(item)}
                 </li>
               ))}
-              <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-piko-lilac hover:opacity-100 transition"
-                >
-                  Contact Us
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
